@@ -9,7 +9,7 @@ import com.eramo.karpooler.R;
 public class SplashScreenActivity extends BaseActivity {
 
     /** Duration of wait **/
-    private final int SPLASH_DISPLAY_LENGTH = 5000;
+    private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,8 @@ public class SplashScreenActivity extends BaseActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                //Intent mainIntent = new Intent(SplashScreenActivity.this, Menu.class);
-                //SplashScreenActivity.this.startActivity(mainIntent);
+                Intent mainIntent = new Intent(SplashScreenActivity.this, GettingStartedActivity.class);
+                SplashScreenActivity.this.startActivity(mainIntent);
                 SplashScreenActivity.this.finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

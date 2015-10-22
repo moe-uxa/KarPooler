@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">KarPooler</string>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get_started">GET STARTED</string>
+
+    <array name="get_started_titles">
+        <item>Saving Money</item>
+        <item>Saving Gasoline</item>
+        <item>Making New Friendship</item>
+        <item>Decreasing Traffic</item>
+        <item>Decreasing Pollution</item>
+    </array>
+
+    <array name="get_started_descriptions">
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
+    </array>
+
 </resources>
