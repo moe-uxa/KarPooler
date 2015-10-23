@@ -5,11 +5,11 @@ package com.eramo.karpooler.apis;
  */
 
 /** Callback interface for delivering error responses. */
-public interface  ErrorResponseListener {
+public interface  ErrorResponseListener <T> {
 
     /**
      * Callback method that an error has been occurred with the
      */
-    void onErrorResponse(Exception error);
+    void onErrorResponse(T response);
 
 }

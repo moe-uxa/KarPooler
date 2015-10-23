@@ -1,34 +1,38 @@
 package com.eramo.karpooler.activities;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.apis.ErrorResponseListener;
+import com.eramo.karpooler.apis.LoginAPI;
+import com.eramo.karpooler.apis.ResponseListener;
+import com.eramo.karpooler.models.dtos.ErrorDTO;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
 public class LoginActivity extends AppCompatActivity {
 
-    CallbackManager callbackManager;
+    private CallbackManager callbackManager;
+    private LoginAPI loginAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // init login API
+        loginAPI = new LoginAPI();
 
         // initialize facebook sdk
         FacebookSdk.sdkInitialize(getApplicationContext());
 
         setContentView(R.layout.activity_login);
 
-        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+        final LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("user_friends");
 
         // If using in a fragment
@@ -42,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                // App code
 
+                login(loginResult);
             }
 
             @Override
@@ -54,6 +58,22 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onError(FacebookException exception) {
                 // App code
+            }
+        });
+
+    }
+
+    private void login(LoginResult loginResult){
+
+        loginAPI.login(loginResult, new ResponseListener<Void>() {
+            @Override
+            public void onResponse(Void response) {
+
+            }
+        }, new ErrorResponseListener<ErrorDTO>() {
+            @Override
+            public void onErrorResponse(ErrorDTO response) {
+
             }
         });
 
