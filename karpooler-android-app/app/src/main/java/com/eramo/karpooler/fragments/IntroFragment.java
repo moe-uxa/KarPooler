@@ -2,6 +2,7 @@ package com.eramo.karpooler.fragments;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
@@ -9,11 +10,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.activities.LoginActivity;
 import com.eramo.karpooler.models.dtos.IntroDTO;
 
 import java.awt.font.TextAttribute;
@@ -49,6 +52,18 @@ public class IntroFragment extends Fragment {
         // view image
         ImageView introImageView = (ImageView) view.findViewById(R.id.iv_intro_image);
         introImageView.setImageResource(introDTO.getImageResource());
+
+        // get started button -> set on click listener
+        Button getStartedButton = (Button) view.findViewById(R.id.btn_getting_start);
+        getStartedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // go to login activity
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

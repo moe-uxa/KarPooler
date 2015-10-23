@@ -18,9 +18,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.GettingStartedActivity"
-            android:theme="@style/GettingStarted">
-        </activity>
+        <activity
+            android:name=".activities.GettingStartedActivity"
+            android:theme="@style/GettingStarted" />
+
+        <activity android:name=".activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>
