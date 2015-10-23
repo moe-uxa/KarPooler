@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.eramo.karpooler.R;
-import com.eramo.karpooler.apis.ErrorResponseListener;
+import com.eramo.karpooler.services.callbacks.ServiceErrorCallback;
 import com.eramo.karpooler.apis.LoginAPI;
-import com.eramo.karpooler.apis.ResponseListener;
+import com.eramo.karpooler.services.callbacks.ServiceSuccessCallback;
 import com.eramo.karpooler.models.dtos.ErrorDTO;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -65,14 +65,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login(LoginResult loginResult){
 
-        loginAPI.login(loginResult, new ResponseListener<Void>() {
+        loginAPI.login(loginResult, new ServiceSuccessCallback() {
             @Override
-            public void onResponse(Void response) {
+            public void onSuccess(Object response) {
+
+                // navigate to car selection activity
+                Intent intent = new Intent(LoginActivity.this, CarSelectionActivity.class);
+                startActivity(intent);
 
             }
-        }, new ErrorResponseListener<ErrorDTO>() {
+        }, new ServiceErrorCallback<ErrorDTO>() {
             @Override
-            public void onErrorResponse(ErrorDTO response) {
+            public void onError(ErrorDTO errorResponse) {
 
             }
         });

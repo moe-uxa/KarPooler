@@ -1,10 +1,8 @@
 package com.eramo.karpooler.services;
 
-import android.util.Log;
-
-import com.eramo.karpooler.apis.ErrorResponseListener;
-import com.eramo.karpooler.apis.ResponseListener;
 import com.eramo.karpooler.models.dtos.ErrorDTO;
+import com.eramo.karpooler.services.callbacks.ServiceErrorCallback;
+import com.eramo.karpooler.services.callbacks.ServiceSuccessCallback;
 import com.facebook.login.LoginResult;
 
 /**
@@ -36,12 +34,12 @@ public class LoginService extends BaseService {
      * use this method to store any info of access token in sql database or your server database.
      * to get access token use the method faceBookLoginResult.getAccessToken()
      * @param faceBookLoginResult
-     * @param responseListener
-     * @param errorResponseListener
+     * @param serviceSuccessCallback
+     * @param serviceErrorCallback
      */
-    public void login (LoginResult faceBookLoginResult, ResponseListener<Void> responseListener, ErrorResponseListener<ErrorDTO> errorResponseListener){
+    public void login (LoginResult faceBookLoginResult, ServiceSuccessCallback serviceSuccessCallback, ServiceErrorCallback<ErrorDTO> serviceErrorCallback){
 
-
+        serviceSuccessCallback.onSuccess(null);
     }
 
 }
