@@ -3,7 +3,6 @@ package com.eramo.karpooler.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-
 import com.eramo.karpooler.R;
 
 public class SplashScreenActivity extends BaseActivity {
@@ -29,4 +28,5 @@ public class SplashScreenActivity extends BaseActivity {
         }, SPLASH_DISPLAY_LENGTH);
 
     }
+
 }
