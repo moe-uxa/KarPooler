@@ -5,4 +5,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="car_selection_layout_row_height">70dp</dimen>
     <dimen name="car_selection_layout_row_margin_left">10dp</dimen>
+    <dimen name="dividerSize">0.25dp</dimen>
+    <dimen name="dividerLeftMargin">130dp</dimen>
+    <dimen name="dividerRightMargin">0dp</dimen>
 </resources>

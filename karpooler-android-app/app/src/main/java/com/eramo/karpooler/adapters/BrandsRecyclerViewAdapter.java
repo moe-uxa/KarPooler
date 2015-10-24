@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.activities.CarSelectionActivity;
 import com.eramo.karpooler.models.dtos.BrandDTO;
 
 import java.util.List;
@@ -18,9 +19,11 @@ import java.util.List;
 public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecyclerViewAdapter.ViewHolder> {
 
     private List<BrandDTO> brands;
+    private CarSelectionActivity activity;
 
-    public BrandsRecyclerViewAdapter(List<BrandDTO> brands) {
+    public BrandsRecyclerViewAdapter(List<BrandDTO> brands, CarSelectionActivity activity) {
         this.brands = brands;
+        this.activity = activity;
     }
 
     @Override
@@ -30,7 +33,7 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_brand, parent, false);
 
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, activity);
 
         return vh;
     }
@@ -42,6 +45,7 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         BrandDTO brandDTO = brands.get(position);
 
         holder.brandLabel.setText(brandDTO.getBrandName());
+        holder.brandImageView.setImageBitmap(brandDTO.getBrandImage());
 
     }
 
@@ -56,11 +60,18 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         public ImageView brandImageView;
         public TextView brandLabel;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View v, final CarSelectionActivity activity) {
             super(v);
 
             brandImageView = (ImageView) v.findViewById(R.id.imgv_brand);
             brandLabel  = (TextView) v.findViewById(R.id.label_brand);
+
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    activity.getFragmentManager().popBackStack();
+                }
+            });
 
         }
     }
@@ -70,4 +81,5 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
     public void setBrands(List<BrandDTO> brands) {
         this.brands = brands;
     }
+
 }

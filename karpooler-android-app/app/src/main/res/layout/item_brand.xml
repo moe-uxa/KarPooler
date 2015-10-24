@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:background="@android:color/white">
 
         <ImageView
@@ -28,6 +28,6 @@
             android:id="@+id/label_brand"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/imgv_brand"
-            android:layout_marginLeft="40dp" />
+            android:layout_marginLeft="30dp" />
     </RelativeLayout>
 </LinearLayout>

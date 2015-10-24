@@ -1,6 +1,7 @@
 package com.eramo.karpooler.fragments;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,6 +19,7 @@ import com.eramo.karpooler.models.dtos.BrandDTO;
 import com.eramo.karpooler.models.dtos.ErrorDTO;
 import com.eramo.karpooler.services.callbacks.ServiceErrorCallback;
 import com.eramo.karpooler.services.callbacks.ServiceSuccessCallback;
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,15 +82,23 @@ public class SelectBrandFragment extends Fragment {
     private void prepareUIControllers(){
 
         RecyclerView brandRecyclerView = (RecyclerView) activity.findViewById(R.id.recycler_view_brands);
-        //brandRecyclerView.setHasFixedSize(true);
+        brandRecyclerView.setHasFixedSize(true);
+
+        // set recycler view divider
+        brandRecyclerView.addItemDecoration(
+                new HorizontalDividerItemDecoration.Builder(getActivity())
+                        .drawable(R.drawable.divider)
+                        .marginResId(R.dimen.dividerLeftMargin, R.dimen.dividerRightMargin)
+                        .build());
 
         // use a linear layout manager
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         brandRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter
-        brandsRecyclerViewAdapter = new BrandsRecyclerViewAdapter(new ArrayList<BrandDTO>());
+        brandsRecyclerViewAdapter = new BrandsRecyclerViewAdapter(new ArrayList<BrandDTO>(), activity);
         brandRecyclerView.setAdapter(brandsRecyclerViewAdapter);
+
 
     }
 
