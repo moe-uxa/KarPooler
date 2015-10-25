@@ -42,11 +42,19 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         // get brand dto
-        BrandDTO brandDTO = brands.get(position);
+        final BrandDTO brandDTO = brands.get(position);
 
         holder.brandLabel.setText(brandDTO.getBrandName());
         holder.brandImageView.setImageBitmap(brandDTO.getBrandImage());
 
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                activity.setSelectedBrand(brandDTO);
+                activity.getFragmentManager().popBackStack();
+
+            }
+        });
     }
 
     @Override
@@ -59,19 +67,14 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         // each data item is just a string in this case
         public ImageView brandImageView;
         public TextView brandLabel;
+        public View view;
 
         public ViewHolder(View v, final CarSelectionActivity activity) {
             super(v);
 
+            view = v;
             brandImageView = (ImageView) v.findViewById(R.id.imgv_brand);
             brandLabel  = (TextView) v.findViewById(R.id.label_brand);
-
-            v.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    activity.getFragmentManager().popBackStack();
-                }
-            });
 
         }
     }

@@ -7,10 +7,14 @@ import com.eramo.karpooler.R;
 import com.eramo.karpooler.apis.CarSelectionAPI;
 import com.eramo.karpooler.fragments.CarSelectionFragment;
 import com.eramo.karpooler.fragments.SelectBrandFragment;
+import com.eramo.karpooler.models.dtos.BrandDTO;
 
-public class CarSelectionActivity extends AppCompatActivity {
+public class CarSelectionActivity extends AppCompatActivity  {
 
     private CarSelectionAPI carSelectionAPI;
+    private CarSelectionFragment carSelectionFragment;
+    private SelectBrandFragment selectBrandFragment;
+    private BrandDTO selectedBrand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +30,24 @@ public class CarSelectionActivity extends AppCompatActivity {
 
 
     private void addCarSelectionFragment(){
-        CarSelectionFragment carSelectionFragment = new CarSelectionFragment();
+        carSelectionFragment = new CarSelectionFragment();
         getFragmentManager().beginTransaction().add(R.id.layout_container, carSelectionFragment).addToBackStack(null).commit();
     }
 
     public void addSelectBrandFragment(){
-        SelectBrandFragment selectBrandFragment = new SelectBrandFragment();
+        selectBrandFragment = new SelectBrandFragment();
         getFragmentManager().beginTransaction().replace(R.id.layout_container, selectBrandFragment).addToBackStack(null).commit();
     }
 
     public CarSelectionAPI getCarSelectionAPI() {
         return carSelectionAPI;
+    }
+
+    public BrandDTO getSelectedBrand() {
+        return selectedBrand;
+    }
+
+    public void setSelectedBrand(BrandDTO selectedBrand) {
+        this.selectedBrand = selectedBrand;
     }
 }

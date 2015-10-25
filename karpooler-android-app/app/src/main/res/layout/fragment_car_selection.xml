@@ -33,7 +33,8 @@
             android:id="@+id/spinner_brand"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/label_brand"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -60,7 +61,8 @@
             android:id="@+id/spinner_model"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/label_model"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -87,7 +89,9 @@
             android:id="@+id/spinner_model_year"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/label_model_year"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"/>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -114,7 +118,8 @@
             android:id="@+id/spinner_plate_type"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/label_plate_type"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.AppCompat.Spinner.Underlined"/>
     </RelativeLayout>
 
     <RelativeLayout

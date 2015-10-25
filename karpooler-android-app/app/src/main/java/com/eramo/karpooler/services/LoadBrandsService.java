@@ -53,35 +53,35 @@ public class LoadBrandsService extends BaseService {
             switch (i){
                 case 1:
                     brandDTO.setBrandName("Aston Martin");
-                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/aston.png"));
                     break;
                 case 2:
                     brandDTO.setBrandName("Audi");
-                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/audi.png"));
                     break;
                 case 3:
-                    brandDTO.setBrandName("Brand " + i);
-                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    brandDTO.setBrandName("BMW");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/bmw.png"));
                     break;
                 case 4:
-                    brandDTO.setBrandName("Brand " + i);
-                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    brandDTO.setBrandName("Bentley");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/bent.png"));
                     break;
                 case 5:
-                    brandDTO.setBrandName("Brand " + i);
-                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    brandDTO.setBrandName("Chevrolet");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/c.png"));
                     break;
                 case 6:
-                    brandDTO.setBrandName("Brand " + i);
+                    brandDTO.setBrandName("FIAT");
                     brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
                     break;
                 case 7:
-                    brandDTO.setBrandName("Brand " + i);
-                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    brandDTO.setBrandName("Ford");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/ford.png"));
                     break;
                 case 8:
-                    brandDTO.setBrandName("Brand " + i);
-                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    brandDTO.setBrandName("Jaguar");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/jaguar.png"));
                     break;
             }
 
