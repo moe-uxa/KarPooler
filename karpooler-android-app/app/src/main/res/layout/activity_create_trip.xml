@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.eramo.karpooler.activities.CreateTripActivity"
+    android:background="@android:color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_trip_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="@string/trip_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/who_are_you"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/edt_trip_name"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/linearLayout">
+
+        <RadioGroup
+            android:id="@+id/radio_group_types"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:checkedButton="@+id/toggleButton">
+
+            <ToggleButton
+                android:id="@+id/toggle_driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_driver"
+                android:layout_marginRight="30dp"
+                android:drawablePadding="10dp"
+                android:textOff="@string/driver"
+                android:textOn="@string/driver"
+                android:textColor="@color/toggle_text_color"
+                android:onClick="onToggle"
+                android:checked="true"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_passenger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_passenger"
+                android:layout_marginRight="30dp"
+                android:drawablePadding="10dp"
+                android:textOff="@string/passenger"
+                android:textOn="@string/passenger"
+                android:textColor="@color/toggle_text_color"
+                android:onClick="onToggle"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_both"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_both"
+                android:drawablePadding="10dp"
+                android:textOff="@string/both"
+                android:textOn="@string/both"
+                android:textColor="@color/toggle_text_color"
+                android:onClick="onToggle"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/number_of_seats"
+            android:id="@+id/textView4"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="152dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/border_number_picker"
+            android:divider="@drawable/linear_layout_divider"
+            android:showDividers="middle"
+            android:weightSum="3">
+
+            <Button
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/button"
+                android:drawableTop="@drawable/ic_increase"
+                android:drawablePadding="5dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:ems="2"
+                android:id="@+id/editText2"
+                android:layout_weight="1"/>
+
+            <Button
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:drawableTop="@drawable/ic_decrease"
+                android:drawablePadding="20dp"
+                android:id="@+id/button2"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
