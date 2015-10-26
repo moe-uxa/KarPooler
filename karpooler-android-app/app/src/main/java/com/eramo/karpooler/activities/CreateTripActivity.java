@@ -1,15 +1,22 @@
 package com.eramo.karpooler.activities;
 
+import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.dialogs.TripDatePickerDialog;
+
+import java.util.Calendar;
 
 public class CreateTripActivity extends AppCompatActivity {
 
@@ -25,6 +32,16 @@ public class CreateTripActivity extends AppCompatActivity {
 
     private void prepareUIControllers(){
 
+        prepareTypesToggleGroup();
+
+        prepareNumberPicker();
+
+        prepareDateAndTimeButtons();
+
+    }
+
+    private void prepareTypesToggleGroup(){
+
         final RadioGroup typesRadioGroup  = (RadioGroup) findViewById(R.id.radio_group_types);
         typesRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -36,7 +53,10 @@ public class CreateTripActivity extends AppCompatActivity {
                 }
             }
         });
-        //number picker business
+
+    }
+
+    private void prepareNumberPicker(){
 
         tv_number = (TextView) findViewById(R.id.tv_number);
 
@@ -56,7 +76,21 @@ public class CreateTripActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    private void prepareDateAndTimeButtons(){
+
+        EditText dateEditText = (EditText) findViewById(R.id.edt_date);
+        dateEditText.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                TripDatePickerDialog dialog = new TripDatePickerDialog();
+                dialog.show(getSupportFragmentManager(), "");
+
+                return false;
+            }
+        });
     }
 
     public void onToggle(View view) {

@@ -34,6 +34,17 @@
     <string name="passenger">Passenger</string>
     <string name="driver">Driver</string>
     <string name="number_of_seats">Number of Seats</string>
+    <string name="from">From</string>
+    <string name="pick_location">Pickup location</string>
+    <string name="to">To</string>
+    <string name="drop_of">Drop of</string>
+    <string name="date">Date</string>
+    <string name="repeat">Repeat</string>
+    <string name="round_trip">Roundtrip</string>
+    <string name="advanced_option">Advanced Option</string>
+    <string name="publish_trip">PUBLISH TRIP</string>
+    <string name="type">Type</string>
+    <string name="price">Price</string>
 
 
 </resources>

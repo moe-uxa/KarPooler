@@ -1,164 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="30dp"
-    android:paddingRight="30dp"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.eramo.karpooler.activities.CreateTripActivity"
-    android:background="@android:color/white">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.eramo.karpooler.activities.CreateTripActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/scrollView"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="560dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" >
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+            <EditText
+                android:id="@+id/edt_trip_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:hint="@string/trip_name"
+                android:textColorHint="@android:color/black" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/edt_trip_name"
+                android:layout_marginTop="20dp"
+                android:text="@string/who_are_you"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView3"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_types"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:checkedButton="@+id/toggleButton"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ToggleButton
+                        android:id="@+id/toggle_driver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:background="@android:color/transparent"
+                        android:checked="true"
+                        android:drawablePadding="10dp"
+                        android:drawableTop="@drawable/ic_driver"
+                        android:onClick="onToggle"
+                        android:text="New ToggleButton"
+                        android:textColor="@color/toggle_text_color"
+                        android:textOff="@string/driver"
+                        android:textOn="@string/driver" />
+
+                    <ToggleButton
+                        android:id="@+id/toggle_passenger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="10dp"
+                        android:drawableTop="@drawable/ic_passenger"
+                        android:onClick="onToggle"
+                        android:text="New ToggleButton"
+                        android:textColor="@color/toggle_text_color"
+                        android:textOff="@string/passenger"
+                        android:textOn="@string/passenger" />
+
+                    <ToggleButton
+                        android:id="@+id/toggle_both"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="10dp"
+                        android:drawableTop="@drawable/ic_both"
+                        android:onClick="onToggle"
+                        android:text="New ToggleButton"
+                        android:textColor="@color/toggle_text_color"
+                        android:textOff="@string/both"
+                        android:textOn="@string/both" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/linearLayout"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/number_of_seats"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_decrease"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/number_picker_left_button_bg"
+                        android:drawableTop="@drawable/ic_decrease"
+                        android:padding="17dp" />
+
+                    <TextView
+                        android:id="@+id/tv_number"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border_number_picker"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/btn_increase"
+                        style="@style/Base.Widget.AppCompat.Button.Borderless"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/number_picker_right_button_bg"
+                        android:drawableTop="@drawable/ic_increase"
+                        android:padding="10dp" />
+
+                </LinearLayout>
 
 
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/relativeLayout"
+                android:text="@string/from"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btn_pickup_location"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView5"
+                android:gravity="top"
+                android:padding="0dp"
+                android:text="@string/pick_location"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/seperator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_pickup_location"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/seperator"
+                android:layout_marginTop="15dp"
+                android:text="@string/to"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btn_drop_off"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView6"
+                android:gravity="top"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:text="@string/pick_location"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/seperator2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_drop_off"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/seperator2">
+
+                <EditText
+                    android:id="@+id/edt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:ems="9"
+                    android:hint="@string/date"
+                    android:inputType="date"
+                    android:textColorHint="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:ems="6"
+                    android:hint="Time"
+                    android:inputType="time"
+                    android:textColorHint="@android:color/black" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_round_trip"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/relativeLayout2">
+
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/round_trip"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="18sp" />
+
+                <Switch
+                    android:id="@+id/switch_round_trip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_advanced_options"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/layout_round_trip">
+
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/advanced_option"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="18sp" />
+
+                <Switch
+                    android:id="@+id/switch_advanced_options"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <include
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/activity_create_trip_extended"
+                android:layout_below="@+id/layout_advanced_options" />
 
         </RelativeLayout>
     </ScrollView>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edt_trip_name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="@string/trip_name" />
+    <Button
+        android:id="@+id/btn_publish_trip"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/btn_save_and_go"
+        android:text="@string/publish_trip"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/who_are_you"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/edt_trip_name"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="20dp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:id="@+id/linearLayout">
-
-        <RadioGroup
-            android:id="@+id/radio_group_types"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:checkedButton="@+id/toggleButton">
-
-            <ToggleButton
-                android:id="@+id/toggle_driver"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New ToggleButton"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/ic_driver"
-                android:layout_marginRight="30dp"
-                android:drawablePadding="10dp"
-                android:textOff="@string/driver"
-                android:textOn="@string/driver"
-                android:textColor="@color/toggle_text_color"
-                android:onClick="onToggle"
-                android:checked="true"/>
-
-            <ToggleButton
-                android:id="@+id/toggle_passenger"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New ToggleButton"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/ic_passenger"
-                android:layout_marginRight="30dp"
-                android:drawablePadding="10dp"
-                android:textOff="@string/passenger"
-                android:textOn="@string/passenger"
-                android:textColor="@color/toggle_text_color"
-                android:onClick="onToggle"/>
-
-            <ToggleButton
-                android:id="@+id/toggle_both"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New ToggleButton"
-                android:background="@android:color/transparent"
-                android:drawableTop="@drawable/ic_both"
-                android:drawablePadding="10dp"
-                android:textOff="@string/both"
-                android:textOn="@string/both"
-                android:textColor="@color/toggle_text_color"
-                android:onClick="onToggle"/>
-
-        </RadioGroup>
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/number_of_seats"
-            android:id="@+id/textView4"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true">
-
-            <Button
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:drawableTop="@drawable/ic_decrease"
-                android:id="@+id/btn_decrease"
-                android:padding="17dp"
-                android:background="@drawable/number_picker_left_button_bg"/>
-
-            <TextView
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:text="0"
-                android:id="@+id/tv_number"
-                android:background="@drawable/border_number_picker"/>
-
-            <Button
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:id="@+id/btn_increase"
-                android:drawableTop="@drawable/ic_increase"
-                android:padding="10dp"
-                android:background="@drawable/number_picker_right_button_bg"/>
-
-        </LinearLayout>
-    </RelativeLayout>
 
 </RelativeLayout>

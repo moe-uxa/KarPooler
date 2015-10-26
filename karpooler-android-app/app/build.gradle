@@ -31,4 +31,6 @@ dependencies {
     compile 'com.android.support:design:23.1.0'
     compile 'com.facebook.android:facebook-android-sdk:4.7.0'
     compile 'com.yqritc:recyclerview-flexibledivider:1.2.6'
+    compile 'org.apmem.tools:layouts:1.10@aar'
+
 }
