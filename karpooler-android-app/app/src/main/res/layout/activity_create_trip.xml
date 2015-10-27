@@ -219,7 +219,7 @@
                 android:gravity="top"
                 android:paddingLeft="0dp"
                 android:paddingTop="0dp"
-                android:text="@string/pick_location"
+                android:text="@string/drop_off"
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp" />
 

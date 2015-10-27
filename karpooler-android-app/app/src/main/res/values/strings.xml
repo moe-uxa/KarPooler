@@ -45,6 +45,8 @@
     <string name="publish_trip">PUBLISH TRIP</string>
     <string name="type">Type</string>
     <string name="price">Price</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="drop_off">Drop off</string>
 
 
 </resources>

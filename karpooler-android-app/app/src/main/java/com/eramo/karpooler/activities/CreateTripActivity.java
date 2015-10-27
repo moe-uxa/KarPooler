@@ -1,6 +1,7 @@
 package com.eramo.karpooler.activities;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -14,10 +15,15 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.dialogs.TripDatePickerDialog;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 
 import org.apmem.tools.layouts.FlowLayout;
 
@@ -26,6 +32,8 @@ import java.util.Calendar;
 public class CreateTripActivity extends AppCompatActivity {
 
     private TextView tv_number;
+    private final int PLACE_PICKER_FROM_REQUEST = 1;
+    private final int PLACE_PICKER_TO_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,9 +139,27 @@ public class CreateTripActivity extends AppCompatActivity {
 
     private void prepareFromLocationBtn(){
 
+        Button fromLocationBtn = (Button) findViewById(R.id.btn_pickup_location);
+        fromLocationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openPlacePicker(PLACE_PICKER_FROM_REQUEST);
+            }
+        });
+
     }
 
     private void prepareToLocationBtn(){
+
+        Button fromLocationBtn = (Button) findViewById(R.id.btn_drop_off);
+        fromLocationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openPlacePicker(PLACE_PICKER_TO_REQUEST);
+            }
+        });
 
     }
 
@@ -165,5 +191,41 @@ public class CreateTripActivity extends AppCompatActivity {
         toggleButton.setLayoutParams(layoutParams);
 
         return toggleButton;
+    }
+
+    private void openPlacePicker(int requestId){
+
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+        try {
+            startActivityForResult(builder.build(CreateTripActivity.this), requestId);
+        } catch (GooglePlayServicesRepairableException e) {
+            e.printStackTrace();
+        } catch (GooglePlayServicesNotAvailableException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        // pickup from location
+        if (requestCode == PLACE_PICKER_FROM_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlacePicker.getPlace(data, this);
+                String toastMsg = String.format("Place: %s", place.getName());
+                Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+            }
+        }
+
+        // Drop off to location
+        if (requestCode == PLACE_PICKER_TO_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlacePicker.getPlace(data, this);
+                String toastMsg = String.format("Place: %s", place.getName());
+                Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
+            }
+        }
+
     }
 }
