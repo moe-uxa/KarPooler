@@ -3,9 +3,12 @@ package com.eramo.karpooler.activities;
 import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -15,6 +18,8 @@ import android.widget.ToggleButton;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.dialogs.TripDatePickerDialog;
+
+import org.apmem.tools.layouts.FlowLayout;
 
 import java.util.Calendar;
 
@@ -38,6 +43,11 @@ public class CreateTripActivity extends AppCompatActivity {
 
         prepareDateAndTimeButtons();
 
+        prepareFromLocationBtn();
+
+        prepareToLocationBtn();
+
+        prepareCriteriaLayout();
     }
 
     private void prepareTypesToggleGroup(){
@@ -116,6 +126,44 @@ public class CreateTripActivity extends AppCompatActivity {
         if(numberOfSeat<0)
             numberOfSeat = 0;
 
-        tv_number.setText(numberOfSeat+"");
+        tv_number.setText(numberOfSeat + "");
+    }
+
+    private void prepareFromLocationBtn(){
+
+    }
+
+    private void prepareToLocationBtn(){
+
+    }
+
+    private void prepareCriteriaLayout(){
+
+        FlowLayout criteriaLayout = (FlowLayout) findViewById(R.id.layout_criteria);
+
+        // create test data
+        criteriaLayout.addView(generateCriteriaToggleButton("Male"));
+        criteriaLayout.addView(generateCriteriaToggleButton("Female"));
+        criteriaLayout.addView(generateCriteriaToggleButton("Smoker"));
+        criteriaLayout.addView(generateCriteriaToggleButton("Friends"));
+        criteriaLayout.addView(generateCriteriaToggleButton("Friends of friends"));
+        criteriaLayout.addView(generateCriteriaToggleButton("Music"));
+        criteriaLayout.addView(generateCriteriaToggleButton("Quran"));
+
+    }
+
+    private ToggleButton generateCriteriaToggleButton (String criteriaName){
+
+        ToggleButton toggleButton = (ToggleButton) getLayoutInflater().inflate(R.layout.criteria_toggle_button, null);
+        toggleButton.setTextOff(criteriaName);
+        toggleButton.setTextOn(criteriaName);
+        toggleButton.setChecked(false);
+
+        int ht_px = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
+        FlowLayout.LayoutParams layoutParams = new FlowLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ht_px);
+        layoutParams.setMargins(20, 20, 20, 20);
+        toggleButton.setLayoutParams(layoutParams);
+
+        return toggleButton;
     }
 }
