@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
-import com.eramo.karpooler.activities.CarSelectionActivity;
+import com.eramo.karpooler.activities.SelectBrandActivity;
 import com.eramo.karpooler.models.dtos.BrandDTO;
 
 import java.util.List;
@@ -19,9 +19,9 @@ import java.util.List;
 public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecyclerViewAdapter.ViewHolder> {
 
     private List<BrandDTO> brands;
-    private CarSelectionActivity activity;
+    private SelectBrandActivity activity;
 
-    public BrandsRecyclerViewAdapter(List<BrandDTO> brands, CarSelectionActivity activity) {
+    public BrandsRecyclerViewAdapter(List<BrandDTO> brands, SelectBrandActivity activity) {
         this.brands = brands;
         this.activity = activity;
     }
@@ -69,7 +69,7 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         public TextView brandLabel;
         public View view;
 
-        public ViewHolder(View v, final CarSelectionActivity activity) {
+        public ViewHolder(View v, final SelectBrandActivity activity) {
             super(v);
 
             view = v;

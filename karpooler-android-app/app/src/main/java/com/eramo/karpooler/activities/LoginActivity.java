@@ -3,12 +3,16 @@ package com.eramo.karpooler.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.services.callbacks.ServiceErrorCallback;
 import com.eramo.karpooler.apis.LoginAPI;
 import com.eramo.karpooler.services.callbacks.ServiceSuccessCallback;
 import com.eramo.karpooler.models.dtos.ErrorDTO;
 import com.facebook.CallbackManager;
+import com.facebook.FacebookActivity;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;

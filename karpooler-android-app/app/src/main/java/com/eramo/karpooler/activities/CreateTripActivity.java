@@ -1,20 +1,22 @@
 package com.eramo.karpooler.activities;
 
-import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.NavUtils;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -29,7 +31,7 @@ import org.apmem.tools.layouts.FlowLayout;
 
 import java.util.Calendar;
 
-public class CreateTripActivity extends AppCompatActivity {
+public class CreateTripActivity extends BaseActivity {
 
     private TextView tv_number;
     private final int PLACE_PICKER_FROM_REQUEST = 1;
@@ -40,8 +42,40 @@ public class CreateTripActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_trip);
 
+        // setup tool bar
+        setupToolBar();
+
+        // enable home button
+        enableUpButton();
+
+        // set toolbar title
+        getSupportActionBar().setTitle(getResources().getString(R.string.create_trip));
+
         prepareUIControllers();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_create_trip, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+
+            NavUtils.navigateUpFromSameTask(this);
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void prepareUIControllers(){
 
@@ -49,13 +83,17 @@ public class CreateTripActivity extends AppCompatActivity {
 
         prepareNumberPicker();
 
-        prepareDateAndTimeButtons();
+        prepareDateAndTimeSelectors();
 
         prepareFromLocationBtn();
 
         prepareToLocationBtn();
 
         prepareCriteriaLayout();
+
+        prepareTypeSpinner();
+
+        preparePriceSpinner();
     }
 
     private void prepareTypesToggleGroup(){
@@ -96,7 +134,7 @@ public class CreateTripActivity extends AppCompatActivity {
 
     }
 
-    private void prepareDateAndTimeButtons(){
+    private void prepareDateAndTimeSelectors(){
 
         EditText dateEditText = (EditText) findViewById(R.id.edt_date);
         dateEditText.setOnTouchListener(new View.OnTouchListener() {
@@ -109,6 +147,26 @@ public class CreateTripActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        final EditText timeEditText = (EditText) findViewById(R.id.edt_time);
+        timeEditText.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                TimePickerDialog dialog = new TimePickerDialog(CreateTripActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                        timeEditText.setText(hourOfDay+":"+minute);
+                    }
+                }, Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), false);
+
+                dialog.show();
+
+                return false;
+            }
+        });
+
     }
 
     public void onToggle(View view) {
@@ -204,6 +262,31 @@ public class CreateTripActivity extends AppCompatActivity {
         } catch (GooglePlayServicesNotAvailableException e) {
             e.printStackTrace();
         }
+
+    }
+
+    private void prepareTypeSpinner(){
+
+        Spinner typeSpinner = (Spinner) this.findViewById(R.id.spinner_trip_type);
+
+        // test data
+        String [] types = {"Work Trip", "Other"};
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, types);
+        typeSpinner.setAdapter(adapter);
+
+    }
+
+    private void preparePriceSpinner(){
+
+        Spinner priceSpinner = (Spinner) this.findViewById(R.id.spinner_trip_price);
+
+        // test data
+        String [] priceOptions = {"Free"};
+
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, priceOptions);
+        priceSpinner.setAdapter(adapter);
+
 
     }
 

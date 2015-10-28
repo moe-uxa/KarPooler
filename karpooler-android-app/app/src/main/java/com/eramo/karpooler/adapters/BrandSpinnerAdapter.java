@@ -38,10 +38,8 @@ public class BrandSpinnerAdapter extends ArrayAdapter {
 
         View view = inflater.inflate(R.layout.item_spinner_brand, parent, false);
 
-        TextView brandLabel = (TextView) view.findViewById(R.id.label_brand);
-        ImageView brandImage = (ImageView) view.findViewById(R.id.imgv_brand);
 
-        brandLabel.setText(brandDTO.getBrandName());
+        ImageView brandImage = (ImageView) view.findViewById(R.id.imgv_brand);
         brandImage.setImageBitmap(brandDTO.getBrandImage());
 
         return view;

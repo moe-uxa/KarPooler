@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.LoginActivity;
+import com.eramo.karpooler.helpers.FontUtil;
 import com.eramo.karpooler.models.dtos.IntroDTO;
 
 import java.awt.font.TextAttribute;

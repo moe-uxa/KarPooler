@@ -48,5 +48,8 @@
     <string name="title_activity_maps">Map</string>
     <string name="drop_off">Drop off</string>
 
+    <string name="your_car">Your Car</string>
+    <string name="skip">SKIP</string>
+    <string name="create_trip">Create trip</string>
 
 </resources>
