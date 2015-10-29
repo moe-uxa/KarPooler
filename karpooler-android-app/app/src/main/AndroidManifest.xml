@@ -41,25 +41,17 @@
         <activity
             android:name=".activities.CarSelectionActivity"
             android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.GettingStartedActivity" />
         </activity>
-
         <activity
             android:name=".activities.CreateTripActivity"
             android:screenOrientation="portrait" >
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.CarSelectionActivity" />
-
         </activity>
 
         <!--
@@ -75,10 +67,18 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".activities.SelectBrandActivity" >
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.CarSelectionActivity" />
+        </activity>
+
+        <activity android:name=".activities.HomeActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
     </application>

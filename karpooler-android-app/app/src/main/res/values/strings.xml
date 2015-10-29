@@ -52,4 +52,12 @@
     <string name="skip">SKIP</string>
     <string name="create_trip">Create trip</string>
 
+    <array name="tabs">
+        <item>Feed</item>
+        <item>My Trip</item>
+        <item>Inbox</item>
+        <item>Notifications</item>
+        <item>More</item>
+    </array>
+
 </resources>
