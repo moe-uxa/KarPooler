@@ -62,6 +62,7 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         return brands.size();
     }
 
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         // each data item is just a string in this case
@@ -85,4 +86,6 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         this.brands = brands;
     }
 
+
 }
+

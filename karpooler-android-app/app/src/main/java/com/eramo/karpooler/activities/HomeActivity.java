@@ -28,6 +28,7 @@ public class HomeActivity extends BaseActivity {
 
     private ViewPager viewPager;
     private SlidingTabLayout tabs;
+    private int [] icons;
 
     // TABS
     private final int FEED_TAB = 0;
@@ -38,6 +39,7 @@ public class HomeActivity extends BaseActivity {
 
     private String [] tabsTitles;
     private int selectedTabPosition;
+    private MyViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +72,6 @@ public class HomeActivity extends BaseActivity {
 
         int id = item.getItemId();
 
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -78,7 +79,8 @@ public class HomeActivity extends BaseActivity {
 
         // view pager and tabs
         viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager()));
+        viewPagerAdapter = new MyViewPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(viewPagerAdapter);
         tabs = (SlidingTabLayout) findViewById(R.id.tabs);
         tabs.setDistributeEvenly(true);
         tabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
@@ -99,6 +101,7 @@ public class HomeActivity extends BaseActivity {
 
                 // set tab title
                 setToolBarTitle(tabsTitles[position]);
+
             }
 
             @Override
@@ -112,12 +115,14 @@ public class HomeActivity extends BaseActivity {
 
     }
 
-    private class MyViewPagerAdapter extends FragmentPagerAdapter{
+    private class MyViewPagerAdapter extends FragmentPagerAdapter {
 
-        private int [] icons = {R.drawable.ic_feed, R.drawable.ic_trip, R.drawable.ic_inbox, R.drawable.ic_notif, R.drawable.ic_more};
+        //icons = {R.drawable.ic_feed, R.drawable.ic_trip, R.drawable.ic_inbox, R.drawable.ic_notif, R.drawable.ic_more};
 
         public MyViewPagerAdapter(FragmentManager fm) {
             super(fm);
+
+            prepareTabsIcons();
         }
 
         @Override
@@ -166,12 +171,21 @@ public class HomeActivity extends BaseActivity {
             return spannableString;
         }
 
+
     }
 
     private void setToolBarTitle(String title){
 
         // set toolbar title
         getSupportActionBar().setTitle(title);
+    }
 
+    private void prepareTabsIcons(){
+        icons = new int[5];
+        icons[FEED_TAB] = R.drawable.ic_feed;
+        icons[MY_TRIP_TAB] = R.drawable.ic_trip;
+        icons[INBOX_TAB] = R.drawable.ic_inbox;
+        icons[NOTIFICATION_TAB] = R.drawable.ic_notif;
+        icons[MORE_TAB] = R.drawable.ic_more;
     }
 }
