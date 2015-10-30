@@ -1,11 +1,8 @@
 package com.eramo.karpooler.fragments;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +10,13 @@ import android.view.ViewGroup;
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.HomeActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class FeedFragment extends BaseFragment {
 
-    HomeActivity activity;
+public class InboxFragment extends BaseFragment {
 
-    public FeedFragment() {
+
+    private HomeActivity activity;
+
+    public InboxFragment() {
         // Required empty public constructor
     }
 
@@ -29,7 +25,7 @@ public class FeedFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feed, container, false);
+        return inflater.inflate(R.layout.fragment_inbox, container, false);
     }
 
     @Override
@@ -39,7 +35,7 @@ public class FeedFragment extends BaseFragment {
         // get activity instance
         activity = (HomeActivity) getActivity();
 
-
     }
+
 
 }

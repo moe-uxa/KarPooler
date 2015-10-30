@@ -1,9 +1,10 @@
 <resources>
+
+    <!-- App Name -->
     <string name="app_name">KarPooler</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Get Started Screens -->
     <string name="get_started">GET STARTED</string>
-
     <array name="get_started_titles">
         <item>Saving Money</item>
         <item>Saving Gasoline</item>
@@ -20,14 +21,23 @@
         <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
     </array>
 
+
+    <!-- Login Screen -->
     <string name="facebook_app_id">860230554072344</string>
     <string name="app_website_url">karpooler.com</string>
     <string name="app_login_description">Discover and meet your trip mate easily</string>
+
+
+    <!-- Car Selection Screens -->
     <string name="brand">Brand</string>
     <string name="model">Model</string>
     <string name="model_year">Model Year</string>
     <string name="plate_type">Plate Type</string>
     <string name="save_and_go">SAVE AND GO</string>
+    <string name="your_car">Your Car</string>
+    <string name="skip">SKIP</string>
+
+    <!-- Create Trip Screen -->
     <string name="trip_name">Trip Name</string>
     <string name="who_are_you">Who are you?</string>
     <string name="both">Both</string>
@@ -47,12 +57,10 @@
     <string name="price">Price</string>
     <string name="title_activity_maps">Map</string>
     <string name="drop_off">Drop off</string>
-
-    <string name="your_car">Your Car</string>
-    <string name="skip">SKIP</string>
     <string name="create_trip">Create trip</string>
 
-    <array name="tabs">
+    <!-- tabs titles -->
+    <array name="tabs_titles">
         <item>Feed</item>
         <item>My Trip</item>
         <item>Inbox</item>

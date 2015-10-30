@@ -18,12 +18,26 @@ import android.widget.Button;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.FeedFragment;
+import com.eramo.karpooler.fragments.InboxFragment;
+import com.eramo.karpooler.fragments.MoreFragment;
+import com.eramo.karpooler.fragments.MyTripFragment;
+import com.eramo.karpooler.fragments.NotificationFragment;
 import com.eramo.karpooler.tabs.SlidingTabLayout;
 
 public class HomeActivity extends BaseActivity {
 
     private ViewPager viewPager;
     private SlidingTabLayout tabs;
+
+    // TABS
+    private final int FEED_TAB = 0;
+    private final int MY_TRIP_TAB = 1;
+    private final int INBOX_TAB = 2;
+    private final int NOTIFICATION_TAB = 3;
+    private final int MORE_TAB = 4;
+
+    private String [] tabsTitles;
+    private int selectedTabPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +47,13 @@ public class HomeActivity extends BaseActivity {
         // setup tool bar
         setupToolBar();
 
-        // set toolbar title
-        getSupportActionBar().setTitle("Feed");
+        // get tabs titles
+        tabsTitles = getResources().getStringArray(R.array.tabs_titles);
 
-        // view pager and tabs
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager()));
-        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
-        tabs.setDistributeEvenly(true);
-        tabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
-        tabs.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        tabs.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
-        tabs.setViewPager(viewPager);
+        // set tab title
+        setToolBarTitle(tabsTitles[selectedTabPosition]);
 
+        prepareTabs();
 
     }
 
@@ -66,6 +74,44 @@ public class HomeActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void prepareTabs(){
+
+        // view pager and tabs
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(new MyViewPagerAdapter(getSupportFragmentManager()));
+        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        tabs.setDistributeEvenly(true);
+        tabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
+        tabs.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        tabs.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
+
+        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                // save selected tab position
+                selectedTabPosition = position;
+
+                // set tab title
+                setToolBarTitle(tabsTitles[position]);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        tabs.setViewPager(viewPager);
+
+
+    }
+
     private class MyViewPagerAdapter extends FragmentPagerAdapter{
 
         private int [] icons = {R.drawable.ic_feed, R.drawable.ic_trip, R.drawable.ic_inbox, R.drawable.ic_notif, R.drawable.ic_more};
@@ -77,7 +123,29 @@ public class HomeActivity extends BaseActivity {
         @Override
         public Fragment getItem(int position) {
 
-            return new FeedFragment();
+            Fragment fragment = null;
+
+            switch (position){
+
+                case FEED_TAB:
+                    fragment = new FeedFragment();
+                    break;
+                case MY_TRIP_TAB:
+                    fragment = new MyTripFragment();
+                    break;
+                case INBOX_TAB:
+                    fragment = new InboxFragment();
+                    break;
+                case NOTIFICATION_TAB:
+                    fragment = new NotificationFragment();
+                    break;
+                case MORE_TAB:
+                    fragment = new MoreFragment();
+                    break;
+
+            }
+
+            return fragment;
         }
 
         @Override
@@ -97,6 +165,13 @@ public class HomeActivity extends BaseActivity {
 
             return spannableString;
         }
+
+    }
+
+    private void setToolBarTitle(String title){
+
+        // set toolbar title
+        getSupportActionBar().setTitle(title);
 
     }
 }
