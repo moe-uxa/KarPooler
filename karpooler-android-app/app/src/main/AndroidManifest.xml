@@ -25,6 +25,13 @@
         <activity
             android:name=".activities.SplashScreenActivity"
             android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
         </activity>
         <activity
             android:name=".activities.GettingStartedActivity"
@@ -72,7 +79,8 @@
                 android:value=".activities.CarSelectionActivity" />
         </activity>
 
-        <activity android:name=".activities.HomeActivity" >
+        <activity android:name=".activities.HomeActivity"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

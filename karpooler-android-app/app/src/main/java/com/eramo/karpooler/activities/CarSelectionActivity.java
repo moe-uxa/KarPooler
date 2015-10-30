@@ -25,6 +25,8 @@ public class CarSelectionActivity extends BaseActivity  {
 
     private CarSelectionAPI carSelectionAPI;
     private boolean brandSelectionActivityOpened;
+    private Spinner brandSpinner;
+    private BrandSpinnerAdapter brandSpinnerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,14 +91,18 @@ public class CarSelectionActivity extends BaseActivity  {
 
     }
 
+    private void setBrandSpinnerSelectedBrand(BrandDTO brandDTO){
+        brandSpinnerAdapter.clear();
+        brandSpinnerAdapter.add(brandDTO);
+        brandSpinnerAdapter.notifyDataSetChanged();
+    }
+
     private void prepareBrandSpinner(){
 
-        Spinner brandSpinner = (Spinner) findViewById(R.id.spinner_brand);
-
-        List<BrandDTO> brands = new ArrayList<>();
+        brandSpinner = (Spinner) findViewById(R.id.spinner_brand);
 
         // set spinner adapter
-        BrandSpinnerAdapter brandSpinnerAdapter = new BrandSpinnerAdapter(this, android.R.layout.simple_spinner_item, brands);
+        brandSpinnerAdapter = new BrandSpinnerAdapter(this, android.R.layout.simple_spinner_item, new ArrayList<BrandDTO>());
         brandSpinner.setAdapter(brandSpinnerAdapter);
 
         // set spinner on touch listener
@@ -180,7 +186,7 @@ public class CarSelectionActivity extends BaseActivity  {
 
             BrandDTO brandDTO = data.getExtras().getParcelable(Constants.SELECTED_BRAND_EXTRA_KEY);
 
-            Log.i("xxxx", "gg:"+brandDTO.getBrandName());
+            setBrandSpinnerSelectedBrand(brandDTO);
         }
     }
 }

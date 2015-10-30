@@ -1,5 +1,7 @@
 package com.eramo.karpooler.activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.widget.LinearLayoutManager;
@@ -116,7 +118,10 @@ public class SelectBrandActivity extends BaseActivity {
 
         Bundle extra = new Bundle();
         extra.putParcelable(Constants.SELECTED_BRAND_EXTRA_KEY, selectedBrand);
-        getIntent().putExtras(extra);
+        Intent returnIntent = new Intent();
+        returnIntent.putExtras(extra);
+        setResult(Activity.RESULT_OK, returnIntent);
+        finish();
 
     }
 
