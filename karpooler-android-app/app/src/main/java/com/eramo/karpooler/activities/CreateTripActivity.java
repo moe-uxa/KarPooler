@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -116,7 +117,7 @@ public class CreateTripActivity extends BaseActivity {
 
         tv_number = (TextView) findViewById(R.id.tv_number);
 
-        Button increaseButton = (Button) findViewById(R.id.btn_increase);
+        ImageButton increaseButton = (ImageButton) findViewById(R.id.btn_increase);
         increaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +125,7 @@ public class CreateTripActivity extends BaseActivity {
             }
         });
 
-        Button decreaseButton = (Button) findViewById(R.id.btn_decrease);
+        ImageButton decreaseButton = (ImageButton) findViewById(R.id.btn_decrease);
         decreaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

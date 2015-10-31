@@ -68,4 +68,7 @@
         <item>More</item>
     </array>
 
+    <!-- feed Tab -->
+    <string name="friends_in_common">friends in common</string>
+
 </resources>
