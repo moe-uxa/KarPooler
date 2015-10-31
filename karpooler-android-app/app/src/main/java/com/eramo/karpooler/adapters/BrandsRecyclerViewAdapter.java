@@ -80,12 +80,9 @@ public class BrandsRecyclerViewAdapter extends RecyclerView.Adapter<BrandsRecycl
         }
     }
 
-
-
     public void setBrands(List<BrandDTO> brands) {
         this.brands = brands;
     }
-
 
 }
 

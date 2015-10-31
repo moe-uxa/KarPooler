@@ -13,6 +13,6 @@
     <dimen name="dividerRightMargin">0dp</dimen>
 
     <!-- Feed Screen -->
-    <dimen name="feed_card_height">200dp</dimen>
+    <dimen name="feed_card_height">300dp</dimen>
 
 </resources>

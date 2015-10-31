@@ -69,9 +69,10 @@ public class FeedFragment extends BaseFragment {
         FeedsRecyclerViewAdapter feedsRecyclerViewAdapter = new FeedsRecyclerViewAdapter(new ArrayList<FeedDTO>());
         feedsRecyclerView.setAdapter(feedsRecyclerViewAdapter);
 
-        feedsRecyclerViewAdapter.addFeed(new GroupCreationFeedDTO());
-        feedsRecyclerViewAdapter.addFeed(new GroupCreationFeedDTO());
         feedsRecyclerViewAdapter.addFeed(new TripCreationFeedDTO());
+        feedsRecyclerViewAdapter.addFeed(new TripCreationFeedDTO());
+        feedsRecyclerViewAdapter.addFeed(new GroupCreationFeedDTO());
+        feedsRecyclerViewAdapter.addFeed(new GroupCreationFeedDTO());
         feedsRecyclerViewAdapter.addFeed(new GroupCreationFeedDTO());
         feedsRecyclerViewAdapter.addFeed(new UpdateStatusFeedDTO());
 
