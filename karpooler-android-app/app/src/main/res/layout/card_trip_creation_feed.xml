@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/feed_card_height"
+    android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
     android:layout_marginLeft="12dp"
     android:layout_marginRight="12dp"
@@ -130,7 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="Summer Vacation Trip to Alabama"
             android:textColor="@color/feedCarText"
             android:textSize="16sp" />
