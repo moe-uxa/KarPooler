@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_feed_owner"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -141,35 +141,35 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/person2" />
 
-            <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/person3" />
 
-            <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/person4" />
 
-            <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
                 android:src="@drawable/person5" />
 
-            <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -181,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp">
 
-                <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/imgv_6"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
