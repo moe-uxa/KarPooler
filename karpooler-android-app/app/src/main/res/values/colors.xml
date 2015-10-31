@@ -8,4 +8,6 @@
 
     <color name="toggle_normal_text_color">@android:color/darker_gray</color>
 
+    <color name="light_gray">#d7d5d5</color>
+
 </resources>
