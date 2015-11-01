@@ -41,6 +41,10 @@ public class TripCreationViewHolder extends FeedViewHolder{
     public void onBindViewHolder(FeedDTO feedDTO) {
         super.onBindViewHolder(feedDTO);
 
+
+        // clear all images in passengers layout
+        tripPassengersList.removeAllViews();
+
         TripCreationFeedDTO tripCreationFeedDTO = (TripCreationFeedDTO) feedDTO;
 
         // add passengers circle images

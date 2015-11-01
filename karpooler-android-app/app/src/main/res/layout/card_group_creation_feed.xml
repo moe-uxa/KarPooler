@@ -98,25 +98,11 @@
                     android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"
                     android:gravity="center_vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_facbook"
-                        android:layout_alignBaseline="@+id/tv_feed_number_of_friends_in_common"
-                        android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_gmail" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_linked_in" />
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:src="@drawable/ic_facbook" />-->
 
                 </LinearLayout>
 
@@ -129,8 +115,8 @@
             android:id="@+id/tv_feed_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
             android:text="LongTrip Alabama Group"
             android:textColor="@color/feedCarText"
             android:textSize="16sp" />
@@ -163,12 +149,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_alignParentRight="true"
+                android:layout_marginLeft="15dp"
                 android:background="@drawable/feed_btn_background"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="VIEW"
-                android:textColor="@color/colorAccent"
-                android:layout_marginLeft="15dp"/>
+                android:textColor="@color/colorAccent" />
 
             <Button
                 android:id="@+id/btn_feed_join_group"

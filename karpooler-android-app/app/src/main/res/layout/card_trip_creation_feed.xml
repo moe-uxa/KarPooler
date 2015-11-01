@@ -51,77 +51,65 @@
                 android:textColor="@color/feedCarText"
                 android:textSize="16sp" />
 
-           <RelativeLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_alignLeft="@+id/tv_feed_owner"
-               android:layout_below="@+id/tv_feed_owner"
-               android:layout_marginTop="7dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_feed_owner"
+                android:layout_below="@+id/tv_feed_owner"
+                android:layout_marginTop="7dp">
 
-               <TextView
-                   android:id="@+id/tv_feed_time"
-                   android:layout_width="wrap_content"
-                   android:layout_height="20dp"
-                   android:text="2 hours ago"
-                   android:textColor="@color/feedCarText"
-                   android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/tv_feed_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="2 hours ago"
+                    android:textColor="@color/feedCarText"
+                    android:textSize="13sp" />
 
-               <TextView
-                   android:id="@+id/tv_dash"
-                   android:layout_width="wrap_content"
-                   android:layout_height="20dp"
-                   android:layout_alignBaseline="@+id/tv_feed_time"
-                   android:layout_marginLeft="5dp"
-                   android:layout_marginRight="5dp"
-                   android:layout_marginTop="10dp"
-                   android:layout_toRightOf="@+id/tv_feed_time"
-                   android:text="-"
-                   android:textColor="@color/feedCarText"
-                   android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/tv_dash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignBaseline="@+id/tv_feed_time"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tv_feed_time"
+                    android:text="-"
+                    android:textColor="@color/feedCarText"
+                    android:textSize="13sp" />
 
-               <TextView
-                   android:id="@+id/tv_feed_number_of_friends_in_common"
-                   android:layout_width="wrap_content"
-                   android:layout_height="20dp"
-                   android:layout_alignBaseline="@+id/tv_dash"
-                   android:layout_marginTop="10dp"
-                   android:layout_toRightOf="@+id/tv_dash"
-                   android:text="3 friends in common"
-                   android:textColor="@color/feedCarText"
-                   android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/tv_feed_number_of_friends_in_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_alignBaseline="@+id/tv_dash"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/tv_dash"
+                    android:text="3 friends in common"
+                    android:textColor="@color/feedCarText"
+                    android:textSize="13sp" />
 
-               <LinearLayout
-                   android:id="@+id/layout_feed_owner_social_medias"
-                   android:layout_width="50dp"
-                   android:layout_height="20dp"
-                   android:layout_marginLeft="15dp"
-                   android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"
-                   android:gravity="center_vertical">
+                <LinearLayout
+                    android:id="@+id/layout_feed_owner_social_medias"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                   <ImageView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginRight="10dp"
-                       android:src="@drawable/ic_facbook"
-                       android:layout_alignBaseline="@+id/tv_feed_number_of_friends_in_common"
-                       android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"/>
-
-                   <ImageView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginRight="10dp"
-                       android:src="@drawable/ic_gmail" />
-
-                   <ImageView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginRight="10dp"
-                       android:src="@drawable/ic_linked_in" />
-
-               </LinearLayout>
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:src="@drawable/ic_facbook" />-->
 
 
-           </RelativeLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
@@ -142,7 +130,13 @@
             android:orientation="horizontal">
 
 
-
+            <!--<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:src="@drawable/person1"-->
+                <!--android:layout_marginRight="30dp"/>-->
 
 
         </LinearLayout>

@@ -98,25 +98,12 @@
                     android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"
                     android:gravity="center_vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_facbook"
-                        android:layout_alignBaseline="@+id/tv_feed_number_of_friends_in_common"
-                        android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"/>
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:src="@drawable/ic_facbook" />-->
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_gmail" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_linked_in" />
 
                 </LinearLayout>
 
@@ -129,8 +116,8 @@
             android:id="@+id/tv_feed_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
             android:text="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old."
             android:textColor="@color/feedCarText"
             android:textSize="16sp" />

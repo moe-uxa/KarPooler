@@ -1,14 +1,20 @@
 package com.eramo.karpooler.viewHolders;
 
+import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.models.dtos.FeedDTO;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Mohamed.Gaber on 10/31/2015.
@@ -58,5 +64,26 @@ public class FeedViewHolder extends RecyclerView.ViewHolder implements FeedCard 
         // set feed description
         feedDescription.setText(feedDTO.getFeedDescription());
 
+        // set social medias images
+        for (Bitmap bitmap : feedDTO.getSocialMediasList()){
+            ImageView imageView = generateSocialMediaImageView(bitmap);
+            socialMediasIcons.addView(imageView);
+        }
+
+    }
+
+    private ImageView generateSocialMediaImageView(Bitmap bitmap){
+
+        ImageView imageView = new ImageView(fragment.getContext());
+
+        // set src
+        imageView.setImageBitmap(bitmap);
+
+        // set layout params
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(0, 0, 30, 0);
+        imageView.setLayoutParams(layoutParams);
+
+        return imageView;
     }
 }

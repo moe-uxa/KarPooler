@@ -68,6 +68,15 @@ public class FeedFragment extends BaseFragment {
         createTripCreationFeedTest();
         createGroupCreationFeedTest();
         createUpdateStatusFeedTest();
+        createGroupCreationFeedTest();
+        createUpdateStatusFeedTest();
+        createTripCreationFeedTest();
+        createTripCreationFeedTest();
+        createGroupCreationFeedTest();
+        createUpdateStatusFeedTest();
+        createGroupCreationFeedTest();
+        createUpdateStatusFeedTest();
+        createTripCreationFeedTest();
 
     }
 
@@ -116,6 +125,13 @@ public class FeedFragment extends BaseFragment {
         passengers.add(((BitmapDrawable) getResources().getDrawable(R.drawable.person4)).getBitmap());
         feedDTO.setTripPassengers(passengers);
 
+        // set social medias images
+        Bitmap [] socialMedias = new Bitmap[3];
+        socialMedias[0] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_facbook)).getBitmap();
+        socialMedias[1] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_linked_in)).getBitmap();
+        socialMedias[2] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_gmail)).getBitmap();
+        feedDTO.setSocialMediasList(socialMedias);
+
         feedsRecyclerViewAdapter.addFeed(feedDTO);
 
     }
@@ -124,15 +140,23 @@ public class FeedFragment extends BaseFragment {
 
         GroupCreationFeedDTO feedDTO = new GroupCreationFeedDTO();
 
-        feedDTO.setOwnerName("Ahmed Mohamed");
-        feedDTO.setFeedTitle("trip just created");
-        feedDTO.setFeedTime("3 days ago");
-        feedDTO.setNumberOfFriendsInCommon(10);
-        feedDTO.setFeedDescription("Summer Vacation Trip To Alexandria");
+        // set main data
+        feedDTO.setOwnerName("Mohamed Ali");
+        feedDTO.setFeedTitle("has created a group");
+        feedDTO.setFeedTime("2 minutes ago");
+        feedDTO.setNumberOfFriendsInCommon(5);
+        feedDTO.setFeedDescription("Group for work");
 
+        // set feed owner image
         BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.person3);
-
         feedDTO.setOwnerImage(drawable.getBitmap());
+
+        // set social medias images
+        Bitmap [] socialMedias = new Bitmap[3];
+        socialMedias[0] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_facbook)).getBitmap();
+        socialMedias[1] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_linked_in)).getBitmap();
+        socialMedias[2] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_gmail)).getBitmap();
+        feedDTO.setSocialMediasList(socialMedias);
 
         feedsRecyclerViewAdapter.addFeed(feedDTO);
 
@@ -142,15 +166,23 @@ public class FeedFragment extends BaseFragment {
 
         UpdateStatusFeedDTO feedDTO = new UpdateStatusFeedDTO();
 
-        feedDTO.setOwnerName("Ahmed Mohamed");
-        feedDTO.setFeedTitle("trip just created");
-        feedDTO.setFeedTime("3 days ago");
-        feedDTO.setNumberOfFriendsInCommon(10);
-        feedDTO.setFeedDescription("Summer Vacation Trip To Alexandria");
+        // set feed main data
+        feedDTO.setOwnerName("Samy Ali");
+        feedDTO.setFeedTitle("has update status");
+        feedDTO.setFeedTime("10 hourss ago");
+        feedDTO.setNumberOfFriendsInCommon(3);
+        feedDTO.setFeedDescription("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.");
 
+        // set feed owner image
         BitmapDrawable drawable = (BitmapDrawable) getResources().getDrawable(R.drawable.person2);
-
         feedDTO.setOwnerImage(drawable.getBitmap());
+
+        // set social medias images
+        Bitmap [] socialMedias = new Bitmap[3];
+        socialMedias[0] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_facbook)).getBitmap();
+        socialMedias[1] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_linked_in)).getBitmap();
+        socialMedias[2] = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_gmail)).getBitmap();
+        feedDTO.setSocialMediasList(socialMedias);
 
         feedsRecyclerViewAdapter.addFeed(feedDTO);
 
