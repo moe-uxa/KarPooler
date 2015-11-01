@@ -18,6 +18,7 @@ public class TripsRecyclerViewAdapter extends RecyclerView.Adapter <TripsRecycle
 
     private List<TripDTO> trips;
     private Fragment fragment;
+    private static int NUMBER_OF_HEADERS = 3;
 
     public TripsRecyclerViewAdapter(List<TripDTO> trips, Fragment fragment) {
         this.trips = trips;
@@ -31,6 +32,10 @@ public class TripsRecyclerViewAdapter extends RecyclerView.Adapter <TripsRecycle
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_trip, parent, false);
 
+        if (viewType == 1)
+            v = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.layout_trip_list_header, parent, false);
+
         ViewHolder viewHolder = new ViewHolder(v);
 
         return viewHolder;
@@ -42,11 +47,17 @@ public class TripsRecyclerViewAdapter extends RecyclerView.Adapter <TripsRecycle
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return position%2;
+    }
+
+    @Override
     public int getItemCount() {
-        return trips.size();
+        return trips.size() + NUMBER_OF_HEADERS;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
+
 
         public ViewHolder(View view) {
             super(view);

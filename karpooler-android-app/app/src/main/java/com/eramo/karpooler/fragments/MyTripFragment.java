@@ -11,10 +11,9 @@ import android.view.ViewGroup;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.HomeActivity;
-import com.eramo.karpooler.adapters.FeedsRecyclerViewAdapter;
 import com.eramo.karpooler.adapters.TripsRecyclerViewAdapter;
-import com.eramo.karpooler.models.dtos.FeedDTO;
 import com.eramo.karpooler.models.dtos.TripDTO;
+
 
 import java.util.ArrayList;
 

@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.helpers.GeneratePeopleImageHelper;
 import com.eramo.karpooler.models.dtos.FeedDTO;
 import com.eramo.karpooler.models.dtos.TripCreationFeedDTO;
 
@@ -61,63 +62,24 @@ public class TripCreationViewHolder extends FeedViewHolder{
             Bitmap bitmap = passengers.get(i);
 
             // set ImageView src
-            CircleImageView circleImageView = generateCircleImageView(bitmap);
+            CircleImageView circleImageView = GeneratePeopleImageHelper.generateCircleImageView(bitmap, fragment, 50, 30);
             tripPassengersList.addView(circleImageView);
         }
 
         if (tripCreationFeedDTO.getTripPassengers().size() > 6){
 
             // view more button with number of more passengers to view
-            RelativeLayout moreLayout = createMoreButton(passengers.get(5), passengers.size()-5);
+            RelativeLayout moreLayout = GeneratePeopleImageHelper.createMoreButton(passengers.get(5), passengers.size() - 5, fragment, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar snackbar = Snackbar.make(view, "more friends", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            });
+
             tripPassengersList.addView(moreLayout);
         }
         
     }
 
-    private CircleImageView generateCircleImageView(Bitmap bitmap){
-
-        CircleImageView circleImageView = new CircleImageView(fragment.getContext());
-
-        // set src
-        circleImageView.setImageBitmap(bitmap);
-
-        // convert width and height from dp to px
-        int width_height_px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, fragment.getResources().getDisplayMetrics());
-
-        // set layout params
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width_height_px, width_height_px);
-        layoutParams.setMargins(0, 0, 30, 0);
-        circleImageView.setLayoutParams(layoutParams);
-
-        return circleImageView;
-    }
-
-    private RelativeLayout createMoreButton(Bitmap lastImage, int numberOfMorePassengers){
-
-
-        RelativeLayout layout = (RelativeLayout) fragment.getLayoutInflater(null).inflate(R.layout.layout_more_passengers, null);
-
-        // set layout params
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(0, 0, 10, 0);
-        layout.setLayoutParams(layoutParams);
-
-        // set last image
-        CircleImageView circleImageView = (CircleImageView) layout.findViewById(R.id.imgv_last_image);
-        circleImageView.setImageBitmap(lastImage);
-
-        // set number of more friends
-        Button moreButton = (Button) layout.findViewById(R.id.btn_more_passengers);
-        moreButton.setText(numberOfMorePassengers+"+");
-
-        moreButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar snackbar = Snackbar.make(view, "more friends", Snackbar.LENGTH_LONG);
-                snackbar.show();
-            }
-        });
-
-        return layout;
-    }
 }

@@ -13,5 +13,6 @@
     <!-- trip card -->
     <color name="tripCardTextColor">#494c55</color>
     <color name="tripCardTextLightColor">#8c929f</color>
+    <color name="headerTextColor">#a5aab3</color>
 
 </resources>
