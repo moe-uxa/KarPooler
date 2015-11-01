@@ -95,6 +95,8 @@ public class CreateTripActivity extends BaseActivity {
         prepareTypeSpinner();
 
         preparePriceSpinner();
+
+        preparePublishTripButton();
     }
 
     private void prepareTypesToggleGroup(){
@@ -291,6 +293,20 @@ public class CreateTripActivity extends BaseActivity {
 
     }
 
+    private void preparePublishTripButton(){
+
+        Button publishTripButton = (Button) findViewById(R.id.btn_publish_trip);
+        publishTripButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // go to home activity
+                startActivity(new Intent(CreateTripActivity.this, HomeActivity.class));
+            }
+        });
+
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         // pickup from location
@@ -312,4 +328,5 @@ public class CreateTripActivity extends BaseActivity {
         }
 
     }
+
 }
