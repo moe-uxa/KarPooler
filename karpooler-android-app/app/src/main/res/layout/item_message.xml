@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@android:color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imgv_message_owner"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/person1" />
+
+    <TextView
+        android:id="@+id/tv_message_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imgv_message_owner"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/imgv_message_owner"
+        android:text="Jared Leto"
+        android:textColor="@color/feedCarText"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_message_owner"
+        android:layout_alignLeft="@+id/tv_message_owner"
+        android:layout_marginTop="5dp"
+        android:text="Hi Alex, how’s it going? I hope everything is ok."
+        android:textColor="@color/tripCardTextLightColor"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="2h"
+        android:textColor="@color/tripCardTextLightColor"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>

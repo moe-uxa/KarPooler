@@ -38,7 +38,8 @@
                 android:layout_toRightOf="@+id/imgv_feed_owner"
                 android:text="Jared Leto"
                 android:textColor="@color/feedCarText"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/tv_feed_title"
