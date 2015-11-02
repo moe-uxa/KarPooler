@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@android:color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imgv_notify_owner"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/person1" />
+
+    <TextView
+        android:id="@+id/tv_notify_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imgv_notify_owner"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/imgv_notify_owner"
+        android:text="Jared Leto"
+        android:textColor="@color/feedCarText"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_notify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_notify_owner"
+        android:layout_alignBaseline="@+id/tv_notify_owner"
+        android:text="just accepted your invitation"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/tripCardTextLightColor"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_notify_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 hours ago"
+        android:textColor="@color/tripCardTextLightColor"
+        android:textSize="12sp"
+        android:layout_below="@+id/tv_notify_owner"
+        android:layout_alignLeft="@+id/tv_notify_owner"
+        android:layout_marginTop="5dp"
+        />
+
+
+</RelativeLayout>
