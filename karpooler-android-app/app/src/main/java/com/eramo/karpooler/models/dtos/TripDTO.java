@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Mohamed.Gaber on 11/1/2015.
  */
-public class TripDTO implements Comparator{
+public class TripDTO implements Comparable{
 
     private int tripId;
     private String tripName;
@@ -67,14 +67,13 @@ public class TripDTO implements Comparator{
 
 
     @Override
-    public int compare(Object lhs, Object rhs) {
+    public int compareTo(Object another) {
 
-        TripDTO leftTripDTO = (TripDTO) lhs;
-        TripDTO rightTripDTO = (TripDTO) rhs;
+        TripDTO otherTripDTO = (TripDTO) another;
 
-        if (leftTripDTO.tripState < rightTripDTO.tripState)
+        if (tripState < otherTripDTO.tripState)
             return -1;
-        else if (leftTripDTO.tripState > rightTripDTO.tripState)
+        else if (tripState > otherTripDTO.tripState)
             return 1;
         else
             return 0;

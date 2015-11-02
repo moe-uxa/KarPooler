@@ -71,4 +71,9 @@
     <!-- feed Tab -->
     <string name="friends_in_common">friends in common</string>
 
+    <!-- My Trips Tab -->
+    <string name="on_going">ONGOING</string>
+    <string name="up_coming">UPCOMING</string>
+    <string name="expired">EXPIRED</string>
+
 </resources>

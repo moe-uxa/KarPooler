@@ -103,4 +103,9 @@ public class FeedsRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
     public void addFeed(FeedDTO feedDTO){
         feeds.add(feedDTO);
     }
+
+    public void addFeeds(List<FeedDTO> addedFeeds){
+        feeds.addAll(addedFeeds);
+        notifyDataSetChanged();
+    }
 }
