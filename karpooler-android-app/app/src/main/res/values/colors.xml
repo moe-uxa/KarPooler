@@ -15,4 +15,7 @@
     <color name="tripCardTextLightColor">#8c929f</color>
     <color name="headerTextColor">#a5aab3</color>
 
+    <!--  more menu -->
+    <color name="menuItemTextColor">#383c46</color>
+
 </resources>

@@ -14,11 +14,21 @@
     </array>
 
     <array name="get_started_descriptions">
-        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
-        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
-        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
-        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
-        <item>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have
+            suffered alteration in some form, by injected humour,
+        </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have
+            suffered alteration in some form, by injected humour,
+        </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have
+            suffered alteration in some form, by injected humour,
+        </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have
+            suffered alteration in some form, by injected humour,
+        </item>
+        <item>There are many variations of passages of Lorem Ipsum available, but the majority have
+            suffered alteration in some form, by injected humour,
+        </item>
     </array>
 
 
@@ -75,5 +85,17 @@
     <string name="on_going">ONGOING</string>
     <string name="up_coming">UPCOMING</string>
     <string name="expired">EXPIRED</string>
+
+    <!-- More Tab -->
+    <string name="view_profile">View Profile</string>
+    <array name="menu_items">
+        <item>My Route</item>
+        <item>My Rating</item>
+        <item>My Verification List</item>
+        <item>Invite Friends</item>
+        <item>Contact Us</item>
+        <item>Logout</item>
+        <item>Delete Account</item>
+    </array>
 
 </resources>

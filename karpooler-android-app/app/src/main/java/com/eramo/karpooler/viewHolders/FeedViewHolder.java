@@ -3,18 +3,14 @@ package com.eramo.karpooler.viewHolders;
 import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.models.dtos.FeedDTO;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Mohamed.Gaber on 10/31/2015.
@@ -33,8 +29,8 @@ public class FeedViewHolder extends RecyclerView.ViewHolder implements FeedCard 
     public FeedViewHolder(View view) {
         super(view);
 
-        feedOwnerImage = (ImageView) view.findViewById(R.id.imgv_feed_owner);
-        feedOwnerName = (TextView) view.findViewById(R.id.tv_feed_owner);
+        feedOwnerImage = (ImageView) view.findViewById(R.id.imgv_user_image);
+        feedOwnerName = (TextView) view.findViewById(R.id.tv_user_name);
         feedTitle = (TextView) view.findViewById(R.id.tv_feed_title);
         feedTime = (TextView) view.findViewById(R.id.tv_feed_time);
         ownerCommonFriendsNumber = (TextView) view.findViewById(R.id.tv_feed_number_of_friends_in_common);

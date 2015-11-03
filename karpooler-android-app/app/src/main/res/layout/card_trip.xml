@@ -27,7 +27,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_trip_date"
+            android:id="@+id/tv_user_gender_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -37,7 +37,7 @@
 
 
         <TextView
-            android:id="@+id/tv_trip_from_to"
+            android:id="@+id/btn_view_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/imgv_feed_owner"
+                android:id="@+id/imgv_user_image"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentLeft="true"
@@ -30,12 +30,12 @@
                 android:src="@drawable/person5" />
 
             <TextView
-                android:id="@+id/tv_feed_owner"
+                android:id="@+id/tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imgv_feed_owner"
+                android:layout_alignTop="@+id/imgv_user_image"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/imgv_feed_owner"
+                android:layout_toRightOf="@+id/imgv_user_image"
                 android:text="David Villa"
                 android:textColor="@color/feedCarText"
                 android:textSize="20sp"
@@ -45,9 +45,9 @@
                 android:id="@+id/tv_feed_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_feed_owner"
+                android:layout_alignBaseline="@+id/tv_user_name"
                 android:layout_marginLeft="15dp"
-                android:layout_toRightOf="@+id/tv_feed_owner"
+                android:layout_toRightOf="@+id/tv_user_name"
                 android:text="updated status"
                 android:textColor="@color/feedCarText"
                 android:textSize="16sp" />
@@ -55,8 +55,8 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_feed_owner"
-                android:layout_below="@+id/tv_feed_owner"
+                android:layout_alignLeft="@+id/tv_user_name"
+                android:layout_below="@+id/tv_user_name"
                 android:layout_marginTop="7dp">
 
                 <TextView

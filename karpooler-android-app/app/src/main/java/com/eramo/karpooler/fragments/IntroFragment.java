@@ -1,9 +1,7 @@
 package com.eramo.karpooler.fragments;
 
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
@@ -17,10 +15,7 @@ import android.widget.TextView;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.LoginActivity;
-import com.eramo.karpooler.helpers.FontUtil;
 import com.eramo.karpooler.models.dtos.IntroDTO;
-
-import java.awt.font.TextAttribute;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,7 +38,7 @@ public class IntroFragment extends Fragment {
         prepareViewPagerIndicator(view);
 
         // view title
-        TextView title = (TextView) view.findViewById(R.id.tv_title);
+        TextView title = (TextView) view.findViewById(R.id.tv_text);
         title.setText(introDTO.getTitle());
 
         // view description

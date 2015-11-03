@@ -1,7 +1,6 @@
 package com.eramo.karpooler.adapters;
 
 import android.graphics.Bitmap;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -146,8 +145,8 @@ public class TripsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
 
             // get views
             tripName = (TextView) view.findViewById(R.id.tv_trip_name);
-            tripDate = (TextView) view.findViewById(R.id.tv_trip_date);
-            tripFromTo = (TextView) view.findViewById(R.id.tv_trip_from_to);
+            tripDate = (TextView) view.findViewById(R.id.tv_user_gender_age);
+            tripFromTo = (TextView) view.findViewById(R.id.btn_view_profile);
             tripPassengersList = (LinearLayout) view.findViewById(R.id.layout_people);
 
         }
