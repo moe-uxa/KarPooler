@@ -9,7 +9,7 @@
     <dimen name="car_selection_layout_row_height">70dp</dimen>
     <dimen name="car_selection_layout_row_margin_left">10dp</dimen>
     <dimen name="dividerSize">0.25dp</dimen>
-    <dimen name="dividerLeftMargin">130dp</dimen>
+    <dimen name="dividerLeftMargin">120dp</dimen>
     <dimen name="dividerRightMargin">0dp</dimen>
 
     <!-- Feed Screen -->
@@ -20,6 +20,11 @@
     <dimen name="messages_list_divider_margin_right">0dp</dimen>
 
     <dimen name="user_image_size">50dp</dimen>
-
+    <dimen name="brand_logo_size">60dp</dimen>
+    <dimen name="brand_text_size">22sp</dimen>
+    <dimen name="brand_item_height">80dp</dimen>
+    <dimen name="brand_text_margin_left">40dp</dimen>
+    <dimen name="spinner_brand_icon_size">50dp</dimen>
+    <dimen name="spinner_item_height">60dp</dimen>
 
 </resources>

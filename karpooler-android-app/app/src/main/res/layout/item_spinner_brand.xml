@@ -11,8 +11,8 @@
         android:background="@android:color/white">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/spinner_brand_icon_size"
+            android:layout_height="@dimen/spinner_brand_icon_size"
             android:id="@+id/imgv_brand"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"

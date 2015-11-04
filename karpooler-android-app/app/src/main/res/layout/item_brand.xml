@@ -7,12 +7,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/brand_item_height"
         android:background="@android:color/white">
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/brand_logo_size"
+            android:layout_height="@dimen/brand_logo_size"
             android:id="@+id/imgv_brand"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -23,11 +23,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/brand_text_size"
+            android:textColor="@android:color/black"
             android:text="Aston Martin"
             android:id="@+id/label_brand"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/imgv_brand"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginLeft="@dimen/brand_text_margin_left" />
     </RelativeLayout>
 </LinearLayout>
