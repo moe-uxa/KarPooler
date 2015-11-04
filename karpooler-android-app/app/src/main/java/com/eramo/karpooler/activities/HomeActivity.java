@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.FeedFragment;
@@ -23,6 +24,8 @@ import com.eramo.karpooler.fragments.MoreFragment;
 import com.eramo.karpooler.fragments.MyTripFragment;
 import com.eramo.karpooler.fragments.NotificationFragment;
 import com.eramo.karpooler.tabs.SlidingTabLayout;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 
 public class HomeActivity extends BaseActivity {
 
@@ -40,6 +43,7 @@ public class HomeActivity extends BaseActivity {
     private String [] tabsTitles;
     private int selectedTabPosition;
     private MyViewPagerAdapter viewPagerAdapter;
+    private FloatingActionMenu floatingActionMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +59,11 @@ public class HomeActivity extends BaseActivity {
         // set tab title
         setToolBarTitle(tabsTitles[selectedTabPosition]);
 
+        // prepare tabs
         prepareTabs();
+
+        // prepare FAB button menu
+        prepareFabButtonMenu();
 
     }
 
@@ -91,6 +99,7 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+                floatingActionMenu.showMenuButton(true);
             }
 
             @Override
@@ -101,6 +110,8 @@ public class HomeActivity extends BaseActivity {
 
                 // set tab title
                 setToolBarTitle(tabsTitles[position]);
+
+                floatingActionMenu.hideMenuButton(true);
 
             }
 
@@ -187,5 +198,63 @@ public class HomeActivity extends BaseActivity {
         icons[INBOX_TAB] = R.drawable.ic_inbox;
         icons[NOTIFICATION_TAB] = R.drawable.ic_notif;
         icons[MORE_TAB] = R.drawable.ic_more;
+    }
+
+    private void prepareFabButtonMenu(){
+
+        // menu button
+        floatingActionMenu = (FloatingActionMenu) findViewById(R.id.fab_menu);
+
+        // Status Button
+        FloatingActionButton statusBtn = (FloatingActionButton) findViewById(R.id.menu_item_status);
+        statusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(HomeActivity.this, "Status", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Ride Now Button
+        FloatingActionButton rideNowBtn = (FloatingActionButton) findViewById(R.id.menu_item_ride_now);
+        rideNowBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(HomeActivity.this, "Ride Now", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Create Car Pooling Button
+        FloatingActionButton createCarPoolingBtn = (FloatingActionButton) findViewById(R.id.menu_item_create_car_pooling);
+        createCarPoolingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(HomeActivity.this, "Create Car Pooling", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        // Create Group Button
+        FloatingActionButton createGroupBtn = (FloatingActionButton) findViewById(R.id.menu_item_create_group);
+        createGroupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(HomeActivity.this, "Create Group", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Finds Group Button
+        FloatingActionButton findGroupBtn = (FloatingActionButton) findViewById(R.id.menu_item_find_group);
+        findGroupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(HomeActivity.this, "Find Group", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

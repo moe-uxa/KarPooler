@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,9 +42,6 @@ public class MoreFragment extends BaseFragment {
     private final int CONTACT_US_ITEM = 4;
     private final int LOGOUT_ITEM = 5;
     private final int DELETE_ACCOUNT_ITEM = 6;
-    private ImageView userImage;
-    private TextView userName;
-    private TextView userGenderAge;
 
     public MoreFragment() {
         // Required empty public constructor
@@ -65,7 +63,7 @@ public class MoreFragment extends BaseFragment {
         activity = (HomeActivity) getActivity();
 
         // prepare user info layout
-        prepareUserInfoLayout();
+        //prepareUserInfoLayout();
 
         // prepare recycler view
         prepareRecyclerView();
@@ -74,6 +72,7 @@ public class MoreFragment extends BaseFragment {
         createTestData();
 
     }
+
 
     private void createTestData(){
 
@@ -89,20 +88,23 @@ public class MoreFragment extends BaseFragment {
 
     private void prepareUserInfoLayout(){
 
-        userImage = (ImageView) activity.findViewById(R.id.imgv_user_image);
-        userName = (TextView) activity.findViewById(R.id.tv_user_name);
-        userGenderAge = (TextView) activity.findViewById(R.id.tv_user_gender_age);
+//        userImage = (ImageView) activity.findViewById(R.id.imgv_user_image);
+//        userName = (TextView) activity.findViewById(R.id.tv_user_name);
+//        userGenderAge = (TextView) activity.findViewById(R.id.tv_user_gender_age);
         Button viewProfile = (Button) activity.findViewById(R.id.btn_view_user_profile);
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // open profile screen
             }
         });
     }
 
     private void viewUserInfo(MenuUserInfoDTO userInfoDTO){
+
+        ImageView userImage = (ImageView) activity.findViewById(R.id.imgv_user_image);
+        TextView userName = (TextView) activity.findViewById(R.id.tv_user_name);
+        TextView userGenderAge = (TextView) activity.findViewById(R.id.tv_user_gender_age);
 
         userImage.setImageBitmap(userInfoDTO.getUserImage());
         userName.setText(userInfoDTO.getUserName());

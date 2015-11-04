@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
@@ -20,5 +19,7 @@
     <dimen name="messages_list_divider_margin_left">90dp</dimen>
     <dimen name="messages_list_divider_margin_right">0dp</dimen>
 
-    <dimen name="user_image_size">10dp</dimen>
+    <dimen name="user_image_size">50dp</dimen>
+
+
 </resources>

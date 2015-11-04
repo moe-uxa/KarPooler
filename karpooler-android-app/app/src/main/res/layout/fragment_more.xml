@@ -21,7 +21,6 @@
                 android:layout_height="80dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/person3"
                 android:layout_margin="30dp"/>
 
             <TextView
@@ -30,7 +29,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/imgv_user_image"
                 android:layout_toRightOf="@+id/imgv_user_image"
-                android:text="Jared Leto"
                 android:textColor="@color/feedCarText"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
@@ -41,7 +39,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Male, 24 years old"
                 android:layout_below="@+id/tv_user_name"
                 android:layout_alignLeft="@+id/tv_user_name"
                 android:textColor="@color/tripCardTextLightColor"
