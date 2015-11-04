@@ -88,6 +88,12 @@
 
     <!-- More Tab -->
     <string name="view_profile">View Profile</string>
+    <string name="cancel">Cancel</string>
+    <string name="status">Status</string>
+    <string name="ride_now">Ride Now</string>
+    <string name="create_car_pooling">Create Carpooling</string>
+    <string name="create_group">Create Group</string>
+    <string name="find_group">Find Group</string>
     <array name="menu_items">
         <item>My Route</item>
         <item>My Rating</item>

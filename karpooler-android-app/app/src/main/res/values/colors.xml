@@ -17,5 +17,12 @@
 
     <!--  more menu -->
     <color name="menuItemTextColor">#383c46</color>
+    
+    <!-- fab menu -->
+    <color name="statusButtonColor">#4dc64a</color>
+    <color name="rideNowButtonColor">#eb6060</color>
+    <color name="createCarPoolingButtonColor">#9476eb</color>
+    <color name="createGroupButtonColor">#eb76a5</color>
+    <color name="findGroupButtonColor">#65bfa2</color>
 
 </resources>
