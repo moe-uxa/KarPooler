@@ -68,7 +68,7 @@ public class CreateTripActivity extends BaseActivity {
 
         int id = item.getItemId();
 
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
 
             NavUtils.navigateUpFromSameTask(this);
 
@@ -78,7 +78,7 @@ public class CreateTripActivity extends BaseActivity {
     }
 
 
-    private void prepareUIControllers(){
+    private void prepareUIControllers() {
 
         prepareTypesToggleGroup();
 
@@ -99,9 +99,9 @@ public class CreateTripActivity extends BaseActivity {
         preparePublishTripButton();
     }
 
-    private void prepareTypesToggleGroup(){
+    private void prepareTypesToggleGroup() {
 
-        final RadioGroup typesRadioGroup  = (RadioGroup) findViewById(R.id.radio_group_types);
+        final RadioGroup typesRadioGroup = (RadioGroup) findViewById(R.id.radio_group_types);
         typesRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -109,13 +109,24 @@ public class CreateTripActivity extends BaseActivity {
                 for (int j = 0; j < typesRadioGroup.getChildCount(); j++) {
                     final ToggleButton view = (ToggleButton) typesRadioGroup.getChildAt(j);
                     view.setChecked(view.getId() == checkedId);
+
+                    // set toggle button text color based on state
+                    ToggleButton toggleButton = (ToggleButton) view;
+                    if (toggleButton.isChecked()) {
+                        toggleButton.setTextColor(getResources().getColor(R.color.colorAccent));
+                        toggleButton.setEnabled(false);
+                    } else {
+                        toggleButton.setTextColor(getResources().getColor(R.color.toggle_normal_text_color));
+                        toggleButton.setEnabled(true);
+                    }
+
                 }
             }
         });
 
     }
 
-    private void prepareNumberPicker(){
+    private void prepareNumberPicker() {
 
         tv_number = (TextView) findViewById(R.id.tv_number);
 
@@ -137,7 +148,7 @@ public class CreateTripActivity extends BaseActivity {
 
     }
 
-    private void prepareDateAndTimeSelectors(){
+    private void prepareDateAndTimeSelectors() {
 
         EditText dateEditText = (EditText) findViewById(R.id.edt_date);
         dateEditText.setOnTouchListener(new View.OnTouchListener() {
@@ -160,7 +171,7 @@ public class CreateTripActivity extends BaseActivity {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                        timeEditText.setText(hourOfDay+":"+minute);
+                        timeEditText.setText(hourOfDay + ":" + minute);
                     }
                 }, Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), false);
 
@@ -173,32 +184,33 @@ public class CreateTripActivity extends BaseActivity {
     }
 
     public void onToggle(View view) {
-        ((RadioGroup)view.getParent()).check(view.getId());
-        // app specific stuff ..
+
+        ((RadioGroup) view.getParent()).check(view.getId());
     }
 
-  private void increaseNumber(){
+    private void increaseNumber() {
 
-       int numberOfSeat = Integer.parseInt(tv_number.getText().toString());
-      numberOfSeat++;
+        int numberOfSeat = Integer.parseInt(tv_number.getText().toString());
+        numberOfSeat++;
 
-      if(numberOfSeat>4)
-          numberOfSeat = 4;
+        if (numberOfSeat > 4)
+            numberOfSeat = 4;
 
-      tv_number.setText(numberOfSeat + "");
-  }
-    private void decreaseNumber(){
+        tv_number.setText(numberOfSeat + "");
+    }
+
+    private void decreaseNumber() {
 
         int numberOfSeat = Integer.parseInt(tv_number.getText().toString());
         numberOfSeat--;
 
-        if(numberOfSeat<0)
+        if (numberOfSeat < 0)
             numberOfSeat = 0;
 
         tv_number.setText(numberOfSeat + "");
     }
 
-    private void prepareFromLocationBtn(){
+    private void prepareFromLocationBtn() {
 
         Button fromLocationBtn = (Button) findViewById(R.id.btn_pickup_location);
         fromLocationBtn.setOnClickListener(new View.OnClickListener() {
@@ -211,7 +223,7 @@ public class CreateTripActivity extends BaseActivity {
 
     }
 
-    private void prepareToLocationBtn(){
+    private void prepareToLocationBtn() {
 
         Button fromLocationBtn = (Button) findViewById(R.id.btn_drop_off);
         fromLocationBtn.setOnClickListener(new View.OnClickListener() {
@@ -224,7 +236,7 @@ public class CreateTripActivity extends BaseActivity {
 
     }
 
-    private void prepareCriteriaLayout(){
+    private void prepareCriteriaLayout() {
 
         FlowLayout criteriaLayout = (FlowLayout) findViewById(R.id.layout_criteria);
 
@@ -239,14 +251,14 @@ public class CreateTripActivity extends BaseActivity {
 
     }
 
-    private ToggleButton generateCriteriaToggleButton (String criteriaName){
+    private ToggleButton generateCriteriaToggleButton(String criteriaName) {
 
         ToggleButton toggleButton = (ToggleButton) getLayoutInflater().inflate(R.layout.criteria_toggle_button, null);
         toggleButton.setTextOff(criteriaName);
         toggleButton.setTextOn(criteriaName);
         toggleButton.setChecked(false);
 
-        int ht_px = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
+        int ht_px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics());
         FlowLayout.LayoutParams layoutParams = new FlowLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ht_px);
         layoutParams.setMargins(20, 20, 20, 20);
         toggleButton.setLayoutParams(layoutParams);
@@ -254,7 +266,7 @@ public class CreateTripActivity extends BaseActivity {
         return toggleButton;
     }
 
-    private void openPlacePicker(int requestId){
+    private void openPlacePicker(int requestId) {
 
         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
@@ -268,24 +280,24 @@ public class CreateTripActivity extends BaseActivity {
 
     }
 
-    private void prepareTypeSpinner(){
+    private void prepareTypeSpinner() {
 
         Spinner typeSpinner = (Spinner) this.findViewById(R.id.spinner_trip_type);
 
         // test data
-        String [] types = {"Work Trip", "Other"};
+        String[] types = {"Work Trip", "Other"};
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, types);
         typeSpinner.setAdapter(adapter);
 
     }
 
-    private void preparePriceSpinner(){
+    private void preparePriceSpinner() {
 
         Spinner priceSpinner = (Spinner) this.findViewById(R.id.spinner_trip_price);
 
         // test data
-        String [] priceOptions = {"Free"};
+        String[] priceOptions = {"Free"};
 
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, priceOptions);
         priceSpinner.setAdapter(adapter);
@@ -293,7 +305,7 @@ public class CreateTripActivity extends BaseActivity {
 
     }
 
-    private void preparePublishTripButton(){
+    private void preparePublishTripButton() {
 
         Button publishTripButton = (Button) findViewById(R.id.btn_publish_trip);
         publishTripButton.setOnClickListener(new View.OnClickListener() {

@@ -2,11 +2,11 @@
 <ToggleButton xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toggleButton7"
     android:layout_width="wrap_content"
-    android:layout_height="40dp"
+    android:layout_height="@dimen/criteria_toggle_height"
     android:layout_below="@+id/textView9"
     android:layout_margin="20dp"
     android:background="@drawable/criteria_toggle_btn"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
+    android:paddingLeft="@dimen/criteria_toggle_pading_sides"
+    android:paddingRight="@dimen/criteria_toggle_pading_sides"
     android:textColor="@android:color/white"
-    android:textSize="16sp" />
+    android:textSize="@dimen/criteria_toggle_text_size" />

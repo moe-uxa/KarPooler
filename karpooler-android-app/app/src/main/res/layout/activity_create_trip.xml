@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:orientation="vertical"
     tools:context="com.eramo.karpooler.activities.CreateTripActivity">
 
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+        android:layout_height="wrap_content" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="540dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/app_bar">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -48,12 +46,12 @@
                 android:layout_marginTop="20dp"
                 android:text="@string/who_are_you"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView3"
@@ -73,14 +71,15 @@
                         android:id="@+id/toggle_driver"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/user_type_toggle_margin_right"
                         android:background="@android:color/transparent"
                         android:checked="true"
                         android:drawablePadding="10dp"
                         android:drawableTop="@drawable/ic_driver"
                         android:onClick="onToggle"
                         android:text="New ToggleButton"
-                        android:textColor="@color/toggle_text_color"
+                        android:textColor="@color/colorAccent"
                         android:textOff="@string/driver"
                         android:textOn="@string/driver" />
 
@@ -88,13 +87,14 @@
                         android:id="@+id/toggle_passenger"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/user_type_toggle_margin_right"
                         android:background="@android:color/transparent"
                         android:drawablePadding="10dp"
                         android:drawableTop="@drawable/ic_passenger"
                         android:onClick="onToggle"
                         android:text="New ToggleButton"
-                        android:textColor="@color/toggle_text_color"
+                        android:textColor="@color/toggle_normal_text_color"
                         android:textOff="@string/passenger"
                         android:textOn="@string/passenger" />
 
@@ -102,12 +102,13 @@
                         android:id="@+id/toggle_both"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:background="@android:color/transparent"
                         android:drawablePadding="10dp"
                         android:drawableTop="@drawable/ic_both"
                         android:onClick="onToggle"
                         android:text="New ToggleButton"
-                        android:textColor="@color/toggle_text_color"
+                        android:textColor="@color/toggle_normal_text_color"
                         android:textOff="@string/both"
                         android:textOn="@string/both" />
 
@@ -117,10 +118,12 @@
             <RelativeLayout
                 android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/linearLayout"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:id="@+id/textView4"
@@ -130,11 +133,11 @@
                     android:layout_centerVertical="true"
                     android:text="@string/number_of_seats"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textSize="18sp" />
+                    android:textSize="17sp"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/seats_number_picker_height"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:orientation="horizontal">
@@ -142,14 +145,14 @@
                     <ImageButton
                         android:id="@+id/btn_decrease"
                         style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/seats_picker_button_width"
                         android:layout_height="match_parent"
                         android:background="@drawable/number_picker_left_button_bg"
                         android:src="@drawable/ic_decrease" />
 
                     <TextView
                         android:id="@+id/tv_number"
-                        android:layout_width="60dp"
+                        android:layout_width="@dimen/seats_picker_text_view_width"
                         android:layout_height="match_parent"
                         android:background="@drawable/border_number_picker"
                         android:gravity="center"
@@ -159,7 +162,7 @@
                     <ImageButton
                         android:id="@+id/btn_increase"
                         style="@style/Base.Widget.AppCompat.Button.Borderless"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/seats_picker_button_width"
                         android:layout_height="match_parent"
                         android:background="@drawable/number_picker_right_button_bg"
                         android:src="@drawable/ic_increase" />
@@ -245,22 +248,20 @@
 
                 <EditText
                     android:id="@+id/edt_date"
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:ems="9"
                     android:hint="@string/date"
                     android:inputType="date"
                     android:textColorHint="@android:color/black" />
 
                 <EditText
                     android:id="@+id/edt_time"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:ems="6"
                     android:hint="Time"
                     android:inputType="time"
                     android:textColorHint="@android:color/black" />
@@ -329,14 +330,16 @@
 
     <Button
         android:id="@+id/btn_publish_trip"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_below="@+id/scrollView"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/btn_save_and_go"
         android:text="@string/publish_trip"
         android:textColor="@android:color/white"
         android:textSize="20sp" />
 
 
-</RelativeLayout>
+</LinearLayout>

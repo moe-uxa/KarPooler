@@ -13,7 +13,7 @@
         android:layout_marginTop="30dp"
         android:text="Driver/Passenger Criteria"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18sp" />
+        android:textSize="17sp" />
 
     <org.apmem.tools.layouts.FlowLayout
         android:id="@+id/layout_criteria"
