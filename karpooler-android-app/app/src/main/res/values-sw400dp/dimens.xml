@@ -44,6 +44,7 @@
     <dimen name="card_feed_button_height">35dp</dimen>
     <dimen name="card_feed_text_button_padding_left_right">20dp</dimen>
     <dimen name="card_feed_text_button_width">80dp</dimen>
+    <dimen name="card_trip_passenger_image_margin_right">10dp</dimen>
 
     <!-- 3.2 My Trips Tab -->
     <dimen name="card_trip_name_text_size">18sp</dimen>

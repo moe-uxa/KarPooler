@@ -137,7 +137,7 @@
                 <!--android:layout_alignParentLeft="true"-->
                 <!--android:layout_alignParentTop="true"-->
                 <!--android:src="@drawable/person1"-->
-                <!--android:layout_marginRight="30dp"/>-->
+                <!--android:layout_marginRight="@dimen/card_trip_passenger_image_margin_right"/>-->
 
 
         </LinearLayout>

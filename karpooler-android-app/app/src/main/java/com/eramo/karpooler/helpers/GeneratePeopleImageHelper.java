@@ -21,7 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 public class GeneratePeopleImageHelper {
 
-    public static CircleImageView generateCircleImageView(Bitmap bitmap, Fragment fragment, int imageSizeDimenResource, int rightMargin){
+    public static CircleImageView generateCircleImageView(Bitmap bitmap, Fragment fragment, int imageSizeDimenResource, int rightMarginDimenRes){
 
         CircleImageView circleImageView = new CircleImageView(fragment.getContext());
 
@@ -29,11 +29,12 @@ public class GeneratePeopleImageHelper {
         circleImageView.setImageBitmap(bitmap);
 
         // convert width and height from dp to px
-        int width_height_px = fragment.getResources().getDimensionPixelSize(imageSizeDimenResource);
+        int imageSizeInPx = fragment.getResources().getDimensionPixelSize(imageSizeDimenResource);
+        int imageRightMarginInPx = fragment.getResources().getDimensionPixelSize(rightMarginDimenRes);
 
         // set layout params
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width_height_px, width_height_px);
-        layoutParams.setMargins(0, 0, rightMargin, 0);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(imageSizeInPx, imageSizeInPx);
+        layoutParams.setMargins(0, 0, imageRightMarginInPx, 0);
         circleImageView.setLayoutParams(layoutParams);
 
         return circleImageView;
