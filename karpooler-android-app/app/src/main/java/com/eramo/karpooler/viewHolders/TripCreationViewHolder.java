@@ -3,6 +3,7 @@ package com.eramo.karpooler.viewHolders;
 import android.graphics.Bitmap;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +63,7 @@ public class TripCreationViewHolder extends FeedViewHolder{
             Bitmap bitmap = passengers.get(i);
 
             // set ImageView src
-            CircleImageView circleImageView = GeneratePeopleImageHelper.generateCircleImageView(bitmap, fragment, 50, 30);
+            CircleImageView circleImageView = GeneratePeopleImageHelper.generateCircleImageView(bitmap, fragment, R.dimen.card_user_image_size, 30);
             tripPassengersList.addView(circleImageView);
         }
 

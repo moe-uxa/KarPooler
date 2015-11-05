@@ -5,7 +5,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <!-- Car Selection Screen -->
+    <!-- 1. Car Selection and Brand Selection Activities -->
     <dimen name="car_selection_layout_row_height">70dp</dimen>
     <dimen name="car_selection_layout_row_margin_left">10dp</dimen>
     <dimen name="dividerSize">0.25dp</dimen>
@@ -18,16 +18,7 @@
     <dimen name="spinner_brand_icon_size">40dp</dimen>
     <dimen name="spinner_item_height">50dp</dimen>
 
-    <!-- Feed Screen -->
-    <dimen name="feed_card_height">250dp</dimen>
-
-    <!-- Inbox Tab -->
-    <dimen name="messages_list_divider_margin_left">90dp</dimen>
-    <dimen name="messages_list_divider_margin_right">0dp</dimen>
-
-    <dimen name="user_image_size">40dp</dimen>
-
-    <!-- Create Trip screen -->
+    <!-- 2 Create Trip Activity -->
     <dimen name="user_type_toggle_margin_right">15dp</dimen>
     <dimen name="seats_number_picker_height">30dp</dimen>
     <dimen name="seats_picker_button_width">40dp</dimen>
@@ -35,5 +26,44 @@
     <dimen name="criteria_toggle_pading_sides">20dp</dimen>
     <dimen name="criteria_toggle_text_size">15sp</dimen>
     <dimen name="criteria_toggle_height">30dp</dimen>
+
+    <!-- 3 Home Activity -->
+    <dimen name="custom_tab_view_padding">10dp</dimen>
+    <dimen name="home_tabs_icon_size">26dp</dimen>
+
+    <!-- 3.1 Feed Tab -->
+    <dimen name="feed_card_height">250dp</dimen>
+    <dimen name="card_user_image_size">40dp</dimen>
+    <dimen name="card_user_name_text_size">14sp</dimen>
+    <dimen name="card_feed_title_text_size">12sp</dimen>
+    <dimen name="card_feed_time_text_size">11sp</dimen>
+    <dimen name="card_feed_desc_text_size">14sp</dimen>
+    <dimen name="card_feed_text_margin_top_down">15dp</dimen>
+    <dimen name="card_feed_buttons_layout_margin_top">15dp</dimen>
+    <dimen name="card_feed_button_width">45dp</dimen>
+    <dimen name="card_feed_button_height">30dp</dimen>
+    <dimen name="card_feed_text_button_padding_left_right">15dp</dimen>
+    <dimen name="card_feed_text_button_width">70dp</dimen>
+
+    <!-- 3.2 My Trips Tab -->
+    <dimen name="card_trip_name_text_size">16sp</dimen>
+    <dimen name="card_trip_time_text_size">13sp</dimen>
+    <dimen name="trip_list_header_text_size">13sp</dimen>
+
+    <!-- 3.3 Inbox Tab -->
+    <dimen name="message_item_user_name_text_size">14sp</dimen>
+    <dimen name="item_message_text_size">12sp</dimen>
+    <dimen name="notification_item_time_text_size">10sp</dimen>
+    <dimen name="messages_list_divider_margin_left">80dp</dimen>
+    <dimen name="messages_list_divider_margin_right">0dp</dimen>
+
+    <!-- 3.4 More Tab -->
+    <dimen name="user_info_image_size">70dp</dimen>
+    <dimen name="user_info_image_layout_margin">25dp</dimen>
+    <dimen name="user_info_name_text_size">18sp</dimen>
+    <dimen name="user_info_text_size">13sp</dimen>
+    <dimen name="more_menu_text_size">18dp</dimen>
+    <dimen name="more_menu_icon_margin">18dp</dimen>
+
 
 </resources>

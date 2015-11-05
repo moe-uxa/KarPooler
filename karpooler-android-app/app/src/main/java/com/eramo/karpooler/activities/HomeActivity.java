@@ -31,7 +31,7 @@ public class HomeActivity extends BaseActivity {
 
     private ViewPager viewPager;
     private SlidingTabLayout tabs;
-    private int [] icons;
+    private int[] icons;
 
     // TABS
     private final int FEED_TAB = 0;
@@ -40,7 +40,7 @@ public class HomeActivity extends BaseActivity {
     private final int NOTIFICATION_TAB = 3;
     private final int MORE_TAB = 4;
 
-    private String [] tabsTitles;
+    private String[] tabsTitles;
     private int selectedTabPosition;
     private MyViewPagerAdapter viewPagerAdapter;
     private FloatingActionMenu floatingActionMenu;
@@ -83,7 +83,7 @@ public class HomeActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void prepareTabs(){
+    private void prepareTabs() {
 
         // view pager and tabs
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -100,6 +100,7 @@ public class HomeActivity extends BaseActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                 floatingActionMenu.showMenuButton(true);
+
             }
 
             @Override
@@ -111,7 +112,12 @@ public class HomeActivity extends BaseActivity {
                 // set tab title
                 setToolBarTitle(tabsTitles[position]);
 
-                floatingActionMenu.hideMenuButton(true);
+
+                if (floatingActionMenu.isOpened())
+                    floatingActionMenu.close(true);
+                else
+                    floatingActionMenu.hideMenuButton(true);
+
 
             }
 
@@ -141,7 +147,7 @@ public class HomeActivity extends BaseActivity {
 
             Fragment fragment = null;
 
-            switch (position){
+            switch (position) {
 
                 case FEED_TAB:
                     fragment = new FeedFragment();
@@ -172,8 +178,10 @@ public class HomeActivity extends BaseActivity {
         @Override
         public CharSequence getPageTitle(int position) {
 
+            int iconSizeInPx = getResources().getDimensionPixelSize(R.dimen.home_tabs_icon_size);
+
             Drawable drawable = getResources().getDrawable(icons[position]);
-            drawable.setBounds(0, 0, 100, 100);
+            drawable.setBounds(0, 0, iconSizeInPx, iconSizeInPx);
 
             ImageSpan imageSpan = new ImageSpan(drawable);
             SpannableString spannableString = new SpannableString(" ");
@@ -185,13 +193,13 @@ public class HomeActivity extends BaseActivity {
 
     }
 
-    private void setToolBarTitle(String title){
+    private void setToolBarTitle(String title) {
 
         // set toolbar title
         getSupportActionBar().setTitle(title);
     }
 
-    private void prepareTabsIcons(){
+    private void prepareTabsIcons() {
         icons = new int[5];
         icons[FEED_TAB] = R.drawable.ic_feed;
         icons[MY_TRIP_TAB] = R.drawable.ic_trip;
@@ -200,7 +208,7 @@ public class HomeActivity extends BaseActivity {
         icons[MORE_TAB] = R.drawable.ic_more;
     }
 
-    private void prepareFabButtonMenu(){
+    private void prepareFabButtonMenu() {
 
         // menu button
         floatingActionMenu = (FloatingActionMenu) findViewById(R.id.fab_menu);

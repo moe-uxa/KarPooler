@@ -7,8 +7,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imgv_message_owner"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/card_user_image_size"
+        android:layout_height="@dimen/card_user_image_size"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/person1" />
@@ -22,7 +22,7 @@
         android:layout_toRightOf="@+id/imgv_message_owner"
         android:text="Jared Leto"
         android:textColor="@color/feedCarText"
-        android:textSize="16sp"
+        android:textSize="@dimen/message_item_user_name_text_size"
         android:textStyle="bold"/>
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_marginTop="5dp"
         android:text="Hi Alex, how’s it going? I hope everything is ok."
         android:textColor="@color/tripCardTextLightColor"
-        android:textSize="14sp" />
+        android:textSize="@dimen/item_message_text_size" />
 
     <TextView
         android:id="@+id/tv_message_time"
@@ -43,7 +43,7 @@
         android:layout_alignParentRight="true"
         android:text="2h"
         android:textColor="@color/tripCardTextLightColor"
-        android:textSize="14sp" />
+        android:textSize="@dimen/item_message_text_size" />
 
 
 </RelativeLayout>

@@ -23,8 +23,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_user_image"
-                android:layout_width="@dimen/user_image_size"
-                android:layout_height="@dimen/user_image_size"
+                android:layout_width="@dimen/card_user_image_size"
+                android:layout_height="@dimen/card_user_image_size"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:src="@drawable/person1" />
@@ -38,7 +38,7 @@
                 android:layout_toRightOf="@+id/imgv_user_image"
                 android:text="Jared Leto"
                 android:textColor="@color/feedCarText"
-                android:textSize="20sp"
+                android:textSize="@dimen/card_user_name_text_size"
                 android:textStyle="bold"/>
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_toRightOf="@+id/tv_user_name"
                 android:text="just created a trip"
                 android:textColor="@color/feedCarText"
-                android:textSize="16sp" />
+                android:textSize="@dimen/card_feed_title_text_size" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                     android:layout_height="20dp"
                     android:text="2 hours ago"
                     android:textColor="@color/feedCarText"
-                    android:textSize="13sp" />
+                    android:textSize="@dimen/card_feed_time_text_size" />
 
                 <TextView
                     android:id="@+id/tv_dash"
@@ -78,7 +78,7 @@
                     android:layout_toRightOf="@+id/tv_feed_time"
                     android:text="-"
                     android:textColor="@color/feedCarText"
-                    android:textSize="13sp" />
+                    android:textSize="@dimen/card_feed_time_text_size" />
 
                 <TextView
                     android:id="@+id/tv_feed_number_of_friends_in_common"
@@ -89,7 +89,7 @@
                     android:layout_toRightOf="@+id/tv_dash"
                     android:text="3 friends in common"
                     android:textColor="@color/feedCarText"
-                    android:textSize="13sp" />
+                    android:textSize="@dimen/card_feed_time_text_size" />
 
                 <LinearLayout
                     android:id="@+id/layout_feed_owner_social_medias"
@@ -118,11 +118,11 @@
             android:id="@+id/tv_feed_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="@dimen/card_feed_text_margin_top_down"
+            android:layout_marginTop="@dimen/card_feed_text_margin_top_down"
             android:text="Summer Vacation Trip to Alabama"
             android:textColor="@color/feedCarText"
-            android:textSize="16sp" />
+            android:textSize="@dimen/card_feed_desc_text_size" />
 
         <LinearLayout
             android:id="@+id/layout_people"
@@ -145,12 +145,12 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="@dimen/card_feed_buttons_layout_margin_top">
 
             <ImageButton
                 android:id="@+id/btn_feed_like"
-                android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/card_feed_button_width"
+                android:layout_height="@dimen/card_feed_button_height"
                 android:layout_alignParentLeft="true"
                 android:layout_marginRight="12dp"
                 android:background="@drawable/feed_btn_background"
@@ -158,8 +158,8 @@
 
             <ImageButton
                 android:id="@+id/btn_feed_comment"
-                android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/card_feed_button_width"
+                android:layout_height="@dimen/card_feed_button_height"
                 android:layout_marginRight="12dp"
                 android:layout_toRightOf="@+id/btn_feed_like"
                 android:background="@drawable/feed_btn_background"
@@ -167,8 +167,8 @@
 
             <ImageButton
                 android:id="@+id/btn_feed_trip_location"
-                android:layout_width="50dp"
-                android:layout_height="35dp"
+                android:layout_width="@dimen/card_feed_button_width"
+                android:layout_height="@dimen/card_feed_button_height"
                 android:layout_toRightOf="@+id/btn_feed_comment"
                 android:background="@drawable/feed_btn_background"
                 android:src="@drawable/ic_location" />
@@ -176,11 +176,11 @@
             <Button
                 android:id="@+id/btn_feed_view_trip"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
+                android:layout_height="@dimen/card_feed_button_height"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/feed_btn_background"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingLeft="@dimen/card_feed_text_button_padding_left_right"
+                android:paddingRight="@dimen/card_feed_text_button_padding_left_right"
                 android:text="VIEW TRIP"
                 android:textColor="@color/colorAccent" />
 

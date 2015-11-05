@@ -184,7 +184,7 @@ public class TripsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             Bitmap bitmap = passengers.get(i);
 
             // set ImageView src
-            CircleImageView circleImageView = GeneratePeopleImageHelper.generateCircleImageView(bitmap, fragment, 50, 30);
+            CircleImageView circleImageView = GeneratePeopleImageHelper.generateCircleImageView(bitmap, fragment, R.dimen.card_user_image_size, 30);
             viewHolder.tripPassengersList.addView(circleImageView);
         }
 

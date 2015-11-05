@@ -17,11 +17,12 @@
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imgv_user_image"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/user_info_image_size"
+                android:layout_height="@dimen/user_info_image_size"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_margin="30dp"/>
+                android:layout_margin="@dimen/user_info_image_layout_margin"
+                android:src="@drawable/person1"/>
 
             <TextView
                 android:id="@+id/tv_user_name"
@@ -30,8 +31,9 @@
                 android:layout_alignTop="@+id/imgv_user_image"
                 android:layout_toRightOf="@+id/imgv_user_image"
                 android:textColor="@color/feedCarText"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textSize="@dimen/user_info_name_text_size"
+                android:textStyle="bold"
+                android:text="Alex Mazovski"/>
 
 
             <TextView
@@ -42,7 +44,8 @@
                 android:layout_below="@+id/tv_user_name"
                 android:layout_alignLeft="@+id/tv_user_name"
                 android:textColor="@color/tripCardTextLightColor"
-                android:textSize="15sp" />
+                android:textSize="@dimen/user_info_text_size"
+                android:text="Male, 23 years old"/>
 
 
             <Button
@@ -53,7 +56,7 @@
                 android:layout_alignLeft="@+id/tv_user_gender_age"
                 android:text="@string/view_profile"
                 android:textColor="@color/tripCardTextLightColor"
-                android:textSize="15sp"
+                android:textSize="@dimen/user_info_text_size"
                 android:paddingLeft="0dp"
                 android:paddingTop="0dp"
                 android:textAllCaps="false"

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Summer Vacation"
             android:textColor="@color/tripCardTextColor"
-            android:textSize="18sp"
+            android:textSize="@dimen/card_trip_name_text_size"
             android:textStyle="bold" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_marginTop="10dp"
             android:text="Today - 24 May"
             android:textColor="@color/tripCardTextLightColor"
-            android:textSize="15sp" />
+            android:textSize="@dimen/card_trip_time_text_size" />
 
 
         <TextView
@@ -43,7 +43,7 @@
             android:layout_marginTop="10dp"
             android:text="Los Angles - Alabama"
             android:textColor="@color/tripCardTextLightColor"
-            android:textSize="15sp" />
+            android:textSize="@dimen/card_trip_time_text_size" />
 
         <LinearLayout
             android:id="@+id/layout_people"
