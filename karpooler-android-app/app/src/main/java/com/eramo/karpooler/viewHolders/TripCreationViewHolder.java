@@ -1,5 +1,6 @@
 package com.eramo.karpooler.viewHolders;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -8,12 +9,14 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.activities.ViewTripActivity;
 import com.eramo.karpooler.helpers.GeneratePeopleImageHelper;
 import com.eramo.karpooler.models.dtos.FeedDTO;
 import com.eramo.karpooler.models.dtos.TripCreationFeedDTO;
@@ -28,6 +31,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class TripCreationViewHolder extends FeedViewHolder{
 
     private LinearLayout tripPassengersList;
+    private Button viewTripBtn;
+    private ImageButton locationBtn;
     private View view;
 
     public TripCreationViewHolder(View view, Fragment fragment) {
@@ -37,12 +42,35 @@ public class TripCreationViewHolder extends FeedViewHolder{
         this.view = view;
 
         tripPassengersList  = (LinearLayout) view.findViewById(R.id.layout_people);
+        viewTripBtn = (Button) view.findViewById(R.id.btn_feed_view_trip);
+        locationBtn = (ImageButton) view.findViewById(R.id.btn_feed_trip_location);
     }
 
     @Override
     public void onBindViewHolder(FeedDTO feedDTO) {
         super.onBindViewHolder(feedDTO);
 
+        // view passengers list
+        viewTripPassengersList(feedDTO);
+
+        // prepare View Trip Button
+        prepareViewTripButton(feedDTO);
+    }
+
+    private void prepareViewTripButton(FeedDTO feedDTO){
+
+        viewTripBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // go to view trip activity
+                fragment.getActivity().startActivity(new Intent(fragment.getActivity(), ViewTripActivity.class));
+            }
+        });
+
+    }
+
+    private void viewTripPassengersList(FeedDTO feedDTO){
 
         // clear all images in passengers layout
         tripPassengersList.removeAllViews();
@@ -80,7 +108,7 @@ public class TripCreationViewHolder extends FeedViewHolder{
 
             tripPassengersList.addView(moreLayout);
         }
-        
+
     }
 
 }

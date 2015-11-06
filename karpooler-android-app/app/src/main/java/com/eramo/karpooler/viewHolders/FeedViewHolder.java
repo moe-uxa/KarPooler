@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,6 +26,9 @@ public class FeedViewHolder extends RecyclerView.ViewHolder implements FeedCard 
     protected LinearLayout socialMediasIcons;
     protected TextView feedDescription;
     protected Fragment fragment;
+    protected ImageButton likeBtn;
+    protected ImageButton commentBtn;
+
 
     public FeedViewHolder(View view) {
         super(view);
@@ -36,6 +40,8 @@ public class FeedViewHolder extends RecyclerView.ViewHolder implements FeedCard 
         ownerCommonFriendsNumber = (TextView) view.findViewById(R.id.tv_feed_number_of_friends_in_common);
         socialMediasIcons = (LinearLayout) view.findViewById(R.id.layout_feed_owner_social_medias);
         feedDescription = (TextView) view.findViewById(R.id.tv_feed_description);
+        likeBtn = (ImageButton) view.findViewById(R.id.btn_feed_like);
+        commentBtn = (ImageButton) view.findViewById(R.id.btn_feed_comment);
 
     }
 

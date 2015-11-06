@@ -69,8 +69,8 @@
     <string name="drop_off">Drop off</string>
     <string name="create_trip">Create trip</string>
 
-    <!-- tabs titles -->
-    <array name="tabs_titles">
+    <!-- home tabs titles -->
+    <array name="home_tabs_titles">
         <item>Feed</item>
         <item>My Trip</item>
         <item>Inbox</item>
@@ -103,5 +103,16 @@
         <item>Logout</item>
         <item>Delete Account</item>
     </array>
+
+    <!-- View Trip Activity -->
+    <array name="view_trip_tabs_titles">
+        <item>Details</item>
+        <item>People</item>
+        <item>Discussion</item>
+    </array>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

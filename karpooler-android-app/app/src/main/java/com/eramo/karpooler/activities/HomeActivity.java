@@ -1,6 +1,5 @@
 package com.eramo.karpooler.activities;
 
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,11 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.eramo.karpooler.R;
@@ -54,7 +51,7 @@ public class HomeActivity extends BaseActivity {
         setupToolBar();
 
         // get tabs titles
-        tabsTitles = getResources().getStringArray(R.array.tabs_titles);
+        tabsTitles = getResources().getStringArray(R.array.home_tabs_titles);
 
         // set tab title
         setToolBarTitle(tabsTitles[selectedTabPosition]);
@@ -85,16 +82,25 @@ public class HomeActivity extends BaseActivity {
 
     private void prepareTabs() {
 
-        // view pager and tabs
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
         viewPagerAdapter = new MyViewPagerAdapter(getSupportFragmentManager());
+
+        // Assigning ViewPager View and setting the adapter
+        viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(viewPagerAdapter);
+
+        // Assigning the Sliding Tab Layout View
         tabs = (SlidingTabLayout) findViewById(R.id.tabs);
         tabs.setDistributeEvenly(true);
+
+        // set tab custom view
         tabs.setCustomTabView(R.layout.custom_tab_view, R.id.tabText);
+
+        // Setting Custom Color for the Scroll bar indicator of the Tab View
         tabs.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         tabs.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
 
+        // set on tab pag change listener
         tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -127,6 +133,7 @@ public class HomeActivity extends BaseActivity {
             }
         });
 
+        // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(viewPager);
 
 
