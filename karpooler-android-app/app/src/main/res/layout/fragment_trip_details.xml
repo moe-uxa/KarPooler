@@ -1,10 +1,86 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
     tools:context="com.eramo.karpooler.fragments.TripDetailsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="Trip Details" />
+    <RelativeLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="170dp" />
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp">
+
+        <TextView
+            android:id="@+id/tv_from_to_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Los Angles - New York"
+            android:textColor="@color/colorTripDetailsTextColor"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_trip_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_from_to_location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Thu, 6 June (08:30 am)"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/label_trip_seats_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_trip_date_time"
+            android:layout_below="@+id/tv_trip_date_time"
+            android:layout_marginTop="20dp"
+            android:text="Seats, available: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_trip_seats_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/label_trip_seats_available"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/label_trip_seats_available"
+            android:text="3 left"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btn_pickup_location"
+        android:background="@android:color/darker_gray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/label_passengers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/passengers"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTripDetailsTextColor"
+            android:textSize="22sp" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

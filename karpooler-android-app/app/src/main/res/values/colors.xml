@@ -25,4 +25,10 @@
     <color name="createGroupButtonColor">#eb76a5</color>
     <color name="findGroupButtonColor">#65bfa2</color>
 
+    <!-- map route color -->
+    <color name="colorMapRoute">#AA5c8aea</color>
+
+    <!-- Trip Details -->
+    <color name="colorTripDetailsTextColor">#383c46</color>
+
 </resources>
