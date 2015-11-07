@@ -65,6 +65,16 @@
     <dimen name="user_info_text_size">15sp</dimen>
     <dimen name="more_menu_text_size">20dp</dimen>
     <dimen name="more_menu_icon_margin">20dp</dimen>
+
+    <!-- 4 View Trip Activity -->
     <dimen name="view_trip_tab_text_size">18dp</dimen>
+    <dimen name="trip_details_section_header_text_size">18sp</dimen>
+    <dimen name="trip_details_section_details_text_size">12sp</dimen>
+    <dimen name="trip_details_section_padding">15dp</dimen>
+    <dimen name="trip_details_map_height">150dp</dimen>
+    <dimen name="trip_details_passenger_image_margin_right">20dp</dimen>
+
+    <!-- 4.1 Trip Details Tab -->
+
 
 </resources>

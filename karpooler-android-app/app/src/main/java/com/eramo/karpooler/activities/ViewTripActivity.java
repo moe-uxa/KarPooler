@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.TripDetailsFragment;
@@ -26,7 +28,6 @@ public class ViewTripActivity extends BaseActivity {
     private final int DISCUSSION_TAB = 2;
 
     private String[] tabsTitles;
-    private int selectedTabPosition;
     private MyViewPagerAdapter viewPagerAdapter;
 
     @Override
@@ -37,11 +38,14 @@ public class ViewTripActivity extends BaseActivity {
         // setup tool bar
         setupToolBar();
 
+        // enable home button
+        enableUpButton();
+
         // get tabs titles
         tabsTitles = getResources().getStringArray(R.array.view_trip_tabs_titles);
 
         // set tab title
-        setToolBarTitle(tabsTitles[selectedTabPosition]);
+        setToolBarTitle("Work Trip");
 
         // prepare tabs
         prepareTabs();
@@ -55,6 +59,21 @@ public class ViewTripActivity extends BaseActivity {
 
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+
+            NavUtils.navigateUpFromSameTask(this);
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void setToolBarTitle(String title) {
 
@@ -81,31 +100,6 @@ public class ViewTripActivity extends BaseActivity {
         // Setting Custom Color for the Scroll bar indicator of the Tab View
         tabs.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         tabs.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
-
-        // set on tab pag change listener
-        tabs.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-                // save selected tab position
-                selectedTabPosition = position;
-
-                // set tab title
-                setToolBarTitle(tabsTitles[position]);
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
         // Setting the ViewPager For the SlidingTabsLayout
         tabs.setViewPager(viewPager);

@@ -7,15 +7,24 @@
     android:orientation="vertical"
     tools:context="com.eramo.karpooler.fragments.TripDetailsFragment">
 
+    <!--<include layout="@layout/app_bar" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:background="@color/colorPrimary">-->
+
+    <!--</LinearLayout>-->
+
     <RelativeLayout
         android:id="@+id/map_container"
         android:layout_width="match_parent"
-        android:layout_height="170dp" />
+        android:layout_height="@dimen/trip_details_map_height" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp">
+        android:padding="@dimen/trip_details_section_padding">
 
         <TextView
             android:id="@+id/tv_from_to_location"
@@ -24,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:text="Los Angles - New York"
             android:textColor="@color/colorTripDetailsTextColor"
-            android:textSize="22sp" />
+            android:textSize="@dimen/trip_details_section_header_text_size" />
 
         <TextView
             android:id="@+id/tv_trip_date_time"
@@ -32,9 +41,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_from_to_location"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Thu, 6 June (08:30 am)"
-            android:textSize="16sp" />
+            android:textSize="@dimen/trip_details_section_details_text_size" />
 
         <TextView
             android:id="@+id/label_trip_seats_available"
@@ -42,9 +51,9 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/tv_trip_date_time"
             android:layout_below="@+id/tv_trip_date_time"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="Seats, available: "
-            android:textSize="16sp" />
+            android:textSize="@dimen/trip_details_section_details_text_size" />
 
         <TextView
             android:id="@+id/tv_trip_seats_available"
@@ -54,7 +63,7 @@
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/label_trip_seats_available"
             android:text="3 left"
-            android:textSize="16sp" />
+            android:textSize="@dimen/trip_details_section_details_text_size" />
 
     </RelativeLayout>
 
@@ -68,7 +77,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="@dimen/trip_details_section_padding">
 
         <TextView
             android:id="@+id/label_passengers"
@@ -78,9 +87,69 @@
             android:text="@string/passengers"
             android:textAllCaps="true"
             android:textColor="@color/colorTripDetailsTextColor"
-            android:textSize="22sp" />
+            android:textSize="@dimen/trip_details_section_header_text_size" />
+
+        <LinearLayout
+            android:id="@+id/layout_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_passengers"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginRight="@dimen/trip_details_passenger_image_margin_right"-->
+            <!--android:src="@drawable/person1" />-->
+
+
+        </LinearLayout>
 
 
     </RelativeLayout>
+
+    <View
+        android:id="@+id/separator2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/btn_pickup_location"
+        android:background="@android:color/darker_gray" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/trip_details_section_padding">
+
+        <TextView
+            android:id="@+id/label_drivers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/drivers"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTripDetailsTextColor"
+            android:textSize="@dimen/trip_details_section_header_text_size" />
+
+        <LinearLayout
+            android:id="@+id/layout_drivers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_drivers"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 
 </LinearLayout>
