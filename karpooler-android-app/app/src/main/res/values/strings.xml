@@ -114,6 +114,7 @@
     <string name="passengers">Passengers</string>
     <string name="drivers">Drivers</string>
     <string name="seats_left">left</string>
+    <string name="type_messages">Type messages</string>
 
 
 </resources>
