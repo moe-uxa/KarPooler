@@ -74,6 +74,7 @@
     <dimen name="trip_details_section_padding">15dp</dimen>
     <dimen name="trip_details_map_height">150dp</dimen>
     <dimen name="trip_details_passenger_image_margin_right">20dp</dimen>
+    <dimen name="chat_message_layout_padding">15dp</dimen>
 
     <!-- 4.1 Trip Details Tab -->
 

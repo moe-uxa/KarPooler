@@ -253,8 +253,8 @@ public class TripDetailsFragment extends Fragment implements OnMapReadyCallback,
         tripDetailsDTO = new TripDetailsDTO();
 
         // trip map
-        tripDetailsDTO.setStartPoint(new LatLng(31.23232, 31.645644545));
-        tripDetailsDTO.setEndPoint(new LatLng(32.2323233, 31.64532323));
+        tripDetailsDTO.setStartPoint(new LatLng(30.085802, 31.293880));
+        tripDetailsDTO.setEndPoint(new LatLng(30.096389, 31.324865));
 
         // trip details
         tripDetailsDTO.setTripId(1);

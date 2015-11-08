@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="15dp">
+    android:padding="@dimen/chat_message_layout_padding">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgv_user_image"
@@ -38,8 +38,9 @@
         android:id="@+id/tv_message_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/tv_message_state"
+        android:layout_marginLeft="5dp"
         android:text="13:30" />
 
 </RelativeLayout>

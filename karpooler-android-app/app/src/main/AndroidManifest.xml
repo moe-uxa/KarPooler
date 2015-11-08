@@ -25,6 +25,7 @@
         <activity
             android:name=".activities.SplashScreenActivity"
             android:screenOrientation="portrait" >
+
         </activity>
         <activity
             android:name=".activities.GettingStartedActivity"
@@ -83,6 +84,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
