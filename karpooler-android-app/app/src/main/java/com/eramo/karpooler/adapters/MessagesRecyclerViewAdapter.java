@@ -1,5 +1,6 @@
 package com.eramo.karpooler.adapters;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.activities.MessageActivity;
 import com.eramo.karpooler.helpers.FontUtil;
 import com.eramo.karpooler.models.dtos.MessageDTO;
 
@@ -52,6 +54,16 @@ public class MessagesRecyclerViewAdapter extends RecyclerView.Adapter<MessagesRe
         holder.messageTime.setText(messageDTO.getMessageTime());
         holder.messageOwnerName.setText(messageDTO.getMessageOwnerName());
 
+        // set view on click listener
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // go to messages activity
+                fragment.startActivity(new Intent(fragment.getActivity(), MessageActivity.class));
+            }
+        });
+
     }
 
     @Override
@@ -65,9 +77,12 @@ public class MessagesRecyclerViewAdapter extends RecyclerView.Adapter<MessagesRe
         public TextView message;
         public TextView messageTime;
         public TextView messageOwnerName;
+        public View view;
 
         public ViewHolder(View view) {
             super(view);
+
+            this.view = view;
 
             messageOwnerImage = (CircleImageView) view.findViewById(R.id.imgv_message_owner);
             message = (TextView) view.findViewById(R.id.tv_message);

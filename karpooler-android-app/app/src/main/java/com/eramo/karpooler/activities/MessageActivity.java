@@ -1,22 +1,18 @@
-package com.eramo.karpooler.fragments;
-
+package com.eramo.karpooler.activities;
 
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v4.app.NavUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
 import com.eramo.karpooler.R;
-import com.eramo.karpooler.activities.ViewTripActivity;
 import com.eramo.karpooler.helpers.GenerateMessageShapeHelper;
 import com.eramo.karpooler.models.dtos.ChatMessageDTO;
 import com.eramo.karpooler.models.dtos.SentChatMessageDTO;
@@ -24,35 +20,22 @@ import com.eramo.karpooler.models.dtos.SentChatMessageDTO;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class TripDiscussionFragment extends Fragment {
+public class MessageActivity extends BaseActivity {
 
-    private ViewTripActivity activity;
     private LinearLayout messageArea;
     private ScrollView scrollView;
-
     private EditText textBox;
 
-    public TripDiscussionFragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trip_discussion, container, false);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_messages);
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+        // setup tool bar
+        setupToolBar();
 
-        // get activity instance
-        activity = (ViewTripActivity) getActivity();
+        // enable home button
+        enableUpButton();
 
         // prepare messages area
         prepareMessagesArea();
@@ -62,25 +45,52 @@ public class TripDiscussionFragment extends Fragment {
 
         // add test data
         addTestData();
+
+        // set title
+        getSupportActionBar().setTitle("Johny");
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_messages, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+
+            NavUtils.navigateUpFromSameTask(this);
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void prepareMessagesArea(){
 
-        messageArea = (LinearLayout) activity.findViewById(R.id.layout_messages_area);
-        scrollView = (ScrollView) activity.findViewById(R.id.scrollView);
+        messageArea = (LinearLayout) findViewById(R.id.layout_messages_area);
+        scrollView = (ScrollView) findViewById(R.id.scrollView);
 
     }
 
     private void prepareTextBox(){
 
-        textBox = (EditText) activity.findViewById(R.id.edt_text_box);
+        textBox = (EditText) findViewById(R.id.edt_text_box);
 
-        Button sendButton = (Button) activity.findViewById(R.id.btn_send);
+        Button sendButton = (Button) findViewById(R.id.btn_send);
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               testSendMessage();
+                testSendMessage();
 
                 // scroll down
                 scrollView.post(new Runnable() {
@@ -105,9 +115,9 @@ public class TripDiscussionFragment extends Fragment {
 
         // generate message shape bases on message dto type
         if (chatMessageDTO instanceof SentChatMessageDTO)
-            messageShapeLayout = GenerateMessageShapeHelper.generateSentMessageShape(activity, (SentChatMessageDTO) chatMessageDTO);
+            messageShapeLayout = GenerateMessageShapeHelper.generateSentMessageShape(this, (SentChatMessageDTO) chatMessageDTO);
         else
-            messageShapeLayout = GenerateMessageShapeHelper.generateReceivedMessageShape(activity, chatMessageDTO);
+            messageShapeLayout = GenerateMessageShapeHelper.generateReceivedMessageShape(this, chatMessageDTO);
 
         // add message shape to message area
         messageArea.addView(messageShapeLayout);
