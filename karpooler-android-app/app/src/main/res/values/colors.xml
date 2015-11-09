@@ -32,4 +32,6 @@
     <color name="colorTripDetailsTextColor">#383c46</color>
     <color name="sendMessageTextBackgroundColor">#e1ebff</color>
 
+    <color name="feedTextButtonColor">#ee6161</color>
+
 </resources>

@@ -1,26 +1,20 @@
 package com.eramo.karpooler.fragments;
 
 
-import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.HomeActivity;
-import com.eramo.karpooler.adapters.BrandsRecyclerViewAdapter;
 import com.eramo.karpooler.adapters.MoreMenuRecyclerViewAdapter;
-import com.eramo.karpooler.models.dtos.BrandDTO;
 import com.eramo.karpooler.models.dtos.MenuItemDTO;
 import com.eramo.karpooler.models.dtos.MenuUserInfoDTO;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -102,8 +96,8 @@ public class MoreFragment extends BaseFragment {
 
     private void viewUserInfo(MenuUserInfoDTO userInfoDTO){
 
-        ImageView userImage = (ImageView) activity.findViewById(R.id.imgv_user_image);
-        TextView userName = (TextView) activity.findViewById(R.id.tv_user_name);
+        ImageView userImage = (ImageView) activity.findViewById(R.id.imgv_trip_owner_image);
+        TextView userName = (TextView) activity.findViewById(R.id.tv_trip_owner_name);
         TextView userGenderAge = (TextView) activity.findViewById(R.id.tv_user_gender_age);
 
         userImage.setImageBitmap(userInfoDTO.getUserImage());

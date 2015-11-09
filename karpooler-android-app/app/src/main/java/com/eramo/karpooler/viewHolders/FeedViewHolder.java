@@ -33,12 +33,12 @@ public class FeedViewHolder extends RecyclerView.ViewHolder implements FeedCard 
     public FeedViewHolder(View view) {
         super(view);
 
-        feedOwnerImage = (ImageView) view.findViewById(R.id.imgv_user_image);
-        feedOwnerName = (TextView) view.findViewById(R.id.tv_user_name);
+        feedOwnerImage = (ImageView) view.findViewById(R.id.imgv_trip_owner_image);
+        feedOwnerName = (TextView) view.findViewById(R.id.tv_trip_owner_name);
         feedTitle = (TextView) view.findViewById(R.id.tv_feed_title);
         feedTime = (TextView) view.findViewById(R.id.tv_feed_time);
-        ownerCommonFriendsNumber = (TextView) view.findViewById(R.id.tv_feed_number_of_friends_in_common);
-        socialMediasIcons = (LinearLayout) view.findViewById(R.id.layout_feed_owner_social_medias);
+        ownerCommonFriendsNumber = (TextView) view.findViewById(R.id.tv_trip_owner_num_of_friends_in_common);
+        socialMediasIcons = (LinearLayout) view.findViewById(R.id.layout_trip_owner_common_social_medias);
         feedDescription = (TextView) view.findViewById(R.id.tv_feed_description);
         likeBtn = (ImageButton) view.findViewById(R.id.btn_feed_like);
         commentBtn = (ImageButton) view.findViewById(R.id.btn_feed_comment);

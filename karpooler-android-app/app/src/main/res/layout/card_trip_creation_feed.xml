@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/imgv_user_image"
+                android:id="@+id/imgv_trip_owner_image"
                 android:layout_width="@dimen/card_user_image_size"
                 android:layout_height="@dimen/card_user_image_size"
                 android:layout_alignParentLeft="true"
@@ -30,12 +30,12 @@
                 android:src="@drawable/person1" />
 
             <TextView
-                android:id="@+id/tv_user_name"
+                android:id="@+id/tv_trip_owner_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imgv_user_image"
+                android:layout_alignTop="@+id/imgv_trip_owner_image"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/imgv_user_image"
+                android:layout_toRightOf="@+id/imgv_trip_owner_image"
                 android:text="Jared Leto"
                 android:textColor="@color/feedCarText"
                 android:textSize="@dimen/card_user_name_text_size"
@@ -45,9 +45,9 @@
                 android:id="@+id/tv_feed_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/tv_user_name"
+                android:layout_alignBaseline="@+id/tv_trip_owner_name"
                 android:layout_marginLeft="15dp"
-                android:layout_toRightOf="@+id/tv_user_name"
+                android:layout_toRightOf="@+id/tv_trip_owner_name"
                 android:text="just created a trip"
                 android:textColor="@color/feedCarText"
                 android:textSize="@dimen/card_feed_title_text_size" />
@@ -55,8 +55,8 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/tv_user_name"
-                android:layout_below="@+id/tv_user_name"
+                android:layout_alignLeft="@+id/tv_trip_owner_name"
+                android:layout_below="@+id/tv_trip_owner_name"
                 android:layout_marginTop="7dp">
 
                 <TextView
@@ -81,7 +81,7 @@
                     android:textSize="@dimen/card_feed_time_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_feed_number_of_friends_in_common"
+                    android:id="@+id/tv_trip_owner_num_of_friends_in_common"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_alignBaseline="@+id/tv_dash"
@@ -92,11 +92,11 @@
                     android:textSize="@dimen/card_feed_time_text_size" />
 
                 <LinearLayout
-                    android:id="@+id/layout_feed_owner_social_medias"
+                    android:id="@+id/layout_trip_owner_common_social_medias"
                     android:layout_width="50dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_toRightOf="@+id/tv_feed_number_of_friends_in_common"
+                    android:layout_toRightOf="@+id/tv_trip_owner_num_of_friends_in_common"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 

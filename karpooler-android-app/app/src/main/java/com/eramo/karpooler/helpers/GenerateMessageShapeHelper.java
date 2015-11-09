@@ -1,8 +1,6 @@
 package com.eramo.karpooler.helpers;
 
 import android.app.Activity;
-import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -60,7 +58,7 @@ public class GenerateMessageShapeHelper {
         messageShapeLayout.setPadding(paddingInPx, paddingInPx, paddingInPx, paddingInPx);
 
         // set user image
-        ImageView messageUserImage = (ImageView) messageShapeLayout.findViewById(R.id.imgv_user_image);
+        ImageView messageUserImage = (ImageView) messageShapeLayout.findViewById(R.id.imgv_trip_owner_image);
         messageUserImage.setImageBitmap(chatMessageDTO.getMessageOwnerImage());
 
         // set message text

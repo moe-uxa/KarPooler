@@ -5,7 +5,7 @@
     android:padding="@dimen/chat_message_layout_padding">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgv_user_image"
+        android:id="@+id/imgv_trip_owner_image"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
@@ -15,9 +15,9 @@
         android:id="@+id/tv_message_text"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imgv_user_image"
+        android:layout_alignTop="@+id/imgv_trip_owner_image"
         android:layout_marginRight="15dp"
-        android:layout_toLeftOf="@+id/imgv_user_image"
+        android:layout_toLeftOf="@+id/imgv_trip_owner_image"
         android:background="@drawable/sent_message_background"
         android:lineSpacingExtra="5dp"
         android:padding="20dp"

@@ -16,7 +16,7 @@
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/imgv_user_image"
+                android:id="@+id/imgv_trip_owner_image"
                 android:layout_width="@dimen/user_info_image_size"
                 android:layout_height="@dimen/user_info_image_size"
                 android:layout_alignParentLeft="true"
@@ -25,11 +25,11 @@
                 android:src="@drawable/person1"/>
 
             <TextView
-                android:id="@+id/tv_user_name"
+                android:id="@+id/tv_trip_owner_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imgv_user_image"
-                android:layout_toRightOf="@+id/imgv_user_image"
+                android:layout_alignTop="@+id/imgv_trip_owner_image"
+                android:layout_toRightOf="@+id/imgv_trip_owner_image"
                 android:textColor="@color/feedCarText"
                 android:textSize="@dimen/user_info_name_text_size"
                 android:textStyle="bold"
@@ -41,8 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:layout_below="@+id/tv_user_name"
-                android:layout_alignLeft="@+id/tv_user_name"
+                android:layout_below="@+id/tv_trip_owner_name"
+                android:layout_alignLeft="@+id/tv_trip_owner_name"
                 android:textColor="@color/tripCardTextLightColor"
                 android:textSize="@dimen/user_info_text_size"
                 android:text="Male, 23 years old"/>
