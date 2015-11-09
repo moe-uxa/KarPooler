@@ -28,17 +28,25 @@ public class TripMatchesFragment extends Fragment {
 
     private TripMatchesActivity activity;
     private TripMatchesRecyclerViewAdapter tripMatchesRecyclerViewAdapter;
+    private RecyclerView tripMatchesRecyclerView;
+    private int dayOffset;
 
     public TripMatchesFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trip_matches, container, false);
+        View view = inflater.inflate(R.layout.fragment_trip_matches, container, false);
+
+        tripMatchesRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_trip_matches);
+
+
+        return view;
     }
 
     @Override
@@ -57,7 +65,6 @@ public class TripMatchesFragment extends Fragment {
 
     private void prepareTripMatchesRecycleView(){
 
-        RecyclerView tripMatchesRecyclerView = (RecyclerView) activity.findViewById(R.id.recycler_view_trip_matches);
         tripMatchesRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
@@ -122,5 +129,9 @@ public class TripMatchesFragment extends Fragment {
 
         tripMatchesRecyclerViewAdapter.addTripMatchesList(tripMatchDTOs);
 
+    }
+
+    public void setDayOffset(int dayOffset) {
+        this.dayOffset = dayOffset;
     }
 }
