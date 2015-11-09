@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    app:theme="@style/AppTheme.AppBarOverlay"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imgv_user_image"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/person1"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Jared Leto"/>
+
+        <TextView
+            android:id="@+id/tv_user_gender_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_user_name"
+            android:layout_alignLeft="@+id/tv_user_name"
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:text="Male, 23 years old"/>
+
+        <TextView
+            android:id="@+id/tv_Registration_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv_user_name"
+            android:layout_alignLeft="@+id/tv_user_name"
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:text="Registered since 2-2010"/>
+
+        <RatingBar
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating_bar_user_rate"
+            android:numStars="5"
+            style="@style/MediumStarRatingBar"
+            android:rating="5"
+            android:clickable="false"
+            android:isIndicator="true"/>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/btn_call"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="Call Jared"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:textAllCaps="false"
+            android:background="@drawable/profile_call_btn_background"
+            android:textColor="@android:color/white"/>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

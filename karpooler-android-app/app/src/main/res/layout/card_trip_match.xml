@@ -49,8 +49,8 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="6dp"
                 android:numStars="5"
-
-                android:layout_toRightOf="@+id/tv_trip_owner_name" />
+                android:layout_toRightOf="@+id/tv_trip_owner_name"
+                android:isIndicator="true"/>
 
 
             <RelativeLayout
@@ -77,7 +77,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_toRightOf="@+id/tv_trip_owner_num_of_friends_in_common"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:clickable="false">
 
                     <!--<ImageView-->
                         <!--android:layout_width="wrap_content"-->
