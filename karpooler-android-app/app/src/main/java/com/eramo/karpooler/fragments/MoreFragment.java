@@ -36,6 +36,9 @@ public class MoreFragment extends BaseFragment {
     private final int CONTACT_US_ITEM = 4;
     private final int LOGOUT_ITEM = 5;
     private final int DELETE_ACCOUNT_ITEM = 6;
+    private ImageView userImage;
+    private TextView userName;
+    private TextView userGenderAge;
 
     public MoreFragment() {
         // Required empty public constructor
@@ -46,7 +49,12 @@ public class MoreFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        View view = inflater.inflate(R.layout.fragment_more, container, false);
+
+        // prepare user info layout
+        prepareUserInfoLayout(view);
+
+        return view;
     }
 
     @Override
@@ -55,9 +63,6 @@ public class MoreFragment extends BaseFragment {
 
         // get activity instance
         activity = (HomeActivity) getActivity();
-
-        // prepare user info layout
-        //prepareUserInfoLayout();
 
         // prepare recycler view
         prepareRecyclerView();
@@ -80,12 +85,12 @@ public class MoreFragment extends BaseFragment {
 
     }
 
-    private void prepareUserInfoLayout(){
+    private void prepareUserInfoLayout(View view){
 
-//        userImage = (ImageView) activity.findViewById(R.id.imgv_user_image);
-//        userName = (TextView) activity.findViewById(R.id.tv_user_name);
-//        userGenderAge = (TextView) activity.findViewById(R.id.tv_user_gender_age);
-        Button viewProfile = (Button) activity.findViewById(R.id.btn_view_user_profile);
+        userImage = (ImageView) view.findViewById(R.id.imgv_user_image);
+        userName = (TextView) view.findViewById(R.id.tv_user_name);
+        userGenderAge = (TextView) view.findViewById(R.id.tv_user_gender_age);
+        Button viewProfile = (Button) view.findViewById(R.id.btn_view_user_profile);
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,10 +100,6 @@ public class MoreFragment extends BaseFragment {
     }
 
     private void viewUserInfo(MenuUserInfoDTO userInfoDTO){
-
-        ImageView userImage = (ImageView) activity.findViewById(R.id.imgv_trip_owner_image);
-        TextView userName = (TextView) activity.findViewById(R.id.tv_trip_owner_name);
-        TextView userGenderAge = (TextView) activity.findViewById(R.id.tv_user_gender_age);
 
         userImage.setImageBitmap(userInfoDTO.getUserImage());
         userName.setText(userInfoDTO.getUserName());
