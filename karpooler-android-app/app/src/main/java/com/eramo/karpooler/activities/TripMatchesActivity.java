@@ -18,7 +18,7 @@ public class TripMatchesActivity extends BaseActivity{
     private ViewPager viewPager;
     private SlidingTabLayout tabs;
 
-    private final int NUMBER_OF_TABS = 7;
+    private final int NUMBER_OF_TABS = 1;
 
     private MyViewPagerAdapter viewPagerAdapter;
 
@@ -103,6 +103,7 @@ public class TripMatchesActivity extends BaseActivity{
         public Fragment getItem(int position) {
 
             return new TripMatchesFragment();
+
         }
 
         @Override

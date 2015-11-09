@@ -14,8 +14,8 @@ public class TripMatchDTO {
     private String tripOwnerName;
     private int tripOwnerRate;
     private int numberOfFriendsInCommon;
-    private List<Bitmap> commonFriendsSocialMediasIcons;
-    private List<Bitmap> verificationsIcons;
+    private Bitmap [] commonFriendsSocialMediasIcons;
+    private Bitmap [] verificationsIcons;
 
     public int getTripId() {
         return tripId;
@@ -57,19 +57,19 @@ public class TripMatchDTO {
         this.numberOfFriendsInCommon = numberOfFriendsInCommon;
     }
 
-    public List<Bitmap> getCommonFriendsSocialMediasIcons() {
+    public Bitmap[] getCommonFriendsSocialMediasIcons() {
         return commonFriendsSocialMediasIcons;
     }
 
-    public void setCommonFriendsSocialMediasIcons(List<Bitmap> commonFriendsSocialMediasIcons) {
+    public void setCommonFriendsSocialMediasIcons(Bitmap[] commonFriendsSocialMediasIcons) {
         this.commonFriendsSocialMediasIcons = commonFriendsSocialMediasIcons;
     }
 
-    public List<Bitmap> getVerificationsIcons() {
+    public Bitmap[] getVerificationsIcons() {
         return verificationsIcons;
     }
 
-    public void setVerificationsIcons(List<Bitmap> verificationsIcons) {
+    public void setVerificationsIcons(Bitmap[] verificationsIcons) {
         this.verificationsIcons = verificationsIcons;
     }
 }
