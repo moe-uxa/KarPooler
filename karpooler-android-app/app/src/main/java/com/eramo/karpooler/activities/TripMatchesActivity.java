@@ -2,90 +2,120 @@ package com.eramo.karpooler.activities;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.TripMatchesFragment;
+import com.eramo.karpooler.tabs.SlidingTabLayout;
 
-import it.neokree.materialtabs.MaterialTab;
-import it.neokree.materialtabs.MaterialTabHost;
-import it.neokree.materialtabs.MaterialTabListener;
+public class TripMatchesActivity extends BaseActivity{
 
-public class TripMatchesActivity extends AppCompatActivity implements MaterialTabListener{
+    private ViewPager viewPager;
+    private SlidingTabLayout tabs;
 
-    private MaterialTabHost tabHost;
-    private ViewPager pager;
-    private ViewPagerAdapter pagerAdapter;
+    private final int NUMBER_OF_TABS = 7;
+
+    private MyViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_matches);
 
-        tabHost = (MaterialTabHost) this.findViewById(R.id.materialTabHost);
-        pager = (ViewPager) this.findViewById(R.id.pager);
+        // setup tool bar
+        setupToolBar();
 
-        // init view pager
-        pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        pager.setAdapter(pagerAdapter);
-        pager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-                // when user do a swipe the selected tab change
-                tabHost.setSelectedNavigationItem(position);
-            }
-        });
+        // enable home button
+        enableUpButton();
 
-        // insert all tabs from pagerAdapter data
-        // insert all tabs from pagerAdapter data
-        for (int i = 0; i < pagerAdapter.getCount(); i++) {
-            tabHost.addTab(
-                    tabHost.newTab()
-                            .setText(pagerAdapter.getPageTitle(i))
-                            .setTabListener(this)
-            );
+        // set title
+        getSupportActionBar().setTitle(getResources().getString(R.string.trip_matches));
+
+        // prepare tabs
+        prepareTabs();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_trip_matches, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+
+            NavUtils.navigateUpFromSameTask(this);
 
         }
+
+        return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onTabSelected(MaterialTab tab) {
-        pager.setCurrentItem(tab.getPosition());
+    private void prepareTabs() {
+
+        // Creating The ViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
+        viewPagerAdapter = new MyViewPagerAdapter(getSupportFragmentManager());
+
+        // Assigning ViewPager View and setting the adapter
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(viewPagerAdapter);
+
+        // Assigning the Sliding Tab Layout View
+        tabs = (SlidingTabLayout) findViewById(R.id.tabs);
+        tabs.setDistributeEvenly(true);
+
+        // set tab custom view
+        tabs.setCustomTabView(R.layout.view_trip_tab_custom_view, R.id.tabText);
+
+        // Setting Custom Color for the Scroll bar indicator of the Tab View
+        tabs.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        tabs.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
+
+        // Setting the ViewPager For the SlidingTabsLayout
+        tabs.setViewPager(viewPager);
+
     }
 
-    @Override
-    public void onTabReselected(MaterialTab tab) {
+    private class MyViewPagerAdapter extends FragmentPagerAdapter {
 
-    }
+        private String[] tabsTitles;
 
-    @Override
-    public void onTabUnselected(MaterialTab tab) {
-
-    }
-
-    private class ViewPagerAdapter extends FragmentStatePagerAdapter {
-
-        public ViewPagerAdapter(FragmentManager fm) {
+        public MyViewPagerAdapter(FragmentManager fm) {
             super(fm);
 
+            tabsTitles = getResources().getStringArray(R.array.trip_matches_tabs_titles);
+
         }
 
-        public Fragment getItem(int num) {
+        @Override
+        public Fragment getItem(int position) {
+
             return new TripMatchesFragment();
         }
 
         @Override
         public int getCount() {
-            return 7;
+            return NUMBER_OF_TABS;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return "Section " + position;
+
+            return tabsTitles[position];
         }
+
 
     }
 

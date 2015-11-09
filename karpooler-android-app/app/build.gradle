@@ -38,5 +38,4 @@ dependencies {
     compile 'com.github.clans:fab:1.6.1'
     compile 'com.getbase:floatingactionbutton:1.10.1'
     compile 'com.github.jd-alexander:library:1.0.7'
-    compile 'it.neokree:MaterialTabs:0.11'
 }
