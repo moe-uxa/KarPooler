@@ -76,6 +76,8 @@
     <dimen name="chat_message_layout_padding">15dp</dimen>
     <dimen name="imgv_social_media_icon_margin_right">10dp</dimen>
     <dimen name="imgv_verfication_icon_margin_right">20dp</dimen>
+    <dimen name="verifications_recycler_view_margin">20dp</dimen>
+    <dimen name="verification_item_height">15dp</dimen>
 
     <!-- 4.1 Trip Details Tab -->
 

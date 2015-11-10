@@ -134,6 +134,10 @@
     <string name="join_trip">Join Trip</string>
     <string name="invite">Invite</string>
     <string name="no_mutual_friends">No mutual friends</string>
+    <string name="verified_via">Verified via</string>
+    <string name="behaviour">Behaviour</string>
+    <string name="years_old">years old</string>
+    <string name="registered_since">Registered since</string>
 
 
 </resources>
