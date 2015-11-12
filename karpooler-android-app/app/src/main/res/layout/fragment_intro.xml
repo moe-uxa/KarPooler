@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="250dp"
         android:layout_height="210dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center">
@@ -31,7 +31,7 @@
         android:id="@+id/tv_text"
         android:layout_below="@+id/view_pager_indicator"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="300dp"
@@ -43,19 +43,7 @@
         android:textSize="16sp"
         android:layout_below="@+id/tv_text"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/get_started"
-        android:id="@+id/btn_getting_start"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/tv_description"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+        android:layout_marginTop="20dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -67,6 +55,17 @@
         android:id="@+id/view_pager_indicator"
         android:gravity="center"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_started"
+        android:id="@+id/btn_getting_start"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"/>
 
 
 </RelativeLayout>
