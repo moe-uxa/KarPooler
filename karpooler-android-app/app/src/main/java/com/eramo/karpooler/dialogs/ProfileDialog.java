@@ -16,10 +16,20 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.MessageActivity;
 import com.eramo.karpooler.activities.ProfileActivity;
+import com.eramo.karpooler.helpers.BlurBuilder;
 import com.eramo.karpooler.models.dtos.ShortUserProfileDTO;
+
+import java.io.ByteArrayOutputStream;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+import jp.wasabeef.glide.transformations.CropTransformation;
+import jp.wasabeef.glide.transformations.GrayscaleTransformation;
+import jp.wasabeef.glide.transformations.MaskTransformation;
 
 /**
  * Created by Mohamed.Gaber on 11/12/2015.
@@ -85,6 +95,17 @@ public class ProfileDialog extends DialogFragment{
     }
 
     private void prepareCoverImage(){
+
+        // set user image as cover
+        Bitmap bmp = BlurBuilder.blur(getContext(), shortUserProfileDTO.getUserImage());
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+
+        Glide.with(this).load(byteArray)
+                .bitmapTransform(new CropTransformation(getContext(), 1010, 300, CropTransformation.CropType.BOTTOM))
+                .into(userProfileCover);
+
 
 
     }
@@ -161,7 +182,7 @@ public class ProfileDialog extends DialogFragment{
 
         // prepare user info dto
         shortUserProfileDTO = new ShortUserProfileDTO();
-        shortUserProfileDTO.setUserImage(((BitmapDrawable) getResources().getDrawable(R.drawable.person5)).getBitmap());
+        shortUserProfileDTO.setUserImage(((BitmapDrawable) getResources().getDrawable(R.drawable.person1)).getBitmap());
         shortUserProfileDTO.setUserName("Johnatan Web");
         shortUserProfileDTO.setUserGender("Male");
         shortUserProfileDTO.setUserAge(20);
