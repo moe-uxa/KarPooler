@@ -11,8 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.dialogs.ProfileDialog;
 import com.eramo.karpooler.models.dtos.MessageDTO;
 import com.eramo.karpooler.models.dtos.TripPersonDTO;
+import com.facebook.Profile;
 import com.google.android.gms.plus.model.people.Person;
 
 import java.util.List;
@@ -63,6 +65,18 @@ public class TripPeopleRecyclerViewAdapter extends RecyclerView.Adapter<TripPeop
             holder.socialMediasList.addView(generateSocialMediaImageView(bitmap));
         }
 
+        // set view onClickListener
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // show Profile Dialog
+                ProfileDialog profileDialog = new ProfileDialog();
+                profileDialog.show(fragment.getFragmentManager(), null);
+
+            }
+        });
+
     }
 
     @Override
@@ -77,9 +91,12 @@ public class TripPeopleRecyclerViewAdapter extends RecyclerView.Adapter<TripPeop
         public TextView numberOfFriendsInCommon;
         public LinearLayout socialMediasList;
         public ImageView driverIcon;
+        public View view;
 
         public ViewHolder(View view) {
             super(view);
+
+            this.view = view;
 
             personImage = (CircleImageView) view.findViewById(R.id.imgv_person_image);
             personName = (TextView) view.findViewById(R.id.tv_person_name);

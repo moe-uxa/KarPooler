@@ -138,6 +138,8 @@
     <string name="behaviour">Behaviour</string>
     <string name="years_old">years old</string>
     <string name="registered_since">Registered since</string>
+    <string name="message">Message</string>
+    <string name="profile">Profile</string>
 
 
 </resources>
