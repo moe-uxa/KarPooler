@@ -140,6 +140,9 @@
     <string name="registered_since">Registered since</string>
     <string name="message">Message</string>
     <string name="profile">Profile</string>
-
+    <string name="star_rating_max_5">Star rating (max 5)</string>
+    <string name="review">Review</string>
+    <string name="submit">Submit</string>
+    <string name="review_driver">Review Driver</string>
 
 </resources>
