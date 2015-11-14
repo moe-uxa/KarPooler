@@ -24,7 +24,7 @@
 
         <activity
             android:name=".activities.SplashScreenActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.GettingStartedActivity"
             android:screenOrientation="portrait" />
@@ -80,7 +80,6 @@
             </intent-filter>
 
         </activity>
-
         <activity
             android:name=".activities.ViewTripActivity"
             android:screenOrientation="portrait">
@@ -97,7 +96,7 @@
         </activity>
         <activity
             android:name=".activities.TripMatchesActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.ProfileActivity"
             android:screenOrientation="portrait">
@@ -107,20 +106,25 @@
         </activity>
         <activity
             android:name=".activities.ReviewDriverActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.RideNowActivity"
             android:screenOrientation="portrait">
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activities.VerificationManagerActivity"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HomeActivity" />
         </activity>
 
         <activity
-            android:name=".activities.VerificationManagerActivity"
+            android:name=".activities.ContactUsActivity"
             android:screenOrientation="portrait">
-
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -161,5 +161,8 @@
     <string name="mobile">Mobile</string>
     <string name="car_plates">Car Plates</string>
     <string name="my_verification">My Verification</string>
+    <string name="name">Name</string>
+    <string name="send">Send</string>
+    <string name="contact_us">Contact Us</string>
 
 </resources>

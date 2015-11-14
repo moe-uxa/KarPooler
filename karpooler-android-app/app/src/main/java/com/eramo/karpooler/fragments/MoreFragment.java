@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.eramo.karpooler.R;
+import com.eramo.karpooler.activities.ContactUsActivity;
 import com.eramo.karpooler.activities.HomeActivity;
 import com.eramo.karpooler.activities.VerificationManagerActivity;
 import com.eramo.karpooler.adapters.MoreMenuRecyclerViewAdapter;
@@ -194,6 +195,8 @@ public class MoreFragment extends BaseFragment {
                         @Override
                         public void onClick(View v) {
 
+                            // start contact us activity
+                            startActivity(new Intent(getActivity(), ContactUsActivity.class));
                         }
                     });
 
