@@ -1,6 +1,7 @@
 package com.eramo.karpooler.fragments;
 
 
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.HomeActivity;
+import com.eramo.karpooler.activities.VerificationManagerActivity;
 import com.eramo.karpooler.adapters.MoreMenuRecyclerViewAdapter;
 import com.eramo.karpooler.models.dtos.MenuItemDTO;
 import com.eramo.karpooler.models.dtos.MenuUserInfoDTO;
@@ -168,6 +170,8 @@ public class MoreFragment extends BaseFragment {
                         @Override
                         public void onClick(View v) {
 
+                            // start my verification activity
+                            startActivity(new Intent(getActivity(), VerificationManagerActivity.class));
                         }
                     });
 

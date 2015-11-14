@@ -149,5 +149,17 @@
     <string name="distance_q">Distance?</string>
     <string name="distance">Distance</string>
     <string name="save_distance">Save Distance</string>
+    <string name="face_book">Facebook</string>
+    <string name="linkedin">Linkedin</string>
+    <string name="verify">Verify</string>
+    <string name="twitter">Twitter</string>
+    <string name="paypal">Paypal</string>
+    <string name="google_plus">Google +</string>
+    <string name="id_card">ID Card</string>
+    <string name="corp_mail">Corp. Mail</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile</string>
+    <string name="car_plates">Car Plates</string>
+    <string name="my_verification">My Verification</string>
 
 </resources>

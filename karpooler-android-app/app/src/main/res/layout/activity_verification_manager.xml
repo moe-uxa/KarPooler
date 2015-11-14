@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.eramo.karpooler.activities.VerificationManagerActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <!-- Facebook -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_facebook"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_facbook" />
+
+            <TextView
+                android:id="@+id/tv_face_book"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_facebook"
+                android:text="@string/face_book"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_facebook"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_face_book"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_facebook"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textSize="@dimen/verification_text_size"
+                android:textColor="@color/colorAccent" />
+
+
+        </RelativeLayout>
+
+        <!-- LinkedIn -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_linkedIn"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_linked_in" />
+
+            <TextView
+                android:id="@+id/tv_linkedIn"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_linkedIn"
+                android:text="@string/linkedin"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_linkedIn"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_linkedIn"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_linkedIn"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- Twitter -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_twitter"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_twitter" />
+
+            <TextView
+                android:id="@+id/tv_twitter"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_twitter"
+                android:text="@string/twitter"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_twitter"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_twitter"
+                android:gravity="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_twitter"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- Paypal -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_payPal"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_pay_pal" />
+
+            <TextView
+                android:id="@+id/tv_payPal"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_payPal"
+                android:text="@string/paypal"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_payPal"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_payPal"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_payPal"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- Google Plus -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_google"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_gmail" />
+
+            <TextView
+                android:id="@+id/tv_google"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_google"
+                android:text="@string/google_plus"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_google"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_google"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_google"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- ID Card -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_id_card"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_id_card" />
+
+            <TextView
+                android:id="@+id/tv_id_card"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_id_card"
+                android:text="@string/id_card"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_id_card"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_id_card"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_id_card"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- Corp Mail -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_corp_mail"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_corp_mail" />
+
+            <TextView
+                android:id="@+id/tv_corp_mail"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_corp_mail"
+                android:text="@string/corp_mail"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_corp_mail"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_corp_mail"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_corp_mail"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- EMail -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_email"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_email" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_email"
+                android:text="@string/email"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_email"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_email"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_email"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- Mobile -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_mobile"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_mobile" />
+
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_mobile"
+                android:text="@string/mobile"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_mobile"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_mobile"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_mobile"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+        <!-- Car Plates -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/verification_layout_margin_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgv_car_plates"
+                android:layout_width="@dimen/verification_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_icon_margin_right"
+                android:src="@drawable/ic_car_plates" />
+
+            <TextView
+                android:id="@+id/tv_car_plates"
+                android:layout_width="@dimen/verification_text_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/verification_text_margin_right"
+                android:layout_toRightOf="@+id/imgv_car_plates"
+                android:text="@string/car_plates"
+                android:textSize="@dimen/verification_text_size" />
+
+            <TextView
+                android:id="@+id/tv_value_car_plates"
+                android:layout_width="@dimen/verfication_value_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_car_plates"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/verification_text_size" />
+
+            <Button
+                android:id="@+id/btn_verify_car_plates"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="@dimen/verify_btn_width"
+                android:layout_height="@dimen/verify_btn_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:text="@string/verify"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/verification_text_size" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
