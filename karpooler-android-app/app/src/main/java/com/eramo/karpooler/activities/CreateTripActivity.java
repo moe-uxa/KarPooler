@@ -36,7 +36,7 @@ public class CreateTripActivity extends BaseActivity {
 
     private TextView tv_number;
     private final int PLACE_PICKER_FROM_REQUEST = 1;
-    private final int PLACE_PICKER_TO_REQUEST = 1;
+    private final int PLACE_PICKER_TO_REQUEST = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -34,4 +34,6 @@
 
     <color name="feedTextButtonColor">#ee6161</color>
 
+    <color name="dialogTextColor">#616878</color>
+
 </resources>

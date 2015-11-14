@@ -1,5 +1,6 @@
 package com.eramo.karpooler.activities;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -236,7 +237,8 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(HomeActivity.this, "Ride Now", Toast.LENGTH_SHORT).show();
+                // open ride now activity
+                startActivity(new Intent(HomeActivity.this, RideNowActivity.class));
             }
         });
 

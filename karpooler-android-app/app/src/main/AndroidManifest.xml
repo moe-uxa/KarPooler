@@ -73,11 +73,12 @@
         <activity
             android:name=".activities.HomeActivity"
             android:screenOrientation="portrait" >
+
+
         </activity>
         <activity
             android:name=".activities.ViewTripActivity"
             android:screenOrientation="portrait" >
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HomeActivity" />
@@ -100,14 +101,23 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.ViewTripActivity" />
         </activity>
+        <activity android:name=".activities.ReviewDriverActivity"
+            android:screenOrientation="portrait">
 
-        <activity android:name=".activities.ReviewDriverActivity" >
+        </activity>
+
+        <activity android:name=".activities.RideNowActivity"
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.HomeActivity" />
 
         </activity>
     </application>

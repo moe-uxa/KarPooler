@@ -144,5 +144,10 @@
     <string name="review">Review</string>
     <string name="submit">Submit</string>
     <string name="review_driver">Review Driver</string>
+    <string name="specific_time">Specific time</string>
+    <string name="search_now">Search Now</string>
+    <string name="distance_q">Distance?</string>
+    <string name="distance">Distance</string>
+    <string name="save_distance">Save Distance</string>
 
 </resources>

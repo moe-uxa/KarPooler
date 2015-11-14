@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.eramo.karpooler.activities.CreateTripActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <EditText
+            android:id="@+id/edt_trip_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:hint="@string/trip_name"
+            android:textColorHint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/edt_trip_name"
+            android:layout_marginTop="20dp"
+            android:text="@string/who_are_you"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView3"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/radio_group_types"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:checkedButton="@+id/toggleButton"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ToggleButton
+                    android:id="@+id/toggle_driver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/user_type_toggle_margin_right"
+                    android:background="@android:color/transparent"
+                    android:checked="true"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_driver"
+                    android:onClick="onToggle"
+                    android:text="New ToggleButton"
+                    android:textColor="@color/colorAccent"
+                    android:textOff="@string/driver"
+                    android:textOn="@string/driver" />
+
+                <ToggleButton
+                    android:id="@+id/toggle_passenger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/user_type_toggle_margin_right"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_passenger"
+                    android:onClick="onToggle"
+                    android:text="New ToggleButton"
+                    android:textColor="@color/toggle_normal_text_color"
+                    android:textOff="@string/passenger"
+                    android:textOn="@string/passenger" />
+
+                <ToggleButton
+                    android:id="@+id/toggle_both"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_both"
+                    android:onClick="onToggle"
+                    android:text="New ToggleButton"
+                    android:textColor="@color/toggle_normal_text_color"
+                    android:textOff="@string/both"
+                    android:textOn="@string/both" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/linearLayout"
+            android:layout_marginTop="30dp"
+            android:text="@string/from"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_pickup_location"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView5"
+            android:text="@string/pick_location"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btn_pickup_location"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/separator"
+            android:layout_marginTop="15dp"
+            android:text="@string/to"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_drop_off"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView6"
+            android:text="@string/drop_off"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/seperator2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btn_drop_off"
+            android:background="@android:color/darker_gray" />
+
+
+        <Button
+            android:id="@+id/btn_distance"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_below="@+id/seperator2"
+            android:layout_marginTop="20dp"
+            android:text="@string/distance_q"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:paddingLeft="0dp"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_round_trip"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btn_distance"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/specific_time"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_specific_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <Button
+
+            android:id="@+id/btn_search_now"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/btn_save_and_go"
+            android:text="@string/search_now"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
