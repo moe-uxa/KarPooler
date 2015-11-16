@@ -49,17 +49,6 @@ public class IntroFragment extends Fragment {
         ImageView introImageView = (ImageView) view.findViewById(R.id.iv_intro_image);
         introImageView.setImageResource(introDTO.getImageResource());
 
-        // get started button -> set on click listener
-        Button getStartedButton = (Button) view.findViewById(R.id.btn_getting_start);
-        getStartedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // go to login activity
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
         return view;
     }

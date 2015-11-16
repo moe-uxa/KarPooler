@@ -46,6 +46,18 @@ public class GettingStartedActivity extends AppCompatActivity {
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
 
+        // get started button -> set on click listener
+        Button getStartedButton = (Button) findViewById(R.id.btn_getting_start);
+        getStartedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // go to login activity
+                Intent intent = new Intent(GettingStartedActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
