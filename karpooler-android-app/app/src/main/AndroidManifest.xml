@@ -24,7 +24,9 @@
 
         <activity
             android:name=".activities.SplashScreenActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
             android:name=".activities.GettingStartedActivity"
             android:screenOrientation="portrait" />
@@ -73,6 +75,7 @@
             android:name=".activities.HomeActivity"
             android:screenOrientation="portrait">
 
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -120,10 +123,18 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HomeActivity" />
+
+        </activity>
+        <activity
+            android:name=".activities.ContactUsActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.HomeActivity" />
         </activity>
 
         <activity
-            android:name=".activities.ContactUsActivity"
+            android:name=".activities.InviteFriendsActivity"
             android:screenOrientation="portrait">
 
             <meta-data

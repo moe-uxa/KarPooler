@@ -129,8 +129,6 @@
         <item>Sunday</item>
     </array>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="join_trip">Join Trip</string>
     <string name="invite">Invite</string>
     <string name="no_mutual_friends">No mutual friends</string>
@@ -164,5 +162,15 @@
     <string name="name">Name</string>
     <string name="send">Send</string>
     <string name="contact_us">Contact Us</string>
+
+    <array name="invite_friends_methods">
+        <item>SMS</item>
+        <item>Twitter</item>
+        <item>Facebook</item>
+        <item>Google+</item>
+        <item>Email</item>
+    </array>
+
+    <string name="invite_friends">Invite Friends</string>
 
 </resources>

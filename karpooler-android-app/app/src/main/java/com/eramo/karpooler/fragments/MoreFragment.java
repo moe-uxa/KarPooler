@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.activities.ContactUsActivity;
 import com.eramo.karpooler.activities.HomeActivity;
+import com.eramo.karpooler.activities.InviteFriendsActivity;
 import com.eramo.karpooler.activities.VerificationManagerActivity;
 import com.eramo.karpooler.adapters.MoreMenuRecyclerViewAdapter;
 import com.eramo.karpooler.models.dtos.MenuItemDTO;
@@ -184,6 +185,8 @@ public class MoreFragment extends BaseFragment {
                         @Override
                         public void onClick(View v) {
 
+                            // start invite friends activity
+                            startActivity(new Intent(getActivity(), InviteFriendsActivity.class));
                         }
                     });
 
