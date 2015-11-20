@@ -98,7 +98,7 @@
             android:id="@+id/layout_user_verifications_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/trip_match_user_verifies_layout_margin_top"
             android:padding="10dp"
             android:orientation="horizontal">
 
@@ -125,7 +125,8 @@
                 android:paddingLeft="@dimen/card_feed_text_button_padding_left_right"
                 android:paddingRight="@dimen/card_feed_text_button_padding_left_right"
                 android:text="@string/join_trip"
-                android:textColor="@color/feedTextButtonColor" />
+                android:textColor="@color/feedTextButtonColor"
+                android:textSize="@dimen/trip_match_card_buttons_text_size"/>
 
             <Button
                 android:id="@+id/btn_invite"
@@ -137,7 +138,8 @@
                 android:paddingRight="@dimen/card_feed_text_button_padding_left_right"
                 android:text="@string/invite"
                 android:layout_marginLeft="15dp"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/trip_match_card_buttons_text_size"/>
 
         </RelativeLayout>
 

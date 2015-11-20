@@ -112,6 +112,8 @@
     <dimen name="send_btn_height">35dp</dimen>
     <dimen name="text_box_height">50dp</dimen>
     <dimen name="chat_text_box_padding">15dp</dimen>
+    <dimen name="trip_match_card_buttons_text_size">12sp</dimen>
+    <dimen name="trip_match_user_verifies_layout_margin_top">15dp</dimen>
 
 
 </resources>
