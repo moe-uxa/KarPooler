@@ -269,7 +269,8 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(HomeActivity.this, "Find Group", Toast.LENGTH_SHORT).show();
+                // start find group activity
+                startActivity(new Intent(HomeActivity.this, FindGroupActivity.class));
             }
         });
 
