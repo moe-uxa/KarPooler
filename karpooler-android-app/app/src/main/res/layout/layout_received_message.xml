@@ -6,14 +6,14 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgv_sender_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/message_owner_image_size"
+        android:layout_height="@dimen/message_owner_image_size"
         android:src="@drawable/person4" />
 
     <TextView
         android:id="@+id/tv_message_text"
-        android:layout_width="270dp"
-        android:padding="20dp"
+        android:layout_width="@dimen/message_rect_shape_width"
+        android:padding="@dimen/message_rect_shape_padding"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imgv_sender_image"
         android:layout_marginLeft="15dp"
@@ -21,7 +21,7 @@
         android:text="It's been a long day without you my friend And I'll tell you all about it when I see you again We've come a long way from"
         android:background="@drawable/receiced_message_background"
         android:textColor="@android:color/white"
-        android:textSize="15sp"
+        android:textSize="@dimen/message_text_size"
         android:lineSpacingExtra="5dp"/>
 
     <TextView
@@ -31,6 +31,7 @@
         android:text="13:30"
         android:layout_toRightOf="@+id/tv_message_text"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/message_state_text_size"/>
 
 </RelativeLayout>
