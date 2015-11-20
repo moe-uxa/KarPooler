@@ -31,7 +31,7 @@
 
             <TextView
                 android:id="@+id/tv_trip_owner_name"
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/imgv_trip_owner_image"
                 android:layout_marginLeft="10dp"

@@ -14,4 +14,5 @@ public class GroupCreationFeedDTO extends FeedDTO {
     public void setGroupId(int groupId) {
         this.groupId = groupId;
     }
+
 }
