@@ -117,6 +117,19 @@
     <dimen name="review_driver_submit_btn_padding_sides">30dp</dimen>
     <dimen name="review_driver_review_text_size">18sp</dimen>
 
+    <!-- 7 Ride Now Activity -->
+    <dimen name="ride_now_main_titles_text_size">18sp</dimen>
+    <dimen name="ride_now_user_types_layout_margin_top">20dp</dimen>
+    <dimen name="ride_now_main_titles_margin_top">30dp</dimen>
+    <dimen name="ride_now_pickup_location_btn_text_size">14sp</dimen>
+    <dimen name="ride_now_distnace_btn_text_size">18sp</dimen>
+    <dimen name="ride_now_distnace_btn_height">45dp</dimen>
+    <dimen name="ride_now_btn_distance_margin_top">20dp</dimen>
+    <dimen name="ride_now_btn_search_now_text_size">20sp</dimen>
+    <dimen name="ride_now_btn_search_now_height">45dp</dimen>
+    <dimen name="ride_now_specific_time_layout_height">50dp</dimen>
+    <dimen name="ride_now_specific_time_layout_margin_top">10dp</dimen>
+
 
     <!-- 7 My verifications Activity -->
     <dimen name="imgv_verfication_icon_margin_right">20dp</dimen>

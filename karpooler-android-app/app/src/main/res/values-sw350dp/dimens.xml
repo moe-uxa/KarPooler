@@ -106,7 +106,7 @@
     <dimen name="profile_btn_call_text_size">12sp</dimen>
     <dimen name="profile_btn_call_height">30dp</dimen>
 
-    <!-- 5 Review Driver Activity -->
+    <!-- 6 Review Driver Activity -->
     <dimen name="review_driver_driver_image_size">65dp</dimen>
     <dimen name="review_driver_driver_name_text_size">16dp</dimen>
     <dimen name="review_driver_driver_info_text_size">11sp</dimen>
@@ -116,6 +116,19 @@
     <dimen name="review_driver_review_text_margin_top">30dp</dimen>
     <dimen name="review_driver_submit_btn_padding_sides">25dp</dimen>
     <dimen name="review_driver_review_text_size">16sp</dimen>
+
+    <!-- 7 Ride Now Activity -->
+    <dimen name="ride_now_main_titles_text_size">16sp</dimen>
+    <dimen name="ride_now_user_types_layout_margin_top">15dp</dimen>
+    <dimen name="ride_now_main_titles_margin_top">15dp</dimen>
+    <dimen name="ride_now_pickup_location_btn_text_size">12sp</dimen>
+    <dimen name="ride_now_distnace_btn_text_size">16sp</dimen>
+    <dimen name="ride_now_distnace_btn_height">40dp</dimen>
+    <dimen name="ride_now_btn_distance_margin_top">15dp</dimen>
+    <dimen name="ride_now_btn_search_now_text_size">18sp</dimen>
+    <dimen name="ride_now_btn_search_now_height">40dp</dimen>
+    <dimen name="ride_now_specific_time_layout_height">30dp</dimen>
+    <dimen name="ride_now_specific_time_layout_margin_top">10dp</dimen>
 
     <!-- 6 My verifications Activity -->
     <dimen name="imgv_verfication_icon_margin_right">20dp</dimen>

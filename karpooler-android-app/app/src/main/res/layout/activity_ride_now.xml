@@ -30,7 +30,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:hint="@string/trip_name"
-            android:textColorHint="@android:color/black" />
+            android:textColorHint="@android:color/black"
+            android:textSize="@dimen/ride_now_main_titles_text_size"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -38,10 +39,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/edt_trip_name"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/ride_now_main_titles_margin_top"
             android:text="@string/who_are_you"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="18sp" />
+            android:textSize="@dimen/ride_now_main_titles_text_size" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -50,7 +51,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView3"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/ride_now_user_types_layout_margin_top"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -118,10 +119,10 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/linearLayout"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/ride_now_main_titles_margin_top"
             android:text="@string/from"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="17sp" />
+            android:textSize="@dimen/ride_now_main_titles_text_size" />
 
         <Button
             android:id="@+id/btn_pickup_location"
@@ -133,7 +134,7 @@
             android:layout_below="@+id/textView5"
             android:text="@string/pick_location"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/ride_now_pickup_location_btn_text_size" />
 
         <View
             android:id="@+id/separator"
@@ -149,10 +150,10 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/separator"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/ride_now_main_titles_margin_top"
             android:text="@string/to"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="17sp" />
+            android:textSize="@dimen/ride_now_main_titles_text_size" />
 
         <Button
             android:id="@+id/btn_drop_off"
@@ -164,7 +165,7 @@
             android:layout_below="@+id/textView6"
             android:text="@string/drop_off"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/ride_now_pickup_location_btn_text_size" />
 
         <View
             android:id="@+id/seperator2"
@@ -178,22 +179,22 @@
             android:id="@+id/btn_distance"
             style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/ride_now_distnace_btn_height"
             android:layout_below="@+id/seperator2"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/ride_now_btn_distance_margin_top"
             android:text="@string/distance_q"
             android:textAllCaps="false"
             android:textColor="@color/colorAccent"
             android:paddingLeft="0dp"
-            android:textSize="18sp" />
+            android:textSize="@dimen/ride_now_distnace_btn_text_size" />
 
         <RelativeLayout
             android:id="@+id/layout_round_trip"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/ride_now_specific_time_layout_height"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/btn_distance"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="@dimen/ride_now_specific_time_layout_margin_top">
 
             <TextView
                 android:id="@+id/textView7"
@@ -203,7 +204,7 @@
                 android:layout_centerVertical="true"
                 android:text="@string/specific_time"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="18sp" />
+                android:textSize="@dimen/ride_now_main_titles_text_size" />
 
             <android.support.v7.widget.SwitchCompat
                 android:id="@+id/switch_specific_time"
@@ -217,7 +218,7 @@
 
             android:id="@+id/btn_search_now"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/ride_now_btn_search_now_height"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="0dp"
@@ -225,7 +226,7 @@
             android:background="@drawable/btn_save_and_go"
             android:text="@string/search_now"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="@dimen/ride_now_btn_search_now_text_size" />
 
     </RelativeLayout>
 
