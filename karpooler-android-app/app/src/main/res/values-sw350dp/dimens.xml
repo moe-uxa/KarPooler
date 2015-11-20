@@ -137,12 +137,12 @@
     <dimen name="verification_layout_margin_bottom">10dp</dimen>
     <dimen name="verification_icon_margin_right">15dp</dimen>
     <dimen name="verification_icon_width">30dp</dimen>
-    <dimen name="verification_text_width">90dp</dimen>
+    <dimen name="verification_text_width">70dp</dimen>
     <dimen name="verification_text_margin_right">10dp</dimen>
-    <dimen name="verfication_value_width">150dp</dimen>
-    <dimen name="verify_btn_width">70dp</dimen>
-    <dimen name="verify_btn_height">40dp</dimen>
-    <dimen name="verification_text_size">16sp</dimen>
+    <dimen name="verfication_value_width">120dp</dimen>
+    <dimen name="verify_btn_width">65dp</dimen>
+    <dimen name="verify_btn_height">35dp</dimen>
+    <dimen name="verification_text_size">14sp</dimen>
 
     <!-- 7 Contact Us Activity -->
     <dimen name="contact_us_row_layout_margin_bottom">15dp</dimen>
