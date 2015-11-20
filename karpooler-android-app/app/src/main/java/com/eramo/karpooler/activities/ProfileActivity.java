@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -95,6 +97,16 @@ public class ProfileActivity extends BaseActivity {
                 commonFriendsSocialMediaList.addView(imageView);
             }
         }
+
+        // setup call button
+        Button callBtn = (Button) findViewById(R.id.btn_call);
+        callBtn.setText(getResources().getString(R.string.call)+" "+userProfileDTO.getUserName());
+        callBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 

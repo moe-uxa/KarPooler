@@ -15,12 +15,12 @@
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="@dimen/profile_extended_app_bar_padding">
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/imgv_user_image"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="@dimen/profile_picture_size"
+            android:layout_height="@dimen/profile_picture_size"
             android:src="@drawable/person1" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_marginTop="15dp"
             android:text="Jared Leto"
             android:textColor="@android:color/white"
-            android:textSize="16dp"
+            android:textSize="@dimen/profile_user_name_text_size"
             android:textStyle="bold" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:layout_marginTop="5dp"
             android:text="Male, 23 years old"
             android:textColor="#DDFFFFFF"
-            android:textSize="11sp" />
+            android:textSize="@dimen/profile_info_text_size" />
 
         <TextView
             android:id="@+id/tv_Registration_date"
@@ -53,7 +53,7 @@
             android:layout_marginTop="10dp"
             android:text="Registered since 2-2010"
             android:textColor="#DDFFFFFF"
-            android:textSize="11sp" />
+            android:textSize="@dimen/profile_info_text_size" />
 
         <RatingBar
             android:id="@+id/rating_bar_user_rate"
@@ -69,11 +69,12 @@
         <Button
             android:id="@+id/btn_call"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/profile_btn_call_height"
             android:layout_marginTop="20dp"
             android:background="@drawable/profile_call_btn_background"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
+            android:textSize="@dimen/profile_btn_call_text_size"
             android:text="Call Jared"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
