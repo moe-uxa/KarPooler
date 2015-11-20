@@ -105,6 +105,11 @@
     <dimen name="profile_extended_app_bar_padding">15dp</dimen>
     <dimen name="profile_btn_call_text_size">12sp</dimen>
     <dimen name="profile_btn_call_height">30dp</dimen>
+    <dimen name="profile_dialog_image_margin_top">60dp</dimen>
+    <dimen name="profile_dialog_image_size">80dp</dimen>
+    <dimen name="profile_dialog_cover_width">305dp</dimen>
+    <dimen name="profile_dialog_cover_height">100dp</dimen>
+
 
     <!-- 6 Review Driver Activity -->
     <dimen name="review_driver_driver_image_size">65dp</dimen>
@@ -149,6 +154,5 @@
     <dimen name="contact_us_text_size">16sp</dimen>
     <dimen name="contact_us_edt_width">180dp</dimen>
     <dimen name="contact_us_send_btn_text_size">18sp</dimen>
-
 
 </resources>

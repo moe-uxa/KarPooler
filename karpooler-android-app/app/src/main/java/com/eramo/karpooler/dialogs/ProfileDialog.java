@@ -102,8 +102,12 @@ public class ProfileDialog extends DialogFragment{
         bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
+        // convert width and height dp to px
+        int widthInPx = getResources().getDimensionPixelSize(R.dimen.profile_dialog_cover_width);
+        int heightInPx = getResources().getDimensionPixelSize(R.dimen.profile_dialog_cover_height);
+
         Glide.with(this).load(byteArray)
-                .bitmapTransform(new CropTransformation(getContext(), 1010, 300, CropTransformation.CropType.BOTTOM))
+                .bitmapTransform(new CropTransformation(getContext(), widthInPx, heightInPx, CropTransformation.CropType.BOTTOM))
                 .into(userProfileCover);
 
 
