@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,7 +23,7 @@ import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SelectBrandActivity extends BaseActivity {
+public class SelectBrandActivity extends BaseActivity implements SearchView.OnQueryTextListener{
 
     private BrandsRecyclerViewAdapter brandsRecyclerViewAdapter;
     private CarSelectionAPI carSelectionAPI;
@@ -55,6 +56,10 @@ public class SelectBrandActivity extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.menu_brand_selection, menu);
+
+        // SearchView set on query text listener
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setOnQueryTextListener(this);
 
         return true;
     }
@@ -125,4 +130,13 @@ public class SelectBrandActivity extends BaseActivity {
 
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
 }

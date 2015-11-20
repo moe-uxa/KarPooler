@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.SearchView;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
@@ -25,7 +26,7 @@ import com.eramo.karpooler.tabs.SlidingTabLayout;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements SearchView.OnQueryTextListener{
 
     private ViewPager viewPager;
     private SlidingTabLayout tabs;
@@ -69,6 +70,10 @@ public class HomeActivity extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.menu_home, menu);
+
+        // SearchView set on query text listener
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setOnQueryTextListener(this);
 
         return true;
     }
@@ -138,6 +143,16 @@ public class HomeActivity extends BaseActivity {
         tabs.setViewPager(viewPager);
 
 
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
     }
 
     private class MyViewPagerAdapter extends FragmentPagerAdapter {
