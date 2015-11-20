@@ -148,7 +148,7 @@
     <dimen name="contact_us_row_layout_margin_bottom">15dp</dimen>
     <dimen name="contact_us_text_size">18sp</dimen>
     <dimen name="contact_us_edt_width">200dp</dimen>
-
+    <dimen name="contact_us_send_btn_text_size">20sp</dimen>
 
 
 </resources>

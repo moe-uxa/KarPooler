@@ -185,7 +185,7 @@
             android:paddingRight="40dp"
             android:text="@string/send"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="@dimen/contact_us_send_btn_text_size" />
 
 
     </LinearLayout>

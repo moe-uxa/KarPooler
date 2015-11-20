@@ -130,7 +130,7 @@
     <dimen name="ride_now_specific_time_layout_height">30dp</dimen>
     <dimen name="ride_now_specific_time_layout_margin_top">10dp</dimen>
 
-    <!-- 6 My verifications Activity -->
+    <!-- 8 My verifications Activity -->
     <dimen name="imgv_verfication_icon_margin_right">20dp</dimen>
     <dimen name="verifications_recycler_view_margin">20dp</dimen>
     <dimen name="verification_item_height">15dp</dimen>
@@ -144,11 +144,11 @@
     <dimen name="verify_btn_height">35dp</dimen>
     <dimen name="verification_text_size">14sp</dimen>
 
-    <!-- 7 Contact Us Activity -->
+    <!-- 9 Contact Us Activity -->
     <dimen name="contact_us_row_layout_margin_bottom">15dp</dimen>
-    <dimen name="contact_us_text_size">18sp</dimen>
-    <dimen name="contact_us_edt_width">200dp</dimen>
-
+    <dimen name="contact_us_text_size">16sp</dimen>
+    <dimen name="contact_us_edt_width">180dp</dimen>
+    <dimen name="contact_us_send_btn_text_size">18sp</dimen>
 
 
 </resources>
