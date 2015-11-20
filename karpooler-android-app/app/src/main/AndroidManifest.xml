@@ -131,13 +131,6 @@
             android:name=".activities.ContactUsActivity"
             android:screenOrientation="portrait">
 
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HomeActivity" />
@@ -145,6 +138,7 @@
         <activity
             android:name=".activities.InviteFriendsActivity"
             android:screenOrientation="portrait">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HomeActivity" />
@@ -155,6 +149,12 @@
             android:name=".activities.FindGroupActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
