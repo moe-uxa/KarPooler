@@ -98,6 +98,25 @@
     <dimen name="trip_match_card_buttons_text_size">14sp</dimen>
     <dimen name="trip_match_user_verifies_layout_margin_top">20dp</dimen>
 
+    <!-- 5 profile Activity -->
+    <dimen name="profile_picture_size">65dp</dimen>
+    <dimen name="profile_user_name_text_size">16sp</dimen>
+    <dimen name="profile_info_text_size">11sp</dimen>
+    <dimen name="profile_extended_app_bar_padding">20dp</dimen>
+    <dimen name="profile_btn_call_text_size">14sp</dimen>
+    <dimen name="profile_btn_call_height">35dp</dimen>
+
+    <!-- 6 Review Driver Activity -->
+    <dimen name="review_driver_driver_image_size">75dp</dimen>
+    <dimen name="review_driver_driver_name_text_size">18dp</dimen>
+    <dimen name="review_driver_driver_info_text_size">13sp</dimen>
+    <dimen name="review_driver_extended_app_bar_title_test_size">20sp</dimen>
+    <dimen name="review_driver_main_titles_text_size">20sp</dimen>
+    <dimen name="review_driver_rating_bar_margin_top">20dp</dimen>
+    <dimen name="review_driver_review_text_margin_top">40dp</dimen>
+    <dimen name="review_driver_submit_btn_padding_sides">30dp</dimen>
+    <dimen name="review_driver_review_text_size">18sp</dimen>
+
 
     <!-- 4 My verifications Activity -->
     <dimen name="imgv_verfication_icon_margin_right">20dp</dimen>
@@ -117,12 +136,7 @@
     <dimen name="contact_us_row_layout_margin_bottom">15dp</dimen>
     <dimen name="contact_us_text_size">18sp</dimen>
     <dimen name="contact_us_edt_width">200dp</dimen>
-    <dimen name="profile_picture_size">65dp</dimen>
-    <dimen name="profile_user_name_text_size">16sp</dimen>
-    <dimen name="profile_info_text_size">11sp</dimen>
-    <dimen name="profile_extended_app_bar_padding">20dp</dimen>
-    <dimen name="profile_btn_call_text_size">14sp</dimen>
-    <dimen name="profile_btn_call_height">35dp</dimen>
+
 
 
 </resources>

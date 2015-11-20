@@ -25,14 +25,14 @@
             android:layout_height="wrap_content"
             android:text="@string/star_rating_max_5"
             android:textColor="@color/colorTripDetailsTextColor"
-            android:textSize="20sp" />
+            android:textSize="@dimen/review_driver_main_titles_text_size" />
 
         <RatingBar
             android:id="@+id/rating_bar_user_rate"
             style="@style/BigStarRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/review_driver_rating_bar_margin_top"
             android:numStars="5"
             android:rating="3"
             android:stepSize="1" />
@@ -40,19 +40,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/review_driver_review_text_margin_top"
             android:text="@string/review"
             android:textColor="@color/colorTripDetailsTextColor"
-            android:textSize="20sp" />
+            android:textSize="@dimen/review_driver_main_titles_text_size" />
 
         <EditText
             android:id="@+id/edt_user_review"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:ems="10"
             android:inputType="textMultiLine"
-            android:textColor="@color/tripCardTextLightColor" />
+            android:textColor="@color/tripCardTextLightColor"
+            android:textSize="@dimen/review_driver_review_text_size"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -60,11 +60,11 @@
             android:layout_gravity="right"
             android:layout_marginTop="30dp"
             android:background="@drawable/btn_save_and_go"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
+            android:paddingLeft="@dimen/review_driver_submit_btn_padding_sides"
+            android:paddingRight="@dimen/review_driver_submit_btn_padding_sides"
             android:text="@string/submit"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="@dimen/review_driver_main_titles_text_size" />
 
     </LinearLayout>
 
