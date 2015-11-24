@@ -1,5 +1,6 @@
 package com.eramo.karpooler.activities;
 
+import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.support.v4.app.NavUtils;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
@@ -20,9 +22,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
 import com.eramo.karpooler.R;
-import com.eramo.karpooler.dialogs.TripDatePickerDialog;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
@@ -150,34 +150,52 @@ public class CreateTripActivity extends BaseActivity {
 
     private void prepareDateAndTimeSelectors() {
 
-        EditText dateEditText = (EditText) findViewById(R.id.edt_date);
-        dateEditText.setOnTouchListener(new View.OnTouchListener() {
+        final EditText dateEditText = (EditText) findViewById(R.id.edt_date);
+        dateEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onFocusChange(View v, boolean hasFocus) {
 
-                TripDatePickerDialog dialog = new TripDatePickerDialog();
-                dialog.show(getSupportFragmentManager(), "");
+                if(hasFocus){
 
-                return false;
+                    Calendar now = Calendar.getInstance();
+
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(CreateTripActivity.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                            dateEditText.setText(dayOfMonth+"-"+monthOfYear+"-"+year);
+                            dateEditText.clearFocus();
+                        }
+                    }, now.get(Calendar.YEAR),
+                            now.get(Calendar.MONTH),
+                            now.get(Calendar.DAY_OF_MONTH));
+
+                    datePickerDialog.show();
+
+
+                }
             }
         });
 
         final EditText timeEditText = (EditText) findViewById(R.id.edt_time);
-        timeEditText.setOnTouchListener(new View.OnTouchListener() {
+        timeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onFocusChange(View v, boolean hasFocus) {
 
-                TimePickerDialog dialog = new TimePickerDialog(CreateTripActivity.this, new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                if (hasFocus) {
 
-                        timeEditText.setText(hourOfDay + ":" + minute);
-                    }
-                }, Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), false);
+                    TimePickerDialog dialog = new TimePickerDialog(CreateTripActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
-                dialog.show();
+                            timeEditText.setText(hourOfDay + ":" + minute);
+                            timeEditText.clearFocus();
+                        }
+                    }, Calendar.getInstance().get(Calendar.HOUR_OF_DAY), Calendar.getInstance().get(Calendar.MINUTE), false);
 
-                return false;
+                    dialog.show();
+
+                }
             }
         });
 
