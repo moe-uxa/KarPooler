@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/white">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/brand_item_height"
+    android:background="@drawable/custom_bg"
+    android:clickable="true">
 
+    <ImageView
+        android:id="@+id/imgv_brand"
+        android:layout_width="@dimen/brand_logo_size"
+        android:layout_height="@dimen/brand_logo_size"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:src="@drawable/aston" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/brand_item_height"
-        android:background="@android:color/white">
-
-        <ImageView
-            android:layout_width="@dimen/brand_logo_size"
-            android:layout_height="@dimen/brand_logo_size"
-            android:id="@+id/imgv_brand"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/aston"
-            android:layout_marginLeft="30dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/brand_text_size"
-            android:textColor="@android:color/black"
-            android:text="Aston Martin"
-            android:id="@+id/label_brand"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/imgv_brand"
-            android:layout_marginLeft="@dimen/brand_text_margin_left" />
-    </RelativeLayout>
-</LinearLayout>
+    <TextView
+        android:id="@+id/label_brand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/brand_text_margin_left"
+        android:layout_toRightOf="@+id/imgv_brand"
+        android:text="Aston Martin"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/brand_text_size" />
+</RelativeLayout>

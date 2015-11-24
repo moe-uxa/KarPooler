@@ -15,6 +15,9 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * setup custom toolbar
+     */
     public void setupToolBar(){
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
@@ -22,6 +25,9 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * enable up button
+     */
     public void enableUpButton(){
 
         getSupportActionBar().setHomeButtonEnabled(true);

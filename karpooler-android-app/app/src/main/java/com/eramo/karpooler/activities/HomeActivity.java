@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.FeedFragment;
 import com.eramo.karpooler.fragments.InboxFragment;
@@ -157,8 +156,6 @@ public class HomeActivity extends BaseActivity implements SearchView.OnQueryText
 
     private class MyViewPagerAdapter extends FragmentPagerAdapter {
 
-        //icons = {R.drawable.ic_feed, R.drawable.ic_trip, R.drawable.ic_inbox, R.drawable.ic_notif, R.drawable.ic_more};
-
         public MyViewPagerAdapter(FragmentManager fm) {
             super(fm);
 
@@ -242,7 +239,9 @@ public class HomeActivity extends BaseActivity implements SearchView.OnQueryText
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(HomeActivity.this, "Status", Toast.LENGTH_SHORT).show();
+                // open review driver activity for tast
+                startActivity(new Intent(HomeActivity.this, ReviewDriverActivity.class));
+
             }
         });
 
@@ -263,7 +262,8 @@ public class HomeActivity extends BaseActivity implements SearchView.OnQueryText
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(HomeActivity.this, "Create Car Pooling", Toast.LENGTH_SHORT).show();
+                // open trip matches activity for test
+                startActivity(new Intent(HomeActivity.this, TripMatchesActivity.class));
 
             }
         });

@@ -36,4 +36,6 @@
 
     <color name="dialogTextColor">#616878</color>
 
+    <color name="colorControlHighlight">#d4d4d4</color>
+
 </resources>

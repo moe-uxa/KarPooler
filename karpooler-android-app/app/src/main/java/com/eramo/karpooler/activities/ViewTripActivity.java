@@ -8,8 +8,6 @@ import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.TripDetailsFragment;
 import com.eramo.karpooler.fragments.TripDiscussionFragment;

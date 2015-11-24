@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.models.dtos.FeedDTO;
 import com.eramo.karpooler.models.dtos.GroupCreationFeedDTO;

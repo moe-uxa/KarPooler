@@ -2,7 +2,6 @@ package com.eramo.karpooler.activities;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,15 +12,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.adapters.BehavioursRecyclerViewAdapter;
 import com.eramo.karpooler.adapters.VerificationsRecyclerViewAdapter;
 import com.eramo.karpooler.models.dtos.BehaviourDTO;
 import com.eramo.karpooler.models.dtos.UserProfileDTO;
 import com.eramo.karpooler.models.dtos.VerificationDTO;
-import com.facebook.Profile;
-
 import java.util.ArrayList;
 import java.util.List;
 

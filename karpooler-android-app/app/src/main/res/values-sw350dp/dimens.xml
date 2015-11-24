@@ -107,7 +107,7 @@
     <dimen name="profile_btn_call_height">30dp</dimen>
     <dimen name="profile_dialog_image_margin_top">60dp</dimen>
     <dimen name="profile_dialog_image_size">80dp</dimen>
-    <dimen name="profile_dialog_cover_width">305dp</dimen>
+    <dimen name="profile_dialog_cover_width">303dp</dimen>
     <dimen name="profile_dialog_cover_height">100dp</dimen>
 
 
@@ -146,7 +146,7 @@
     <dimen name="verification_text_margin_right">10dp</dimen>
     <dimen name="verfication_value_width">120dp</dimen>
     <dimen name="verify_btn_width">65dp</dimen>
-    <dimen name="verify_btn_height">35dp</dimen>
+    <dimen name="verify_btn_height">40dp</dimen>
     <dimen name="verification_text_size">14sp</dimen>
 
     <!-- 9 Contact Us Activity -->

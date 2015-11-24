@@ -8,7 +8,6 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.TripMatchesFragment;
 import com.eramo.karpooler.tabs.SlidingTabLayout;

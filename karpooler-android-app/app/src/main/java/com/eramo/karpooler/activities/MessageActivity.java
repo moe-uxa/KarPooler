@@ -11,12 +11,10 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.helpers.GenerateMessageShapeHelper;
 import com.eramo.karpooler.models.dtos.ChatMessageDTO;
 import com.eramo.karpooler.models.dtos.SentChatMessageDTO;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 

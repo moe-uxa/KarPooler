@@ -2,6 +2,9 @@ package com.eramo.karpooler.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,24 +12,20 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.adapters.BrandsRecyclerViewAdapter;
-import com.eramo.karpooler.apis.CarSelectionAPI;
+import com.eramo.karpooler.application.MyApplication;
 import com.eramo.karpooler.helpers.Constants;
 import com.eramo.karpooler.models.dtos.BrandDTO;
-import com.eramo.karpooler.models.dtos.ErrorDTO;
-import com.eramo.karpooler.services.callbacks.ServiceErrorCallback;
-import com.eramo.karpooler.services.callbacks.ServiceSuccessCallback;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
-
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SelectBrandActivity extends BaseActivity implements SearchView.OnQueryTextListener{
+public class SelectBrandActivity extends BaseActivity implements SearchView.OnQueryTextListener {
 
     private BrandsRecyclerViewAdapter brandsRecyclerViewAdapter;
-    private CarSelectionAPI carSelectionAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +40,6 @@ public class SelectBrandActivity extends BaseActivity implements SearchView.OnQu
 
         // set toolbar title
         getSupportActionBar().setTitle(getResources().getString(R.string.your_car));
-
-        // instantiate car selection API
-        carSelectionAPI = new CarSelectionAPI();
 
         // prepare ui
         prepareUIControllers();
@@ -69,7 +65,7 @@ public class SelectBrandActivity extends BaseActivity implements SearchView.OnQu
 
         int id = item.getItemId();
 
-        if (id == android.R.id.home){
+        if (id == android.R.id.home) {
 
             NavUtils.navigateUpFromSameTask(this);
 
@@ -78,25 +74,17 @@ public class SelectBrandActivity extends BaseActivity implements SearchView.OnQu
         return super.onOptionsItemSelected(item);
     }
 
-    private void loadBrands(){
+    private void loadBrands() {
 
-        carSelectionAPI.loadBrands(new ServiceSuccessCallback<List<BrandDTO>>() {
-            @Override
-            public void onSuccess(List<BrandDTO> response) {
+        // create test data
+        List<BrandDTO> brandDTOList = createTestData();
 
-                brandsRecyclerViewAdapter.setBrands(response);
-                brandsRecyclerViewAdapter.notifyDataSetChanged();
-            }
-        }, new ServiceErrorCallback<ErrorDTO>() {
-            @Override
-            public void onError(ErrorDTO errorResponse) {
-
-            }
-        });
+        brandsRecyclerViewAdapter.setBrands(brandDTOList);
+        brandsRecyclerViewAdapter.notifyDataSetChanged();
 
     }
 
-    private void prepareUIControllers(){
+    private void prepareUIControllers() {
 
         RecyclerView brandRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_brands);
         brandRecyclerView.setHasFixedSize(true);
@@ -138,5 +126,69 @@ public class SelectBrandActivity extends BaseActivity implements SearchView.OnQu
     @Override
     public boolean onQueryTextChange(String newText) {
         return false;
+    }
+
+    private List<BrandDTO> createTestData() {
+
+        List<BrandDTO> brandDTOList = new ArrayList<>();
+
+        for (int i = 1; i <= 8; i++) {
+
+            BrandDTO brandDTO = new BrandDTO();
+            brandDTO.setBrandId(i);
+
+            switch (i) {
+                case 1:
+                    brandDTO.setBrandName("Aston Martin");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/aston.png"));
+                    break;
+                case 2:
+                    brandDTO.setBrandName("Audi");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/audi.png"));
+                    break;
+                case 3:
+                    brandDTO.setBrandName("BMW");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/bmw.png"));
+                    break;
+                case 4:
+                    brandDTO.setBrandName("Bentley");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/bent.png"));
+                    break;
+                case 5:
+                    brandDTO.setBrandName("Chevrolet");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/c.png"));
+                    break;
+                case 6:
+                    brandDTO.setBrandName("FIAT");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/fiat.png"));
+                    break;
+                case 7:
+                    brandDTO.setBrandName("Ford");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/ford.png"));
+                    break;
+                case 8:
+                    brandDTO.setBrandName("Jaguar");
+                    brandDTO.setBrandImage(getBitmapFromAsset("brands/jaguar.png"));
+                    break;
+            }
+
+
+            brandDTOList.add(brandDTO);
+
+        }
+
+        return brandDTOList;
+    }
+
+    private Bitmap getBitmapFromAsset(String strName) {
+        AssetManager assetManager = MyApplication.getInstance().getAssets();
+        InputStream istr = null;
+        try {
+            istr = assetManager.open(strName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Bitmap bitmap = BitmapFactory.decodeStream(istr);
+        return bitmap;
     }
 }

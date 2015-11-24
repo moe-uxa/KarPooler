@@ -1,18 +1,13 @@
 package com.eramo.karpooler.activities;
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.models.dtos.DriverInfoDTO;
-import com.eramo.karpooler.models.dtos.UserProfileDTO;
 
 public class ReviewDriverActivity extends BaseActivity {
 

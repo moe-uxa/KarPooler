@@ -1,18 +1,11 @@
 package com.eramo.karpooler.activities;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.eramo.karpooler.R;
-import com.eramo.karpooler.models.dtos.GroupCreationFeedDTO;
 
 public class FindGroupActivity extends BaseActivity implements SearchView.OnQueryTextListener {
 

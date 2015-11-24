@@ -3,7 +3,6 @@ package com.eramo.karpooler.activities;
 import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -11,19 +10,14 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.adapters.BrandSpinnerAdapter;
-import com.eramo.karpooler.apis.CarSelectionAPI;
 import com.eramo.karpooler.helpers.Constants;
 import com.eramo.karpooler.models.dtos.BrandDTO;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class CarSelectionActivity extends BaseActivity  {
 
-    private CarSelectionAPI carSelectionAPI;
     private boolean brandSelectionActivityOpened;
     private Spinner brandSpinner;
     private BrandSpinnerAdapter brandSpinnerAdapter;
@@ -41,9 +35,6 @@ public class CarSelectionActivity extends BaseActivity  {
 
         // set toolbar title
         getSupportActionBar().setTitle(getResources().getString(R.string.your_car));
-
-        // create car selection api
-        carSelectionAPI = new CarSelectionAPI();
 
         // prepare ui controller
         prepareUIControllers();
@@ -91,14 +82,28 @@ public class CarSelectionActivity extends BaseActivity  {
 
     }
 
+    /**
+     * to show selected brand
+     * @param brandDTO
+     */
     private void setBrandSpinnerSelectedBrand(BrandDTO brandDTO){
+
+        // clear all brands
         brandSpinnerAdapter.clear();
+
+        // add just one brand
         brandSpinnerAdapter.add(brandDTO);
+
+        // notify changes
         brandSpinnerAdapter.notifyDataSetChanged();
     }
 
+    /**
+     * set brand spinner data and set listeners
+     */
     private void prepareBrandSpinner(){
 
+        // get brand spinner by id
         brandSpinner = (Spinner) findViewById(R.id.spinner_brand);
 
         // set spinner adapter
@@ -121,6 +126,9 @@ public class CarSelectionActivity extends BaseActivity  {
 
     }
 
+    /**
+     * set model spinner data and set listeners
+     */
     private void prepareModelsSpinner(){
 
         Spinner modelSpinner = (Spinner) this.findViewById(R.id.spinner_model);
@@ -134,6 +142,9 @@ public class CarSelectionActivity extends BaseActivity  {
 
     }
 
+    /**
+     * set model spinner data and set listeners
+     */
     private void prepareModelYearsSpinner(){
 
         Spinner modelYearsSpinner = (Spinner) this.findViewById(R.id.spinner_model_year);
@@ -148,6 +159,9 @@ public class CarSelectionActivity extends BaseActivity  {
 
     }
 
+    /**
+     * set plate type spinner data and set listeners
+     */
     private void preparePlateTypesSpinner(){
 
         Spinner plateTypesSpinner = (Spinner) this.findViewById(R.id.spinner_plate_type);
@@ -168,16 +182,13 @@ public class CarSelectionActivity extends BaseActivity  {
             @Override
             public void onClick(View v) {
 
-                // go to create trip activity
-                startActivity(new Intent(CarSelectionActivity.this, CreateTripActivity.class));
+                saveCarSelection();
+
             }
         });
 
     }
 
-    public void skip(){
-
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -191,5 +202,17 @@ public class CarSelectionActivity extends BaseActivity  {
 
             setBrandSpinnerSelectedBrand(brandDTO);
         }
+    }
+
+    public void skip(){
+
+        // go to create trip activity
+        startActivity(new Intent(CarSelectionActivity.this, CreateTripActivity.class));
+    }
+
+    private void saveCarSelection(){
+
+        // go to create trip activity
+        startActivity(new Intent(CarSelectionActivity.this, CreateTripActivity.class));
     }
 }

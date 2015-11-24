@@ -6,11 +6,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.helpers.Constants;
 import com.eramo.karpooler.models.dtos.UserVerificationDTO;
-
 import java.util.ArrayList;
 import java.util.List;
 

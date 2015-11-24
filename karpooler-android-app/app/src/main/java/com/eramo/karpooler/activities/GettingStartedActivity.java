@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.eramo.karpooler.R;
 import com.eramo.karpooler.fragments.IntroFragment;
 import com.eramo.karpooler.models.dtos.IntroDTO;
