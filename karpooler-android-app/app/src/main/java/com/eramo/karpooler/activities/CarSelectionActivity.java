@@ -128,7 +128,8 @@ public class CarSelectionActivity extends BaseActivity  {
         // test data
         String [] models = {"Captiva", "Cruze", "Aveo"};
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, models);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.simple_spinner_item, models);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         modelSpinner.setAdapter(adapter);
 
     }
@@ -140,7 +141,8 @@ public class CarSelectionActivity extends BaseActivity  {
         //test data
         String [] modelYears = {"2003", "2004", "2005"};
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, modelYears);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.simple_spinner_item, modelYears);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         modelYearsSpinner.setAdapter(adapter);
 
 
@@ -153,7 +155,8 @@ public class CarSelectionActivity extends BaseActivity  {
         // test data
         String [] plateTypes = {"numbers"};
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, plateTypes);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.simple_spinner_item, plateTypes);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         plateTypesSpinner.setAdapter(adapter);
 
     }

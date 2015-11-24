@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -305,7 +304,8 @@ public class CreateTripActivity extends BaseActivity {
         // test data
         String[] types = {"Work Trip", "Other"};
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, types);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.simple_spinner_item, types);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(adapter);
 
     }
@@ -317,7 +317,8 @@ public class CreateTripActivity extends BaseActivity {
         // test data
         String[] priceOptions = {"Free"};
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, priceOptions);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.simple_spinner_item, priceOptions);
+        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         priceSpinner.setAdapter(adapter);
 
 
